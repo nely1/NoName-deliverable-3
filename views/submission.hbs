@@ -1,0 +1,27 @@
+<div class="record-glucose">
+    <div class = "glucose-data">
+        <h> Insert blood drop photo here </h>
+        <p> <b>Glucose</b> empty underlined space and mmol/L</p>
+    </div>
+
+    <div class = "glucose-comments">
+        <form action="/submission" method="POST">
+            <input type="text" placeholder="Add a comment" name ="number"/>
+            <input type="submit"/>
+        </form>
+    </div>
+
+    <div> 
+        
+        <h>This is what was read</h>
+        <p>
+            
+            {{#each data}}
+                <br>{{this.number}}</br>
+            {{/each}}
+        </p>
+
+
+    </div>
+
+</div>
