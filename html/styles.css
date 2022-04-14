@@ -20,6 +20,16 @@
     text-align: center;
 }
 
+.header2{
+    height: auto;
+    width: 100vw;
+    background:  rgba(25, 97, 160, 1);
+}
+
+.header2 h1{
+    width: 20vw;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -266,3 +276,57 @@ a:visited {
 }
 
 
+
+.band{
+    width: 90%;
+    max-width: 1800px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+}
+
+@media only screen and (min-width: 850px) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    border-radius: 25px;
+    border: 2px solid black;
+    background: white;
+    text-decoration: none;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.card-comment{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card-header {
+    padding: 10px;
+    margin: 0;
+    color: rgba(25, 97, 160, 1);
+}
+
+.card-header svg,
+.card-header h2{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.blue-text{
+    color: rgba(25, 97, 160, 1);
+}
+
+.no-comment-text{
+    color: grey;
+}
