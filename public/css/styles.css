@@ -10,10 +10,12 @@
     justify-content: space-around;
     align-items: center;
     position: fixed;
+    letter-spacing: 1.5px;
 }
 
 .header h2{
-    width: 20vw;
+    padding-left: 10px;
+    width: 100%;
 }
 
 #title{
@@ -50,7 +52,8 @@ button{
 
 .hamburger-icon{
     position: relative;
-    margin-right: 0px;
+    padding-right: 45px;
+    padding-left: 25px;
     color: white;
 }
 
@@ -197,39 +200,48 @@ h1{
 }
 
 .record-glucose{
-    margin:auto;
     width: 100vw;
     height: auto;
-    align-items: center;
-
-
     font-family: 'Didact Gothic';
-    font-size: large;
+    font-size: x-large;
     color: rgb(112,112,112);
+}
 
-    padding-left: 8px;
-    padding-right: 8px;
+.record-glucose svg{
+    padding-top: 150px;
+    margin-left: 50%;
 }
 
 .glucose-data p{
     background-color: white; 
-    margin-top: 130px;
-    text-align: justify;
-    border-bottom: 3px solid rgb(112,112,112);
+    padding-top: 10px;
+    text-align: center;
+    text-decoration-line:underline;
 }
 
 input[type=text] {
-    margin-top: 260px;
+    margin-top: 10px;
     border: 2px solid rgb(112,112,112);
     border-radius: 10px;
     background-color: white; 
     padding-bottom: 100px;
     padding-left: 15px;
     padding-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
     font-size: x-large;
-    width: 85vw;
+    width: 60%;
     height: auto;
-  }
+}
+
+input[type=submit]{
+    border: 2px solid rgb(112,112,112);
+    border-radius: 10px;
+    background-color: white; 
+    width: 7%;
+    padding: 7px;
+    margin-left: 50%;
+}
 
 
 .symptoms{
