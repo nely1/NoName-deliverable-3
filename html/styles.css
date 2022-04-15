@@ -37,15 +37,6 @@ body {
     overflow-x: hidden;
 }
 
-button{
-    padding: 12px;
-    font-family: 'Didact Gothic';
-    border-radius: 5px;
-    background:  rgba(25, 97, 160, 0.8);
-    color: white;
-    border: 2px outset black;
-    cursor: pointer;
-}
 
 #login{
     position: relative;
@@ -276,7 +267,6 @@ a:visited {
 }
 
 
-
 .band{
     width: 90%;
     max-width: 1800px;
@@ -303,18 +293,25 @@ a:visited {
     color: #444;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    font-size: 110%;
+    line-height: 150%;
 }
 
 .card-comment{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.no-comment-text{
+    color: grey;
 }
 
 .card-header {
-    padding: 10px;
-    margin: 0;
+    padding-left: 25px;
+    padding-top: 15px;
     color: rgba(25, 97, 160, 1);
+    font-size: 120%;
 }
 
 .card-header svg,
@@ -327,6 +324,32 @@ a:visited {
     color: rgba(25, 97, 160, 1);
 }
 
-.no-comment-text{
+.card-entry{
+    padding-left: 25px;
+    margin: 0;
     color: grey;
+}
+
+.value-text{
+    color: black;
+    font-size: 350%;
+}
+
+a.btn-record{
+    background-color: white; 
+    width: 175px;
+    font-size: 120%;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    line-height: 0px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+a.btn-record:hover{
+    background-color: rgb(242, 242, 242);
 }
