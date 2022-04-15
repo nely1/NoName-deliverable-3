@@ -8,14 +8,23 @@
             </defs>
             <rect id="noun-blood-2146276" width="46" height="46" fill="url(#pattern)"/>
         </svg>
-        <p> <b>Glucose</b> empty underlined space and mmol/L</p>
+        <p> <b>Glucose</b> mmol/L</p>
     </div>
 
-    <div class = "glucose-comments">
+    <div class = "forms">
+        <i>
+            <form action="/submission" method="POST">
+                <textarea placeholder="Add a comment.." name = "comments"></textarea>
+            </form>
+        </i>
+
         <form action="/submission" method="POST">
-            <input type="text" placeholder="Add a comment" name ="number"/>
-            <input type="submit" value = "Cancel"/>
-            <input type="submit"/>
+            <div class = "submit-buttons"> 
+                <b1><input type="submit" value = "Cancel"/></b1>
+                <b2><input type="submit"/></b2>
+            </div>
         </form>
     </div>
+
+
 </div>
