@@ -1,23 +1,73 @@
-.header{
-    height: auto;
-    width: 100vw;
-    background:  rgba(25, 97, 160, 1);
-    color: white;
-    text-align: left;
-    padding: 10px;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
     font-family: 'Didact Gothic';
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
 }
 
-.header h2{
-    width: 20vw;
-}
-
-#title{
+header{
+    background-color: rgba(25, 97, 160, 1);
+    padding: 15px;
+    padding-top: 0;
     text-align: center;
+    position: fixed;
+    top: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 55px;
+}
+
+header li{
+    display: inline;
+    padding-left: 1.5%;
+    font-size: 17px;
+}
+
+header h1{
+    float: left;
+    margin-top: 9px;
+    font-size: 25px;
+    color: white;
+}
+
+header li a:link,
+header li a:visited,
+header li a:active{
+    color: white;
+    text-decoration: none;
+}
+
+header li a:hover{
+    color: grey;
+}
+
+header ul #logout a{
+    float: right;
+    border-radius: 5px;
+    background-color: aliceblue;
+    color:rgba(25, 97, 160, 1);
+    padding: 5px;
+}
+
+header ul #logout a:hover{
+    background-color: grey;
+}
+
+.active{
+    background-color:rgb(20, 77, 128);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+header a.icon{
+    float: right;
+    margin-top: -12px;
+}
+
+
+main{
+    margin-top: 65px;
 }
 
 .header2{
@@ -30,30 +80,7 @@
     width: 20vw;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-}
 
-
-#login{
-    position: relative;
-    left: 10vw;
-    padding: 10px;
-}
-
-.username{
-    font-size: x-large;
-}
-
-
-.hamburger-icon{
-    position: relative;
-    margin-right: 0px;
-    color: white;
-}
 
 .hamburger-icon:hover{
     cursor: pointer;
@@ -103,14 +130,18 @@ button:hover{
     text-align: justify;
 }
 
-h1{
-    background-color: rgba(69, 135, 192, 1); 
+
+.heading-block{
+    background-color: rgba(25, 97, 160, 1); 
     color: white;
     font-style: bold;
-    margin: 0;
-    border-radius: 5px;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.heading-block svg{
+    vertical-align: text-bottom;
 }
 
 .flex-container {
@@ -267,16 +298,33 @@ a:visited {
 }
 
 
+
 .band{
     width: 90%;
     max-width: 1800px;
     margin: auto;
+    padding-top: 20px;
 
     display: grid;
 
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 50px;
+}
+
+@media only screen and (min-width: 1100px){
+    .heading-block{
+        display: none;
+    }
+    header a.icon{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    header li{
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 850px) {
