@@ -60,7 +60,7 @@ header ul #logout a:hover{
     padding: 5px;
 }
 
-header a.icon{
+header a.hamburger{
     float: right;
     margin-top: -12px;
 }
@@ -94,11 +94,6 @@ main{
     top:3px;
 }
 
-button:hover{
-    padding-left: 15px;    
-    padding-right: 15px;
-    transition: 1s;
-}
 
 .content-section{
     width: 100vw;
@@ -297,8 +292,6 @@ a:visited {
     color:blue
 }
 
-
-
 .band{
     width: 90%;
     max-width: 1800px;
@@ -316,7 +309,7 @@ a:visited {
     .heading-block{
         display: none;
     }
-    header a.icon{
+    header a.hamburger{
         display: none;
     }
 }
@@ -400,4 +393,55 @@ a.btn-record{
 
 a.btn-record:hover{
     background-color: rgb(242, 242, 242);
+}
+
+.tabs{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+    margin-top: 80px;
+}
+
+.tabs input[type="radio"]{
+    display: none;
+}
+
+.tabs label{
+    padding: 10px;
+    background: white;
+    border: 1px solid rgba(25, 97, 160, 1);
+}
+
+.tabs .tab{
+    width: 100%;
+    order: 1;
+    display: none;
+    border: none;
+}
+
+.tabs .tab td,
+.tabs .tab th{
+    padding: 8px;
+}
+
+.tabs .tab tr:hover{
+    background-color: rgb(237, 237, 237);
+}
+
+.tabs .tab th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgba(25, 97, 160, 1);
+    color: white;
+}
+
+.tabs input[type="radio"]:checked + label + .tab{
+    display: table;
+}
+
+.tabs input[type="radio"]:checked + label{
+    background:rgba(25, 97, 160, 1);
+    color: white;
+    border-bottom: none;
 }
