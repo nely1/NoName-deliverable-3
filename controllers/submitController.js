@@ -6,8 +6,9 @@ const display = (req, res) => {
 }
 
 const insert = (req, res) => {
-    const {number} = req
-    peopleNum.push(req)
+    const { number } = req.body
+    peopleNum.push({ number })
+    console.log(req.body)
     //return res.redirect('../')
     return res.redirect('back')
 }
@@ -15,5 +16,5 @@ const insert = (req, res) => {
 
 module.exports = {
     display,
-    insert
+    insert,
 }

@@ -1,5 +1,7 @@
 <div class="record-glucose">
     <div class = "glucose-data">
+
+        {{! Image inserted here }}
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46">
             <defs>
                 <pattern id="pattern" width="1" height="1" viewBox="5.918 0 34.164 34.164">
@@ -8,23 +10,39 @@
             </defs>
             <rect id="noun-blood-2146276" width="46" height="46" fill="url(#pattern)"/>
         </svg>
-        <p> <b>Glucose</b> mmol/L</p>
+
     </div>
+
+    {{! Submit buttons and the comments text box}}
+
+    {{! Mental note on behaviour: when text box is in focus, an outline will appear, yay or nay?}}
 
     <div class = "forms">
-        <i>
-            <form action="/submission" method="POST">
-                <textarea placeholder="Add a comment.." name = "comments"></textarea>
-            </form>
-        </i>
-
         <form action="/submission" method="POST">
-            <div class = "submit-buttons"> 
-                <b1><input type="submit" value = "Cancel"/></b1>
-                <b2><input type="submit"/></b2>
+
+            <div class = "data-recording">
+                <txt1> Glucose: </txt1>               
+                <input type="data" name = "glucose-data">
+                <txt2> mmol/L</txt2>                
             </div>
+
+            <textarea placeholder="Add a comment.." name = "number"></textarea>
+
+            <div>
+                <button1><input type="submit"/></button1>
+            </div>
+
         </form>
+        
+        <a href = "/">
+            <button2><input type="submit" value = "Cancel"/></button2>
+        </a>
     </div>
 
+    <div>
+        {{#each data}}
+            <br>{{this.glucose-data}}</br>
+        {{/each}}
+    </div>
 
 </div>

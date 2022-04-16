@@ -18,6 +18,106 @@
     width: 100%;
 }
 
+.username{
+    font-size: x-large;
+}
+
+.record-glucose{
+    width: 100vw;
+    height: auto;
+    font-family: 'Didact Gothic';
+    font-size: x-large;
+    color: rgb(112,112,112);
+}
+
+.record-glucose svg{
+    padding-top: 150px;
+    margin-left: 50%;
+}
+
+.forms{
+    text-align: center;
+}
+
+.data-recording{
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 24.5%;
+}
+
+.forms txt1{
+    background-color: white; 
+    text-align: center;
+}
+
+.forms txt2{
+    background-color: white; 
+    text-align: center;
+}
+
+input[type=data]{
+    padding-right: 10px;
+    width: max(8%, 100px);
+    text-align: right;
+    border-style: none;
+    border-bottom: 2px solid rgb(112,112,112);
+    background-color: white; 
+    font-family: 'Didact Gothic';
+    font-size: x-large;
+    color: rgb(112,112,112);
+}
+
+textarea {
+    word-wrap: normal;
+    width: max(50%, 450px);
+    margin-top: 40px;
+    border: 2px solid rgb(112,112,112);
+    border-radius: 10px; 
+    background-color: white; 
+    padding-bottom: 100px;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: x-large;
+    font-family: 'Didact Gothic';
+    font-size: x-large;
+    color: rgb(112,112,112);
+}
+
+input[type=submit]{
+    border: 2px solid rgb(112,112,112);
+    border-radius: 10px;
+    background-color: white; 
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-family: 'Didact Gothic';
+    font-size: large;
+    color: rgb(112,112,112);
+}
+
+input[type=data]:focus{
+    color: black;
+}
+
+textarea:focus{
+    color:black;
+}
+
+.forms button1 {
+    float: right;
+    margin-right: 24.5%;
+}
+
+.forms button2 {
+    float: left;
+    margin-left: 24.5%;
+}
+
+/* Deliverable 1 css below*/
+
 #title{
     text-align: center;
 }
@@ -44,11 +144,6 @@ button{
     left: 10vw;
     padding: 10px;
 }
-
-.username{
-    font-size: x-large;
-}
-
 
 .hamburger-icon{
     position: relative;
@@ -198,67 +293,6 @@ h1{
                 0.3em 0.3em 1em rgba(0,0,0,0.3);
     font-size: large;
 }
-
-.record-glucose{
-    width: 100vw;
-    height: auto;
-    font-family: 'Didact Gothic';
-    font-size: x-large;
-    color: rgb(112,112,112);
-}
-
-.record-glucose svg{
-    padding-top: 150px;
-    margin-left: 50%;
-}
-
-.glucose-data p{
-    background-color: white; 
-    padding-top: 10px;
-    text-align: center;
-    text-decoration-line:underline;
-}
-
-.forms{
-    text-align: center;
-}
-
-textarea {
-    word-wrap: normal;
-    display: inline-block;
-    width: max(60%, 450px);
-    margin-top: 10px;
-    border: 2px solid rgb(112,112,112);
-    border-radius: 10px; 
-    background-color: white; 
-    padding-bottom: 100px;
-    padding-left: 15px;
-    padding-top: 15px;
-    font-size: x-large;
-}
-
-input[type=submit]{
-    border: 2px solid rgb(112,112,112);
-    border-radius: 10px;
-    background-color: white; 
-    width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-}
-
-
-.submit-buttons b1{
-    float: left;
-    margin-left: 19.5%;
-}
-.submit-buttons b2{
-    float: right;
-    margin-right: 19.5%;
-}
-
 
 .symptoms{
     margin-top: 25px;
