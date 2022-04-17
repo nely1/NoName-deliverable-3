@@ -112,7 +112,7 @@ main{
 }
 
 .record-glucose svg{
-    padding-top: 150px;
+    padding-top: 80px;
     margin-left: 50%;
 }
 
@@ -177,6 +177,11 @@ input[type=submit]{
     font-family: 'Didact Gothic';
     font-size: large;
     color: rgb(112,112,112);
+}
+
+input[type=submit]:hover {
+    border: 2px solid black;
+    color: black;
 }
 
 input[type=data]:focus{

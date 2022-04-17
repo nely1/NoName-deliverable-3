@@ -20,7 +20,7 @@
                 <h2>Glucose</h2>     
             </div>
 
-            <a href="#" class="btn-record">
+            <a href="/submission" class="btn-record">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="75" height="75" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
@@ -30,6 +30,24 @@
                 
                 <h2>RECORD</h2>
             </a>
+
+            <div class="card-entry">
+                <p><span class="value-text">
+                    {{#each data}}
+                        {{this.glucose_data}}
+                    {{/each}}
+                </span> &emsp; mmol/L</p>
+            </div>
+
+            <div class="card-comment">
+                <p><span class="blue-text">Comment:</span> 
+                    {{#each data}}
+                        {{this.comments}}
+                    {{/each}}
+
+                </p>
+            </div>
+
         </div>
     </div>
 

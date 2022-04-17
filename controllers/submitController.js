@@ -1,16 +1,13 @@
-// link to model
-const peopleNum = require('../models/peopleModel')
-
 const display = (req, res) => {
-    res.render('submission', {data: peopleNum})
+    res.render('submission')
 }
 
+/* Not used, as moved to record hbs*/
 const insert = (req, res) => {
-    const { number } = req.body
-    peopleNum.push({ number })
+    const { glucose_data, comments } = req.body
+    glucoseData.push({ glucose_data, comments })
     console.log(req.body)
-    //return res.redirect('../')
-    return res.redirect('back')
+    return res.redirect('../record')
 }
 
 

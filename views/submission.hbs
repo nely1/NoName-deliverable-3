@@ -13,31 +13,24 @@
     {{! Mental note on behaviour: when text box is in focus, an outline will appear, yay or nay?}}
 
     <div class = "forms">
-        <form action="/submission" method="POST">
+        <form action="/record" method="POST">
 
             <div class = "data-recording">
                 <txt1> Glucose: </txt1>               
-                <input type="data" name = "glucose-data">
+                <input type="data" name = "glucose_data">
                 <txt2> mmol/L</txt2>                
             </div>
 
-            <textarea placeholder="Add a comment.." name = "number"></textarea>
-
+            <textarea placeholder="Add a comment.." name = "comments"></textarea>
+            
             <div>
                 <button1><input type="submit"/></button1>
             </div>
 
         </form>
         
-        <a href = "/">
+        <a href = "/record">
             <button2><input type="submit" value = "Cancel"/></button2>
         </a>
     </div>
-
-    <div>
-        {{#each data}}
-            <br>{{this.glucose-data}}</br>
-        {{/each}}
-    </div>
-
 </div>

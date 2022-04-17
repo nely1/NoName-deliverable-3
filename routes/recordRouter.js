@@ -7,6 +7,7 @@ const recordRouter = express.Router()
 const recordController = require('../controllers/recordController')
 
 recordRouter.get('/', recordController.display)
+recordRouter.post('/', recordController.insert)
 
 // export the router
 module.exports = recordRouter
