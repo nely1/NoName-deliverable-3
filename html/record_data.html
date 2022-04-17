@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+        <title>Diabetes@Home</title>
+    </head>
+
+
+    <body>
+        <header>
+            <h1>Diabetes@home</h1>
+            
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Record your data</a></li>
+                <li><a href="#">View your data</a></li>
+                <li><a href="#">Leaderboard</a></li>
+                <li><a href="#">About diabetes</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Account settings</a></li>
+                <li id="logout"><a href="#">Logout</a></li>
+            </ul>
+
+            <a href="#" class="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="0" y1="8" x2="22" y2="8" />
+                    <line x1="0" y1="14" x2="22" y2="14" />
+                    <line x1="0" y1="20" x2="22" y2="20" />
+                </svg>
+            </a>
+            
+        </header>
+
+        <main>
+            <h1 class="heading-block">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                    <line x1="16" y1="5" x2="19" y2="8" />
+                </svg>
+                Record
+            </h1>
+    
+            <div class="band">
+                <div class="glucose">
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
+                            </svg>
+    
+                            <h2>Glucose</h2>     
+                        </div> 
+    
+                        <a href="#" class="btn-record">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="75" height="75" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                                <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                                <line x1="16" y1="5" x2="19" y2="8" />
+                            </svg>
+                            
+                            <h2>RECORD</h2>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="weight">
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-scale-outline" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="3" y="3" width="18" height="18" rx="4" />
+                                <path d="M12 7c1.956 0 3.724 .802 4.994 2.095l-2.956 2.904a3 3 0 0 0 -2.038 -.799a3 3 0 0 0 -2.038 .798l-2.956 -2.903a6.979 6.979 0 0 1 4.994 -2.095z" />
+                            </svg>
+    
+                            <h2>Weight</h2>     
+                        </div> 
+    
+                        <a href="#" class="btn-record">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="75" height="75" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                                <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                                <line x1="16" y1="5" x2="19" y2="8" />
+                            </svg>
+                            
+                            <h2>RECORD</h2>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="insulin">
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-vaccine" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M17 3l4 4" />
+                                <path d="M19 5l-4.5 4.5" />
+                                <path d="M11.5 6.5l6 6" />
+                                <path d="M16.5 11.5l-6.5 6.5h-4v-4l6.5 -6.5" />
+                                <path d="M7.5 12.5l1.5 1.5" />
+                                <path d="M10.5 9.5l1.5 1.5" />
+                                <path d="M3 21l3 -3" />
+                            </svg>
+    
+                            <h2>Insulin doses</h2>     
+                        </div> 
+    
+                        <div class="card-entry">
+                            <p><span class="value-text">2</span></p>
+                        </div>
+    
+                        <div class="card-comment">
+                            <p><span class="no-comment-text">No comment</span></p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="exercise">
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-walk" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="13" cy="4" r="1" />
+                                <line x1="7" y1="21" x2="10" y2="17" />
+                                <path d="M16 21l-2 -4l-3 -3l1 -6" />
+                                <path d="M6 12l2 -3l4 -1l3 3l3 1" />
+                            </svg>
+    
+                            <h2>Exercise</h2>     
+                        </div> 
+    
+                        <div class="card-entry">
+                            <p><span class="value-text">8,594</span> &emsp; steps</p>
+                        </div>
+    
+                        <div class="card-comment">
+                            <p><span class="blue-text">Comment:</span> Took a couple extra laps around the park today due to some spare time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+
+    </body>
+</html>

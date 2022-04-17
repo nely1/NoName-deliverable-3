@@ -1,15 +1,15 @@
+const glucoseData = require('../models/glucoseModel')
+
 const display = (req, res) => {
-    res.render('submission')
+    res.render('record_data', {data: glucoseData})
 }
 
-/* Not used, as moved to record hbs*/
 const insert = (req, res) => {
     const { glucose_data, comments } = req.body
     glucoseData.push({ glucose_data, comments })
     console.log(req.body)
     return res.redirect('../record')
 }
-
 
 module.exports = {
     display,
