@@ -39,7 +39,15 @@ header li a:active{
 }
 
 header li a:hover{
-    color: grey;
+    text-decoration: underline;
+}
+
+header ul #username{
+    float: right;
+    color: white;
+    margin-top: -5px;
+    margin-right: 12px;
+    font-size: 25px;
 }
 
 header ul #logout a{
@@ -47,12 +55,14 @@ header ul #logout a{
     border-radius: 5px;
     background-color: aliceblue;
     color:rgba(25, 97, 160, 1);
+    margin-top: -2px;
     padding: 5px;
 }
 
 header ul #logout a:hover{
-    background-color: grey;
+    background-color: rgb(204, 204, 204);
 }
+
 
 .active{
     background-color:rgb(20, 77, 128);

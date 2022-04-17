@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: false })) // only needed for URL-encoded 
 
 // link to our router
 const submitRouter = require('./routes/submitRouter')
+const recordRouter = require('./routes/recordRouter')
 
 // middleware to log a message each time a request arrives at the server - handy for debugging
 //app.use((req,res,next) => {
@@ -33,6 +34,9 @@ const submitRouter = require('./routes/submitRouter')
 
 // the demo routes are added to the end of the '/people' path
 app.use('/submission', submitRouter)
+
+// the demo routes are added to the end of the '/people' path
+app.use('/record', recordRouter)
 
 // Tells the app to send the string: "Our demo app is working!" when you hit the '/' endpoint.
 app.get('/', (req, res) => {
