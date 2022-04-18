@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "deliverable-2",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -11,5 +11,13 @@
   "dependencies": {
     "express": "^4.17.3",
     "express-handlebars": "^6.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nely1/deliverable-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nely1/deliverable-2/issues"
+  },
+  "homepage": "https://github.com/nely1/deliverable-2#readme"
 }

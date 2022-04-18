@@ -1,8 +1,8 @@
-const glucoseData = require('../models/glucoseModel')
 
 
 const display = (req, res) => {
-    res.render('record_data', {data: glucoseData})
+    console.log(req.body)
+    res.render('submission_confirm', {data: req.body})
 }
 
 const insert = (req, res) => {
@@ -11,6 +11,7 @@ const insert = (req, res) => {
     console.log(req.body)
     return res.redirect('../record')
 }
+
 
 module.exports = {
     display,

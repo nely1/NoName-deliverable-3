@@ -5,7 +5,7 @@ module.exports =
         data_type: "Glucose",
         unit: "mmol/L",
         svg_path: ["M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z"],
-        path_to: "record"
+        path_to: "confirm_submission"
     },
 
     {   

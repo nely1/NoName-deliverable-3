@@ -25,12 +25,16 @@ app.use(express.urlencoded({ extended: false })) // only needed for URL-encoded 
 // link to our router
 const submitRouter = require('./routes/submitRouter')
 const recordRouter = require('./routes/recordRouter')
+const confirmSubmissionRouter = require('./routes/confirmSubmissionRouter')
 
 // middleware to log a message each time a request arrives at the server - handy for debugging
 //app.use((req,res,next) => {
   //  console.log('message arrived: ' + req.method + ' ' + req.path + ' ' + req.body.number)
     //next()
 //})
+
+// the demo routes are added to the end of the '/people' path
+app.use('/confirm_submission', confirmSubmissionRouter)
 
 // the demo routes are added to the end of the '/people' path
 app.use('/submission', submitRouter)
