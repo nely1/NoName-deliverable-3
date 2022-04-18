@@ -1,24 +1,30 @@
 <div class="record-glucose">
     <div class = "glucose-data">
         {{! Image inserted here }}
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
+        <svg id width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            {{#each templateInfo.svg_path}}
+                <path d="{{this}}"/>
+            {{/each}}
         </svg>
-
     </div>
 
     {{! Submit buttons and the comments text box}}
 
     {{! Mental note on behaviour: when text box is in focus, an outline will appear, yay or nay?}}
+    {{! Mental note 2: need to dynamically change the submission path thing too }}
+    {{! Mental note 3: should I just call these tags p?}}
 
     <div class = "forms">
-        <form action="/record" method="POST">
+        <form action="/{{templateInfo.path_to}}" method="POST">
 
             <div class = "data-recording">
-                <txt1> Glucose: </txt1>               
+                <txt1> 
+                    {{templateInfo.data_type}}:             
+                </txt1> 
                 <input type="data" name = "glucose_data">
-                <txt2> mmol/L</txt2>                
+                <txt2> 
+                    {{templateInfo.unit}}
+                </txt2>                
             </div>
 
             <textarea placeholder="Add a comment.." name = "comments"></textarea>

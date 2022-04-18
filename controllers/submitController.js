@@ -1,5 +1,10 @@
+const dataInfo = require('../models/datatypeModel')
+
+
+/* Mental note: code in a failure condition */
 const display = (req, res) => {
-    res.render('submission')
+    const data = dataInfo.find(data => data.path_from == req.params.data_type)
+    res.render('submission', {templateInfo: data} )
 }
 
 /* Not used, as moved to record hbs*/
