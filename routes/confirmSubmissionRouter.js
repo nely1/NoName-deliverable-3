@@ -6,7 +6,7 @@ const confirmSubmissionRouter = express.Router()
 // require our controller
 const confirmSubmissionController = require('../controllers/confirmSubmissionController')
 
-confirmSubmissionRouter.get('/', confirmSubmissionController.display)
+confirmSubmissionRouter.post('/', confirmSubmissionController.display)
 
 
 // export the router
