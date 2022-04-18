@@ -1,8 +1,7 @@
 
 
 const display = (req, res) => {
-    const { glucose_data, comments } = req.body
-    console.log(req.body)
+    const {glucose_data, comments} = req.body
     res.render('submission_confirm', {glucose_data, comments})
 }
 

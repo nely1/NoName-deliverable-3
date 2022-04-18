@@ -14,7 +14,7 @@
                         </div>
                         
                         <div class="submission-comment">
-                            <p> <span><b>Comment: </b></span> This was weighed right after dinner.</p>
+                            <p> <span><b>Comment: </b></span> {{comments}}</p>
                         </div>
                     </div>
 
@@ -22,8 +22,12 @@
 
                     <div class="confirm-bottom-half">
                         <p id="submission-warning">Please ensure data is correct as data is unchangeable after submitting.</p>
-                        <a id="cancel-submission">Cancel</a>
-                        <a id="submit-submission">Submit</a>
+                        <a href="/submission/glucose" id="cancel-submission">Cancel</a>
+                        <form action="/record" method="POST">
+                            <input type="hidden" name="glucose_data" value={{glucose_data}}>
+                            <input type="hidden" name="comments" value={{comments}}>
+                            <input type="submit" id="submit-submission" value="Submit">
+                        </form>
                     </div>
                 </div>
             </div>

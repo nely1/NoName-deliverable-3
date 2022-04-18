@@ -30,10 +30,14 @@
                 </div>
 
                 <div class="card-comment">
+                    {{#if this.comments}}
                     <p><span class="blue-text">Comment:</span> 
                         {{#each data}}
                             {{this.comments}}
                         {{/each}}
+                    {{else}}
+                        <p><span class="no-comment-text">No comment</span></p>
+                    {{/if}}
 
                     </p>
                 </div>

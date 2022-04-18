@@ -561,6 +561,11 @@ a.btn-record:hover{
     padding-left: 5%;
     float: left;
     font-size: 24px;
+    text-decoration: none;
+}
+
+#cancel-submission:hover {
+    text-decoration: underline;
 }
 
 #submit-submission {
@@ -568,4 +573,15 @@ a.btn-record:hover{
     float:right;
     padding-right: 5%;
     font-size: 24px;
+    border-style: none;
+    margin-top:-10px;
+}
+
+#submission-submisstion:hover {
+    text-decoration: underline;
+    border-bottom: 2px solid rgb(112,112,112);
+}
+
+input[type=submit]:hover#submit-submission {
+    text-decoration:underline;
 }
