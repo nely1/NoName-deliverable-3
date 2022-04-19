@@ -9,7 +9,7 @@ const insert = (req, res) => {
     const { glucose_data, comments } = req.body
     glucoseData.push({ glucose_data, comments })
     console.log(req.body)
-    return res.redirect('../record')
+    return res.redirect('/patient/record')
 }
 
 module.exports = {

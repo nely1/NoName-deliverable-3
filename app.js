@@ -1,60 +1,33 @@
 const exphbs = require('express-handlebars')
-
-// Import express
 const express = require('express')
-// Set your app up as an express app
 const app = express()
 
-// configure Handlebars
 app.engine(
     'hbs',
     exphbs.engine({
-        defaultlayout: 'main',
+        defaultlayout: 'patient_main',
         extname: 'hbs',
     })
 )
-// set Handlebars view engine
 app.set('view engine', 'hbs')
-
 app.use(express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
-// Set up to handle POST requests
-app.use(express.json()) // needed if POST data is in JSON format
-app.use(express.urlencoded({ extended: false })) // only needed for URL-encoded input
-
-// link to our router
-const submitRouter = require('./routes/submitRouter')
-const recordRouter = require('./routes/recordRouter')
-const confirmSubmissionRouter = require('./routes/confirmSubmissionRouter')
-const clinicianRouter = require('./routes/clinicianRouter')
-
-// middleware to log a message each time a request arrives at the server - handy for debugging
-//app.use((req,res,next) => {
-  //  console.log('message arrived: ' + req.method + ' ' + req.path + ' ' + req.body.number)
-    //next()
-//})
-
-// the demo routes are added to the end of the '/people' path
-app.use('/confirm_submission', confirmSubmissionRouter)
-
-// the demo routes are added to the end of the '/people' path
-app.use('/submission', submitRouter)
-
-// the demo routes are added to the end of the '/people' path
-app.use('/record', recordRouter)
-
-// Tells the app to send the string: "Our demo app is working!" when you hit the '/' endpoint.
-app.get('/', (req, res) => {
+//Router for patients
+const patientRouter = require('./routes/patientRouter')
+app.use('/patient', patientRouter)
+app.get('/patient', (req, res) => {
     res.render('index.hbs')
 })
 
+//Router for clinicians
+const clinicianRouter = require('./routes/clinicianRouter')
+app.use('/clinician', clinicianRouter)
 app.get('/clinician', (req, res) => {
     res.render('clinician_index.hbs')
 })
 
-app.use('/clinician', clinicianRouter)
-
-// Tells the app to listen on port 3000 and logs that information to the console.
 app.listen(3000, () => {
     console.log('Demo app is listening on port 3000!')
 })

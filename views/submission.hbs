@@ -15,7 +15,7 @@
     {{! Mental note 3: should I just call these tags p?}}
 
     <div class = "forms">
-        <form action="/{{templateInfo.path_to}}" method="POST">
+        <form action="/patient/{{templateInfo.path_to}}" method="POST">
             <div class = "data-recording">
                 <txt1> 
                     {{templateInfo.data_type}}:             
@@ -33,7 +33,7 @@
             </div>
         </form>
         
-        <a href = "/record">
+        <a href = "/patient/record">
             <button2><input type="submit" value = "Cancel"/></button2>
         </a>
     </div>
