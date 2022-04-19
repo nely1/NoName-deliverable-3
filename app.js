@@ -26,6 +26,7 @@ app.use(express.urlencoded({ extended: false })) // only needed for URL-encoded 
 const submitRouter = require('./routes/submitRouter')
 const recordRouter = require('./routes/recordRouter')
 const confirmSubmissionRouter = require('./routes/confirmSubmissionRouter')
+const clinicianRouter = require('./routes/clinicianRouter')
 
 // middleware to log a message each time a request arrives at the server - handy for debugging
 //app.use((req,res,next) => {
@@ -46,6 +47,12 @@ app.use('/record', recordRouter)
 app.get('/', (req, res) => {
     res.render('index.hbs')
 })
+
+app.get('/clinician', (req, res) => {
+    res.render('clinician_index.hbs')
+})
+
+app.use('/clinician', clinicianRouter)
 
 // Tells the app to listen on port 3000 and logs that information to the console.
 app.listen(3000, () => {

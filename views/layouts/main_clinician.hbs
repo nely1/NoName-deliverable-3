@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles2.css">
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+        <title>Diabetes@Home</title>
+    </head>
+
+
+    <body>
+        <header>
+            <h1>Diabetes@home</h1>
+            
+            <ul>
+                <li><a href="/clinician/dashboard" onclick = "checkActive('/dashboard')">Dashboard</a></li>
+                <li><a href="#">Register a patient</a></li>
+                <li><a href="/">About diabetes</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Account settings</a></li>
+                <li id="logout"><a href="#">Logout</a></li>
+                <li id="username">Dr Chris Carter</li>
+            </ul>
+
+            <a href="#" class="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="0" y1="8" x2="22" y2="8" />
+                    <line x1="0" y1="14" x2="22" y2="14" />
+                    <line x1="0" y1="20" x2="22" y2="20" />
+                </svg>
+            </a>
+            
+        </header>
+
+        <main>
+            {{{body}}}
+        </main>
+
+        
+
+    </body>
+
+
+<script>
+    function checkActive(curURL){
+        var url = require("url");
+        var pathname = url.parse(req.url).pathname; 
+        console.log(pathname)
+        console.log(curURL)
+        if (curURL == pathname){
+            return "active"
+        }
+        else {
+            return "inactive"
+        }
+    }
+</script>
+</html>
