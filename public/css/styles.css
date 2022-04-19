@@ -234,39 +234,103 @@ main{
 }
 
 .record-glucose{
-    margin:auto;
     width: 100vw;
     height: auto;
-    align-items: center;
-
-
     font-family: 'Didact Gothic';
-    font-size: large;
+    font-size: x-large;
     color: rgb(112,112,112);
-
-    padding-left: 8px;
-    padding-right: 8px;
 }
 
-.glucose-data p{
+.record-glucose svg{
+    padding-top: 80px;
+    margin-left: 50%;
+}
+
+.forms{
+    text-align: center;
+}
+
+.data-recording{
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 24.5%;
+}
+
+.forms txt1{
     background-color: white; 
-    margin-top: 130px;
-    text-align: justify;
-    border-bottom: 3px solid rgb(112,112,112);
+    text-align: center;
 }
 
-input[type=text] {
-    margin-top: 260px;
+.forms txt2{
+    background-color: white; 
+    text-align: center;
+}
+
+input[type=data]{
+    padding-right: 10px;
+    width: max(8%, 100px);
+    text-align: right;
+    border-style: none;
+    border-bottom: 2px solid rgb(112,112,112);
+    background-color: white; 
+    font-family: 'Didact Gothic';
+    font-size: x-large;
+    color: rgb(112,112,112);
+}
+
+textarea {
+    word-wrap: normal;
+    width: max(50%, 450px);
+    margin-top: 40px;
     border: 2px solid rgb(112,112,112);
-    border-radius: 10px;
+    border-radius: 10px; 
     background-color: white; 
     padding-bottom: 100px;
     padding-left: 15px;
     padding-top: 15px;
     font-size: x-large;
-    width: 85vw;
-    height: auto;
-  }
+    font-family: 'Didact Gothic';
+    font-size: x-large;
+    color: rgb(112,112,112);
+}
+
+input[type=submit]{
+    border: 2px solid rgb(112,112,112);
+    border-radius: 10px;
+    background-color: white; 
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-family: 'Didact Gothic';
+    font-size: large;
+    color: rgb(112,112,112);
+}
+
+input[type=submit]:hover {
+    border: 2px solid black;
+    color: black;
+}
+
+input[type=data]:focus{
+    color: black;
+}
+
+textarea:focus{
+    color:black;
+}
+
+.forms button1 {
+    float: right;
+    margin-right: 24.5%;
+}
+
+.forms button2 {
+    float: left;
+    margin-left: 24.5%;
+}
 
 
 .symptoms{
@@ -515,6 +579,7 @@ a.btn-record:hover{
     padding-left: 5%;
     font-size: 16.8px;
     margin-top: -20px;
+
 }
 
 .separator {
@@ -532,6 +597,11 @@ a.btn-record:hover{
     padding-left: 5%;
     float: left;
     font-size: 24px;
+    text-decoration: none;
+}
+
+#cancel-submission:hover {
+    text-decoration: underline;
 }
 
 #submit-submission {
@@ -539,6 +609,17 @@ a.btn-record:hover{
     float:right;
     padding-right: 5%;
     font-size: 24px;
+    border-style: none;
+    margin-top:-10px;
+}
+
+#submission-submisstion:hover {
+    text-decoration: underline;
+    border-bottom: 2px solid rgb(112,112,112);
+}
+
+input[type=submit]:hover#submit-submission {
+    text-decoration:underline;
 }
 
 #clinician-says{

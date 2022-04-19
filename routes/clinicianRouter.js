@@ -11,6 +11,6 @@ clinicianRouter.all('/*', (req, res, next) => {
     next(); 
 });
 
-clinicianRouter.get('/dashboard', clinicianController.display)
+clinicianRouter.get('/', clinicianController.display)
 
 module.exports = clinicianRouter

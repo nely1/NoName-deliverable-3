@@ -18,16 +18,16 @@ app.use(express.urlencoded({ extended: false }))
 const patientRouter = require('./routes/patientRouter')
 app.use('/patient', patientRouter)
 app.get('/patient', (req, res) => {
-    res.render('index.hbs')
+    res.render('home.hbs')
 })
 
 //Router for clinicians
 const clinicianRouter = require('./routes/clinicianRouter')
 app.use('/clinician', clinicianRouter)
 app.get('/clinician', (req, res) => {
-    res.render('clinician_index.hbs')
+    res.render('dashboard.hbs')
 })
 
 app.listen(3000, () => {
-    console.log('Demo app is listening on port 3000!')
+    console.log('Diabetes@Home is listening on port 3000!')
 })
