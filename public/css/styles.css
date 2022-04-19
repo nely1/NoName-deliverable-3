@@ -1,22 +1,9 @@
-@media only screen and (min-width: 1100px){
-    .heading-block{
-        display: none;
-    }
-    header a.hamburger{
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 1100px){
-    header ul{
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 850px) {
-    .band {
-      grid-template-columns: 1fr 1fr;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Didact Gothic';
 }
 
 header{
@@ -55,17 +42,27 @@ header li a:hover{
     text-decoration: underline;
 }
 
+header ul #username{
+    float: right;
+    color: white;
+    margin-top: -5px;
+    margin-right: 12px;
+    font-size: 25px;
+}
+
 header ul #logout a{
     float: right;
     border-radius: 5px;
     background-color: aliceblue;
     color:rgba(25, 97, 160, 1);
+    margin-top: -2px;
     padding: 5px;
 }
 
 header ul #logout a:hover{
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(204, 204, 204);
 }
+
 
 .active{
     background-color:rgb(20, 77, 128);
@@ -75,168 +72,25 @@ header ul #logout a:hover{
 
 header a.hamburger{
     float: right;
+    margin-top: -12px;
 }
 
-.username{
-    font-size: x-large;
-}
 
 main{
     margin-top: 65px;
 }
 
-
-
-.heading-block{
-    background-color: rgba(25, 97, 160, 1); 
-    color: white;
-    font-style: bold;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-}
-
-.heading-block svg{
-    vertical-align: text-bottom;
-}
-
-
-
-
-.record-glucose{
-    width: 100vw;
+.header2{
     height: auto;
-    font-family: 'Didact Gothic';
-    font-size: x-large;
-    color: rgb(112,112,112);
+    width: 100vw;
+    background:  rgba(25, 97, 160, 1);
 }
 
-.record-glucose svg{
-    padding-top: 80px;
-    margin-left: 50%;
+.header2 h1{
+    width: 20vw;
 }
 
-.forms{
-    text-align: center;
-}
 
-.data-recording{
-    text-align: left;
-    margin-top: 50px;
-    margin-left: 24.5%;
-}
-
-.forms txt1{
-    background-color: white; 
-    text-align: center;
-}
-
-.forms txt2{
-    background-color: white; 
-    text-align: center;
-}
-
-input[type=data]{
-    padding-right: 10px;
-    width: max(8%, 100px);
-    text-align: right;
-    border-style: none;
-    border-bottom: 2px solid rgb(112,112,112);
-    background-color: white; 
-    font-family: 'Didact Gothic';
-    font-size: x-large;
-    color: rgb(112,112,112);
-}
-
-textarea {
-    word-wrap: normal;
-    width: max(50%, 450px);
-    margin-top: 40px;
-    border: 2px solid rgb(112,112,112);
-    border-radius: 10px; 
-    background-color: white; 
-    padding-bottom: 100px;
-    padding-left: 15px;
-    padding-top: 15px;
-    font-size: x-large;
-    font-family: 'Didact Gothic';
-    font-size: x-large;
-    color: rgb(112,112,112);
-}
-
-input[type=submit]{
-    border: 2px solid rgb(112,112,112);
-    border-radius: 10px;
-    background-color: white; 
-    width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-    font-family: 'Didact Gothic';
-    font-size: large;
-    color: rgb(112,112,112);
-}
-
-input[type=submit]:hover {
-    border: 2px solid black;
-    color: black;
-}
-
-input[type=data]:focus{
-    color: black;
-}
-
-textarea:focus{
-    color:black;
-}
-
-.forms button1 {
-    float: right;
-    margin-right: 24.5%;
-}
-
-.forms button2 {
-    float: left;
-    margin-left: 24.5%;
-}
-
-/* Deliverable 1 css below*/
-
-#title{
-    text-align: center;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-button{
-    padding: 12px;
-    font-family: 'Didact Gothic';
-    border-radius: 5px;
-    background:  rgba(25, 97, 160, 0.8);
-    color: white;
-    border: 2px outset black;
-    cursor: pointer;
-}
-
-#login{
-    position: relative;
-    left: 10vw;
-    padding: 10px;
-}
-
-.hamburger-icon{
-    position: relative;
-    padding-right: 45px;
-    padding-left: 25px;
-    color: white;
-}
 
 .hamburger-icon:hover{
     cursor: pointer;
@@ -250,11 +104,6 @@ button{
     top:3px;
 }
 
-button:hover{
-    padding-left: 15px;    
-    padding-right: 15px;
-    transition: 1s;
-}
 
 .content-section{
     width: 100vw;
@@ -287,6 +136,18 @@ button:hover{
 }
 
 
+.heading-block{
+    background-color: rgba(25, 97, 160, 1); 
+    color: white;
+    font-style: bold;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.heading-block svg{
+    vertical-align: text-bottom;
+}
 
 .flex-container {
     width: 100%;
@@ -372,6 +233,42 @@ button:hover{
     font-size: large;
 }
 
+.record-glucose{
+    margin:auto;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+
+
+    font-family: 'Didact Gothic';
+    font-size: large;
+    color: rgb(112,112,112);
+
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.glucose-data p{
+    background-color: white; 
+    margin-top: 130px;
+    text-align: justify;
+    border-bottom: 3px solid rgb(112,112,112);
+}
+
+input[type=text] {
+    margin-top: 260px;
+    border: 2px solid rgb(112,112,112);
+    border-radius: 10px;
+    background-color: white; 
+    padding-bottom: 100px;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: x-large;
+    width: 85vw;
+    height: auto;
+  }
+
+
 .symptoms{
     margin-top: 25px;
     height: 35%;
@@ -413,8 +310,30 @@ a:visited {
 
     display: grid;
 
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 50px;
+}
+
+@media only screen and (min-width: 1100px){
+    .heading-block{
+        display: none;
+    }
+    header a.hamburger{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    header li{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
 }
 
 .card {
@@ -427,6 +346,7 @@ a:visited {
     flex-direction: column;
     font-size: 110%;
     line-height: 150%;
+    margin-bottom: 20px;
 }
 
 .card-comment{
@@ -486,6 +406,58 @@ a.btn-record:hover{
     background-color: rgb(242, 242, 242);
 }
 
+.tabs{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+    margin-top: 80px;
+}
+
+.tabs input[type="radio"]{
+    display: none;
+}
+
+.tabs label{
+    padding: 10px;
+    background: white;
+    border: 1px solid rgba(25, 97, 160, 1);
+}
+
+.tabs .tab{
+    width: 100%;
+    order: 1;
+    display: none;
+    border: none;
+}
+
+.tabs .tab td,
+.tabs .tab th{
+    padding: 8px;
+}
+
+.tabs .tab tr:hover{
+    background-color: rgb(237, 237, 237);
+}
+
+.tabs .tab th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgba(25, 97, 160, 1);
+    color: white;
+}
+
+.tabs input[type="radio"]:checked + label + .tab{
+    display: table;
+}
+
+.tabs input[type="radio"]:checked + label{
+    background:rgba(25, 97, 160, 1);
+    color: white;
+    border-bottom: none;
+}
+
+
 .confirm-top-half {
     padding-top: 20px;
     background-color: white;
@@ -543,7 +515,6 @@ a.btn-record:hover{
     padding-left: 5%;
     font-size: 16.8px;
     margin-top: -20px;
-
 }
 
 .separator {
@@ -561,11 +532,6 @@ a.btn-record:hover{
     padding-left: 5%;
     float: left;
     font-size: 24px;
-    text-decoration: none;
-}
-
-#cancel-submission:hover {
-    text-decoration: underline;
 }
 
 #submit-submission {
@@ -573,20 +539,88 @@ a.btn-record:hover{
     float:right;
     padding-right: 5%;
     font-size: 24px;
-    border-style: none;
-    margin-top:-10px;
 }
 
-#submission-submisstion:hover {
+#clinician-says{
+    border-radius: 0;
+}
+
+#welcome-message{
+   text-align: center; 
+}
+
+#clinician-says{
+    box-shadow: 5px 5px rgb(84, 84, 84);
+}
+
+#clinician-says h2{
+    background-color: rgb(241, 241, 241);
+    margin-top: 0;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+#clinician-says h2 svg{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 3px;
+}
+
+#clinician-says p{
+    margin-top: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#record-today h2{
+    text-align: center;
+    font-size: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#record-today h2 svg{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#record-today ul{
+    margin-top: -15px;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    font-size: 20px;
+}
+
+#record-today li{
+    padding-bottom: 10px;
+}
+
+#record-today li svg{
+    vertical-align: middle;
+}
+
+#record-today-btn,
+#view-leaderboard-btn{
+    background-color: rgba(25, 97, 160, 1);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 10px;
+}
+
+#record-today-btn:hover,
+#view-leaderboard-btn:hover{
     text-decoration: underline;
-    border-bottom: 2px solid rgb(112,112,112);
 }
 
 input[type=submit]:hover#submit-submission {
     text-decoration:underline;
 }
-
-
 
 #clinician-says{
     border-radius: 0;
