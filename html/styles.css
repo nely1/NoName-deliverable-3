@@ -330,7 +330,7 @@ a:visited {
     }
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 1000px) {
     .band {
       grid-template-columns: 1fr 1fr;
     }
@@ -515,7 +515,6 @@ a.btn-record:hover{
     padding-left: 5%;
     font-size: 16.8px;
     margin-top: -20px;
-
 }
 
 .separator {
@@ -575,3 +574,111 @@ a.btn-record:hover{
     padding-left: 25px;
     padding-right: 25px;
 }
+
+#record-today h2{
+    text-align: center;
+    font-size: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#record-today h2 svg{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#record-today ul{
+    margin-top: -15px;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    font-size: 20px;
+}
+
+#record-today li{
+    padding-bottom: 10px;
+}
+
+#record-today li svg{
+    vertical-align: middle;
+}
+
+#record-today-btn,
+#view-leaderboard-btn{
+    background-color: rgba(25, 97, 160, 1);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 10px;
+}
+
+#record-today-btn:hover,
+#view-leaderboard-btn:hover{
+    text-decoration: underline;
+}
+
+#top-engager,
+#homepage-ranking,
+#record-today{
+    background-color: rgb(71, 138, 196);
+    border: none;
+    color: white;
+}
+
+#top-engager h3{
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+}
+
+#top-engager h3 svg{
+    vertical-align: middle;
+}
+
+#top-engager-display{
+    color: black;
+    background-color: #00DB00;
+    border: 3px solid black;
+    margin: 0 30px 20px 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.engager-name{
+    float: left;
+    padding-left: 15px;
+}
+
+#top-engager-display svg,
+.engager-percent{
+    float: right;
+    padding-right: 15px;
+}
+
+#homepage-ranking h2{
+    text-align: center;
+    font-size: 35px;
+}
+
+#homepage-ranking-content{
+    margin: 0 40px 20px 40px;
+    text-align: center;
+    top: 0;
+}
+
+#homepage-ranking-content h3{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#homepage-ranking-content h3 img{
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
