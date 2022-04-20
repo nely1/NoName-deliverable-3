@@ -294,7 +294,7 @@ textarea {
     color: rgb(112,112,112);
 }
 
-input[type=submit]{
+input[type=button]{
     border: 2px solid rgb(112,112,112);
     border-radius: 10px;
     background-color: white; 
@@ -309,7 +309,7 @@ input[type=submit]{
     color: rgb(112,112,112);
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
     border: 2px solid black;
     color: black;
 }
@@ -565,6 +565,7 @@ a.btn-record:hover{
     justify-content: space-around;
     align-items: center;
     position: relative;
+    font-size: 24px;
     
 }
 
@@ -579,7 +580,7 @@ a.btn-record:hover{
     padding-left: 5%;
     font-size: 16.8px;
     margin-top: -20px;
-
+    text-align: left;
 }
 
 .separator {
@@ -602,24 +603,50 @@ a.btn-record:hover{
 
 #cancel-submission:hover {
     text-decoration: underline;
+    cursor: default;
 }
 
 #submit-submission {
     color: rgba(25, 97, 160, 1);
     float:right;
-    padding-right: 5%;
+    background-color: white;
     font-size: 24px;
     border-style: none;
-    margin-top:-10px;
+    margin-right: 5%;
+    font-family:'Century Gothic'
 }
 
-#submission-submisstion:hover {
+#submit-submission:hover {
     text-decoration: underline;
-    border-bottom: 2px solid rgb(112,112,112);
+    
 }
 
-input[type=submit]:hover#submit-submission {
-    text-decoration:underline;
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    
+  }
+
+.submission-text {
+    color: black;
+    font-family:'Century Gothic'
+}
+
+#text-entry {
+    overflow-x: hidden;
+    word-break:break-all;
+}
+
+.confirm-format {
+    padding-left:10px;
 }
 
 #clinician-says{
