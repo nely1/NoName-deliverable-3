@@ -2,6 +2,7 @@ const glucoseData = require('../models/glucoseModel')
 
 
 const display = (req, res) => {
+    console.log(glucoseData)
     res.render('record_data', {data: glucoseData})
 }
 

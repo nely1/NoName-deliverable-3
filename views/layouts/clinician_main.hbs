@@ -15,7 +15,7 @@
             <h1>Diabetes@home</h1>
             
             <ul>
-                <li><a href="/clinician" onclick = "checkActive('/')">Dashboard</a></li>
+                <li><a href="/clinician" id="test" on="checkActive()">Dashboard</a></li>
                 <li><a href="#">Register a patient</a></li>
                 <li><a href="/">About diabetes</a></li>
                 <li><a href="#">About us</a></li>
@@ -45,9 +45,9 @@
 
 
 <script>
-    function checkActive(curURL){
+    function checkActive(){
         var url = require("url");
-        var pathname = url.parse(req.url).pathname; 
+        var pathname = document.getElementsByTagName('a')[index].href; 
         console.log(pathname)
         console.log(curURL)
         if (curURL == pathname){
@@ -56,6 +56,7 @@
         else {
             return "inactive"
         }
+
     }
 </script>
 </html>

@@ -10,7 +10,7 @@ patientRouter.all('/*', function (req, res, next) {
 const homepageController = require('../controllers/homepageController')
 const recordController = require('../controllers/recordController')
 const submitController = require('../controllers/submitController')
-const confirmSubmissionController = require('../controllers/confirmSubmissionController')
+
 
 patientRouter.get('/', homepageController.display)
 
@@ -19,6 +19,5 @@ patientRouter.post('/record', recordController.insert)
 
 patientRouter.get('/submission/:data_type', submitController.display)
 
-patientRouter.post('/confirm_submission', confirmSubmissionController.display)
 
 module.exports = patientRouter
