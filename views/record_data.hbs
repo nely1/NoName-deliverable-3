@@ -23,18 +23,14 @@
             {{#if data}}
                 <div class="card-entry">
                     <p><span class="value-text">
-                        {{#each data}}
-                            {{this.glucose_data}}
-                        {{/each}}
+                        {{data.glucose_data}}
                     </span> &emsp; mmol/L</p>
                 </div>
 
                 <div class="card-comment">
-                    {{#if this.comments}}
+                    {{#if data.comments}}
                     <p><span class="blue-text">Comment:</span> 
-                        {{#each data}}
-                            {{this.comments}}
-                        {{/each}}
+                        {{data.comments}}
                     {{else}}
                         <p><span class="no-comment-text">No comment</span></p>
                     {{/if}}

@@ -233,7 +233,7 @@ main{
     font-size: large;
 }
 
-.record-glucose{
+.record-data{
     width: 100vw;
     height: auto;
     font-family: 'Didact Gothic';
@@ -241,7 +241,7 @@ main{
     color: rgb(112,112,112);
 }
 
-.record-glucose svg{
+.record-data svg{
     padding-top: 80px;
     margin-left: 50%;
 }
@@ -250,7 +250,7 @@ main{
     text-align: center;
 }
 
-.data-recording{
+.input-boxes{
     text-align: left;
     margin-top: 50px;
     margin-left: 24.5%;

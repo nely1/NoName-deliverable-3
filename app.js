@@ -2,6 +2,8 @@ const exphbs = require('express-handlebars')
 const express = require('express')
 const app = express()
 
+//mental note: error handling for invalid routes?
+
 app.engine(
     'hbs',
     exphbs.engine({
@@ -15,6 +17,14 @@ app.engine(
                 else {
                     return "normal";
                 }
+            },
+
+            getDate: function (){
+                date = new Date();
+                year = date.getFullYear();
+                month = date.getMonth() + 1;
+                day = date.getDate();
+                return day + '/' + month + '/' + year;
             },
         }
     }
@@ -32,10 +42,6 @@ app.use('/patient', patientRouter)
 //Router for clinicians
 const clinicianRouter = require('./routes/clinicianRouter')
 app.use('/clinician', clinicianRouter)
-
-app.all('*', (req, res) => {  
-	res.status(404).render('error', {errorCode: '404', message: 'That route is invalid.'})
-})
 
 app.listen(3000, () => {
     console.log('Diabetes@Home is listening on port 3000!')
