@@ -332,6 +332,10 @@ textarea:focus{
     margin-left: 24.5%;
 }
 
+#warning {
+    background-color: red;
+}
+
 
 .symptoms{
     margin-top: 25px;
