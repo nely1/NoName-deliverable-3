@@ -8,6 +8,7 @@ module.exports = [
         email: "patp@bmail.com",
         password: "hunter2",
         textbio: "Father of 3. Loves long walks on the beach.",
+        patientID: 1,
         safety_thresholds: 
         {
             glucose : { 
@@ -27,6 +28,12 @@ module.exports = [
                 max: -1
             }
         },
+
+        req_glucose: true,
+        req_exercise: true,
+        req_insulin: true,
+        req_weight: true,
+
         support_message: "Ayyy lmao",
     },
 ]

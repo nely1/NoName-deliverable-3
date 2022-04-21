@@ -1,9 +1,9 @@
 <h1 class="heading-block">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <polyline points="5 12 3 12 12 3 21 12 19 12" />
-        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+        <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+        <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+        <line x1="16" y1="5" x2="19" y2="8" />
     </svg>
     Homepage
 </h1>
@@ -44,13 +44,16 @@
                 To record today
             </h2>
             <ul>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
-                    </svg>
-                    Glucose
-                </li>
+                {{#if profile.req_glucose}}
+                    <li {{#if data}} id = "completed" {{/if}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
+                        </svg>                    
+                        Glucose
+                    </li>
+                {{/if}}
+                {{#if profile.req_weight}}
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-scale-outline" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -59,6 +62,8 @@
                     </svg>
                     Weight
                 </li>
+                {{/if}}
+                {{#if profile.req_exercise}}
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-walk" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -69,6 +74,8 @@
                     </svg>
                     Exercise
                 </li>
+                {{/if}}
+                {{#if profile.req_insulin}}
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-vaccine" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -82,6 +89,7 @@
                     </svg>
                     Insulin
                 </li>
+                {{/if}}
             </ul>
         </div>
 
@@ -118,7 +126,7 @@
         <div class="card" id="homepage-ranking">
             <h2>Your ranking today</h2>
             <div id="homepage-ranking-content">
-                <h3><img src="/images/patient_pat.jpg">
+                <h3><img src="images\patient_pat.jpg">
                     @PatPack01</h3>
                 <p>Your rank: 144th | Your engagement rate: 81%</p>
             </div>

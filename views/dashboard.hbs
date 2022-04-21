@@ -30,12 +30,16 @@
                 <line x1="21" y1="21" x2="15" y2="15" />
                 </svg></a>
             </td>
-            <td>0</td>
-            <td>John Doe</td> 
-            <td id = {{checkThreshold 0.3 data.safety_thresholds.glucose.min data.safety_thresholds.glucose.max}}> 0.3 </td>  
-            <td>65</td>
-            <td>1</td>
-            <td>4479</td>
+            <td>{{profile.patientID}}</td>
+            <td>{{profile.first_name}} {{profile.last_name}}</td>
+            {{#if data}} 
+                <td id = {{checkThreshold data.glucose_data profile.safety_thresholds.glucose.min profile.safety_thresholds.glucose.max}}> {{data.glucose_data}} </td> 
+            {{else}}
+                <td> N/A </td> 
+            {{/if}}
+            <td>N/A</td>
+            <td>2</td>
+            <td>N/A</td>
         </tr>
     </table>
 
@@ -59,11 +63,13 @@
                 <line x1="21" y1="21" x2="15" y2="15" />
                 </svg></a>
             </td>
-            <td>0</td>
-            <td>John Doe</td> 
-            <td>Glucose Level (mmol/L)</td>  
-            <td>7.3</td>
-            <td>Went to a party yesterday.</td>
+            {{#if data.comments}}
+                <td>{{profile.patientID}}</td>
+                <td>{{profile.first_name}} {{profile.last_name}}</td> 
+                <td>Glucose Level (mmol/L)</td>  
+                <td>{{data.glucose_data}}</td>
+                <td>{{data.comments}}</td>
+            {{/if}}
         </tr>
     </table>
 </div>

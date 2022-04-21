@@ -370,6 +370,10 @@ textarea:focus{
     background-color: rgba(255,0,0,0.29);
 }
 
+#completed {
+    text-decoration-line: line-through;
+}
+
 
 .symptoms{
     margin-top: 25px;

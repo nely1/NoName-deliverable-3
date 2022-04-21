@@ -1,6 +1,5 @@
 const glucoseData = require('../models/glucoseModel')
 
-
 const display = (req, res) => {
 
     date = new Date();
