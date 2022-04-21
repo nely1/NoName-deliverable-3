@@ -70,12 +70,6 @@ header ul #logout a:hover{
     padding: 5px;
 }
 
-header a.hamburger{
-    float: right;
-    margin-top: -12px;
-}
-
-
 main{
     margin-top: 65px;
 }
@@ -88,12 +82,6 @@ main{
 
 .header2 h1{
     width: 20vw;
-}
-
-
-
-.hamburger-icon:hover{
-    cursor: pointer;
 }
 
 #login svg{
@@ -319,7 +307,10 @@ a:visited {
     .heading-block{
         display: none;
     }
-    header a.hamburger{
+    #hamburger-btn{
+        display: none;
+    }
+    .hamburger-menu{
         display: none;
     }
 }
@@ -682,3 +673,53 @@ a.btn-record:hover{
     padding-right: 10px;
 }
 
+
+
+header button{
+    background: none;
+    border: none;
+    float: right;
+    margin-top: -12px;
+}
+
+header button:hover{
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.hamburger-menu{
+    background-color: rgb(23, 84, 138);
+    border-radius: 25px;
+    margin: 50px 15px auto 100px;
+    color: white;
+}
+
+.hamburger-menu h2{
+    font-size: 35px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.359);
+    padding: 20px;
+}
+
+.hamburger-menu ul{
+    padding: 20px;
+    padding-top: 0px;
+    margin-top: -15px;
+}
+
+.hamburger-menu li{
+    display: block;
+    font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.118);;
+}

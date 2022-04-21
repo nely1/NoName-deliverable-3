@@ -24,11 +24,12 @@ header li{
     font-size: 17px;
 }
 
-header h1{
+#menu-logo{
     float: left;
     margin-top: 9px;
     font-size: 25px;
     color: white;
+    text-decoration: none;
 }
 
 header li a:link,
@@ -63,16 +64,54 @@ header ul #logout a:hover{
     background-color: rgb(204, 204, 204);
 }
 
-
 .active{
     background-color:rgb(20, 77, 128);
     border-radius: 5px;
     padding: 5px;
 }
 
-header a.hamburger{
+
+
+header button{
+    background: none;
+    border: none;
     float: right;
     margin-top: -12px;
+}
+
+header button:hover{
+    cursor: pointer;
+}
+
+.hamburger-menu{
+    background-color: rgb(23, 84, 138);
+    border-radius: 25px;
+    margin: 50px 15px auto 100px;
+    color: white;
+}
+
+.hamburger-menu h2{
+    font-size: 35px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.359);
+    padding: 20px;
+}
+
+.hamburger-menu ul{
+    padding: 20px;
+    padding-top: 0px;
+    margin-top: -15px;
+}
+
+.hamburger-menu li{
+    display: block;
+    font-size: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.118);;
+}
+
+.hamburger-menu li svg{
+    vertical-align: middle;
+    margin-top: -10px;
 }
 
 
@@ -90,11 +129,6 @@ main{
     width: 20vw;
 }
 
-
-
-.hamburger-icon:hover{
-    cursor: pointer;
-}
 
 #login svg{
     width: 20px;
@@ -387,7 +421,10 @@ a:visited {
     .heading-block{
         display: none;
     }
-    header a.hamburger{
+    #hamburger-btn{
+        display: none;
+    }
+    .hamburger-menu{
         display: none;
     }
 }
@@ -625,7 +662,8 @@ a.btn-record:hover{
     
 }
 
-#overlay {
+#submission-overlay,
+#hamburger-overlay {
     position: fixed;
     display: none;
     width: 100%;
@@ -634,10 +672,11 @@ a.btn-record:hover{
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+#submission-overlay{
     background-color: rgba(0,0,0,0.5);
-    z-index: 2;
-    
-  }
+}
 
 .submission-text {
     color: black;
@@ -874,3 +913,5 @@ input[type=submit]:hover#submit-submission {
     vertical-align: middle;
     padding-right: 10px;
 }
+
+

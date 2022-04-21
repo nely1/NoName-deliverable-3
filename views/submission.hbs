@@ -29,7 +29,7 @@
             <input type ="hidden" name ="date" value ={{getDate}}>
 
             <div>
-                <button1 type="button" onclick="overlay_on()"><input type="button" value = "Submit"/></button1>
+                <button1 type="button" onclick="submission_overlay_on()"><input type="button" value = "Submit"/></button1>
             </div>
             
         </form>        
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<div id="overlay">
+<div id="submission-overlay">
     <div class="submit-modal-div">
         <div class="submission-content">
             <div class="submit-header">
@@ -65,7 +65,7 @@
                     
                     
                     <div>
-                        <a onclick="overlay_off()" id="cancel-submission">Cancel</a>
+                        <a onclick="submission_overlay_off()" id="cancel-submission">Cancel</a>
                         <input type="submit" form="send-data" id="submit-submission" value="Submit">
                     </div>
                 </div>
@@ -76,15 +76,15 @@
 
 
 <script>
-    function overlay_on() {
-        document.getElementById("overlay").style.display = "block";
+    function submission_overlay_on() {
+        document.getElementById("submission-overlay").style.display = "block";
         var data = document.getElementById("data-entry").value;
         var comment= document.getElementById("text-entry").value;
         document.getElementById("confirm-comment").innerHTML = comment;
         document.getElementById("confirm-data").innerHTML = data;
     }
 
-    function overlay_off() {
-        document.getElementById("overlay").style.display = "none";
+    function submission_overlay_off() {
+        document.getElementById("submission-overlay").style.display = "none";
     }
 </script>
