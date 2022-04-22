@@ -46,3 +46,6 @@ app.use('/clinician', clinicianRouter)
 app.listen(3000, () => {
     console.log('Diabetes@Home is listening on port 3000!')
 })
+
+// this may be the problem
+require('./models')

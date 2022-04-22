@@ -1,15 +1,18 @@
 const glucoseData = require('../models/glucoseModel')
 
-const display = (req, res) => {
+const display = async(req, res, next) => { 
+    try {
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        today = day + '/' + month + '/' + year;
+        const today_glucose = await glucoseData.findById(today).lean() 
 
-    date = new Date();
-    year = date.getFullYear();
-    month = date.getMonth() + 1;
-    day = date.getDate();
-    today = day + '/' + month + '/' + year;
-
-    const today_glucose = glucoseData.find(data => data.date == today)
-    res.render('record_data', {data: today_glucose})
+        res.render('record_data', {data: today_glucose})
+    } catch (err) { 
+        return next(err) 
+    } 
 }
 
 const insert = (req, res) => {
