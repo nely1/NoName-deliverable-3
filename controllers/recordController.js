@@ -1,23 +1,27 @@
 const glucoseData = require('../models/glucoseModel')
 
 const display = async(req, res, next) => { 
-    try {
-        date = new Date();
-        year = date.getFullYear();
-        month = date.getMonth() + 1;
-        day = date.getDate();
-        today = day + '/' + month + '/' + year;
-        const today_glucose = await glucoseData.findById(today).lean() 
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    today = day + '/' + month + '/' + year;
+    const today_glucose = await glucoseData.findOne({date:today}).lean() 
+    console.log(today_glucose)
 
-        res.render('record_data', {data: today_glucose})
-    } catch (err) { 
-        return next(err) 
-    } 
+    res.render('record_data', {data: today_glucose})
 }
 
-const insert = (req, res) => {
-    const { date, glucose_data, comments } = req.body
-    glucoseData.push({ date, glucose_data, comments })
+const insert = async(req, res) => {
+    const new_data = new glucoseData({
+        date: req.body.date,
+        glucose_data: req.body.glucose_data,
+        comments: req.body.comments
+    })
+    await new_data.save( (err, result) => { 
+        if (err) res.send(err)
+        return res.send(result)
+    })       
     return res.redirect('/patient/record')
 }
 
