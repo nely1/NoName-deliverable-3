@@ -11,7 +11,7 @@
 <div class="band">
     <div class="glucose">
         <div class="card">
-            <div class="card-header">
+            <div class="record-card-header">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
@@ -21,13 +21,13 @@
             </div>
 
             {{#if data}}
-                <div class="card-entry">
+                <div class="record-card-entry">
                     <p><span class="value-text">
                         {{data.glucose_data}}
                     </span> &emsp; mmol/L</p>
                 </div>
 
-                <div class="card-comment">
+                <div class="record-card-comment">
                     {{#if data.comments}}
                     <p><span class="blue-text">Comment:</span> 
                         {{data.comments}}
@@ -56,7 +56,7 @@
 
     <div class="weight">
         <div class="card">
-            <div class="card-header">
+            <div class="record-card-header">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wiper" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M3 9l5.5 5.5a5 5 0 0 1 7 0l5.5 -5.5a12 12 0 0 0 -18 0" />
@@ -82,7 +82,7 @@
 
     <div class="insulin">
         <div class="card">
-            <div class="card-header">
+            <div class="record-card-header">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-vaccine" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M17 3l4 4" />
@@ -97,11 +97,11 @@
                 <h2>Insulin doses</h2>     
             </div> 
 
-            <div class="card-entry">
+            <div class="record-card-entry">
                 <p><span class="value-text">2</span></p>
             </div>
 
-            <div class="card-comment">
+            <div class="record-card-comment">
                 <p><span class="no-comment-text">No comment</span></p>
             </div>
         </div>
@@ -109,7 +109,7 @@
 
     <div class="exercise">
         <div class="card">
-            <div class="card-header">
+            <div class="record-card-header">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-walk" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M13 3 a 1.5 1.5 0 1 0 0.5 0" />
