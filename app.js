@@ -43,8 +43,8 @@ app.use('/patient', patientRouter)
 const clinicianRouter = require('./routes/clinicianRouter')
 app.use('/clinician', clinicianRouter)
 
-app.listen(3000, () => {
-    console.log('Diabetes@Home is listening on port 3000!')
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Diabetes@Home is listening')
 })
 
 // this may be the problem
