@@ -41,33 +41,31 @@
 </div>
 
 <div id="submission-overlay">
-    <div class="submit-modal-div">
-        <div class="submission-content">
-            <div class="submit-header">
-                
-                <div class = "header-text">Confirm submission</div>
-            </div>
-            <div class="submission-text">
-                <div class="confirm-top-half">
-                    <div class="submission-category">
-                        <p> <span><b>{{templateInfo.data_type}}: </b></span></p>
-                        <p id="confirm-data" class="confirm-format"></p>
-                        <p class="confirm-format">{{templateInfo.unit}}</p>
-                    </div>
-                    <div class="submission-comment">
-                        <p> <span><b>Comment: </b></span> </p>
-                        <p id="confirm-comment" class="confirm-format"></p>
-                    </div>
+    <div id="submission-content">
+        <h2>Confirm submission</h2>
+
+        <div id="submission-text">
+            <div id="confirm-top-half">
+                <!-- retrieve data inputted from submission page -->
+                <div id="submission-category">
+                    <p><span><b>{{templateInfo.data_type}}: </b></span></p>
+                    <p id="confirm-data" class="confirm-format"></p>
+                    <p class="confirm-format">{{templateInfo.unit}}</p>
                 </div>
-                <div class="separator"></div>
-                <div class="confirm-bottom-half">
-                    <p id="submission-warning">Please ensure data is correct as data is unchangeable after submitting.</p>
-                    
-                    
-                    <div>
-                        <a onclick="submission_overlay_off()" id="cancel-submission">Cancel</a>
-                        <input type="submit" form="send-data" id="submit-submission" value="Submit">
-                    </div>
+                <div id="submission-comment">
+                    <p><span><b>Comment: </b></span> </p>
+                    <p id="confirm-comment" class="confirm-format"></p>
+                </div>
+            </div>
+
+            <div id="separator"></div>
+
+            <div id="confirm-bottom-half">
+                <p id="submission-warning">Please ensure data is correct as data is unchangeable after submitting.</p>
+                
+                <div>
+                    <a onclick="submission_overlay_off()" id="cancel-submission">Cancel</a>
+                    <input type="submit" form="send-data" id="submit-submission" value="Submit">
                 </div>
             </div>
         </div>

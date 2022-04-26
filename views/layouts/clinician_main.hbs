@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="/clinician" id="test" on="checkActive()">Dashboard</a></li>
                 <li><a href="#">Register a patient</a></li>
-                <li><a href="/">About diabetes</a></li>
+                <li><a href="#">About diabetes</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Account settings</a></li>
                 <li id="logout"><a href="#">Logout</a></li>
@@ -115,20 +115,6 @@
     </body>
 
 <script>
-    function checkActive(){
-        var url = require("url");
-        var pathname = document.getElementsByTagName('a')[index].href; 
-        console.log(pathname)
-        console.log(curURL)
-        if (curURL == pathname){
-            return "active"
-        }
-        else {
-            return "inactive"
-        }
-
-    }
-
     function hamburger_overlay_on() {
         document.getElementById("hamburger-overlay").style.display = "block";
     }
