@@ -2,7 +2,7 @@ module.exports = [
     {
         first_name : "Pat",
         last_name : "Picasso",
-        ssername : "Lil' PP",
+        username : "Lil' PP",
         DOB: "15/01/2001",
         gender: "Male",
         email: "patp@bmail.com",
@@ -37,3 +37,28 @@ module.exports = [
         support_message: "Ayyy lmao",
     },
 ]
+
+const mongoose = require('mongoose') 
+
+const schema = new mongoose.Schema({ 
+    first_name: {type: String, required: true},
+    last_name: {type: String, required: true},
+    username: {type: String, required: true},
+    DOB: {type: String, required: true},
+    gender: String,
+    email: {type: String, required: true},
+    password: {type: String, required: true},
+    textbio: String,
+    glucose_min: Number,
+    glucose_max: Number,
+    req_glucose: Boolean,
+    req_exercise: Boolean,
+    req_insulin: Boolean,
+    req_weight: Boolean,
+    support_message: String
+
+}) 
+
+const patientModel = mongoose.model('patientModel', schema) 
+
+module.exports = patientModel 

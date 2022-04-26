@@ -19,8 +19,10 @@ const insert = async(req, res) => {
         comments: req.body.comments
     })
     await new_data.save( (err, result) => { 
-        if (err) res.send(err)
-        return res.send(result)
+        if (err) {
+            res.send(err)
+            return res.send(result)
+        }
     })       
     return res.redirect('/patient/record')
 }
