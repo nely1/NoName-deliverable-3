@@ -7,30 +7,7 @@ body {
     font-family: 'Didact Gothic';
 }
 
-@media only screen and (min-width: 1100px){
-    .heading-block{
-        display: none;
-    }
-    #hamburger-btn{
-        display: none;
-    }
-    .hamburger-menu{
-        display: none;
-    }
-}
 
-@media only screen and (max-width: 1100px){
-    header li{
-        display: none;
-    }
-
-}
-
-@media only screen and (min-width: 1000px) {
-    .band {
-      grid-template-columns: 1fr 1fr;
-    }
-}
 
 /*******************************************************************************
 header section 
@@ -746,4 +723,33 @@ a:visited {
 
 .confirm-format {
     padding-left:10px;
+}
+
+/*******************************************************************************
+media queries
+*******************************************************************************/
+
+@media only screen and (min-width: 1100px){
+    .heading-block{
+        display: none;
+    }
+    #hamburger-btn{
+        display: none;
+    }
+    .hamburger-menu{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    header li{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
 }
