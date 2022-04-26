@@ -33,7 +33,7 @@
             <td>{{profile.patientID}}</td>
             <td>{{profile.first_name}} {{profile.last_name}}</td>
             {{#if data}} 
-                <td id = {{checkThreshold data.glucose_data profile.safety_thresholds.glucose.min profile.safety_thresholds.glucose.max}}> {{data.glucose_data}} </td> 
+                <td id = {{checkThreshold data.glucose_data profile.glucose_min profile.glucose_max}}> {{data.glucose_data}} </td> 
             {{else}}
                 <td> N/A </td> 
             {{/if}}
@@ -56,6 +56,7 @@
         </tr>
 
         <tr>
+            {{#if data.comments}}
             <td>
                 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -63,7 +64,7 @@
                 <line x1="21" y1="21" x2="15" y2="15" />
                 </svg></a>
             </td>
-            {{#if data.comments}}
+            
                 <td>{{profile.patientID}}</td>
                 <td>{{profile.first_name}} {{profile.last_name}}</td> 
                 <td>Glucose Level (mmol/L)</td>  

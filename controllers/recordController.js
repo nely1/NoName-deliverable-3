@@ -1,4 +1,6 @@
-const glucoseData = require('../models/glucoseModel')
+const glucoseData = require('../models/glucoseModel');
+const { Schema } = mongoose;
+const patient = require('../models/patientModel')
 
 const display = async(req, res, next) => { 
     date = new Date();
@@ -16,7 +18,8 @@ const insert = async(req, res) => {
     const new_data = new glucoseData({
         date: req.body.date,
         glucose_data: req.body.glucose_data,
-        comments: req.body.comments
+        comments: req.body.comments,
+        patientID: {type: Schema.Types.ObjectId, ref: 'glucoseModel'}
     })
     await new_data.save( (err, result) => { 
         if (err) {

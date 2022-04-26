@@ -9,7 +9,7 @@
 </h1>
 
 <h2 id="welcome-message">
-    Welcome back Pat!
+    Welcome back {{profile.first_name}}!
 </h2>
 
 <div class="band">
@@ -27,7 +27,7 @@
                 Your clinician says...
             </h2>
 
-            <p>Good morning Pat, sunny day today - great weather to exercise!</p>
+            <p>{{profile.support_message}}</p>
         </div>
 
         <div class="card" id="record-today">
@@ -127,7 +127,7 @@
             <h2>Your ranking today</h2>
             <div id="homepage-ranking-content">
                 <h3><img src="images\patient_pat.jpg">
-                    @PatPack01</h3>
+                    @{{profile.username}}</h3>
                 <p>Your rank: 144th | Your engagement rate: 81%</p>
             </div>
         </div>

@@ -10,7 +10,8 @@ const display = async(req, res, next) => {
         today = day + '/' + month + '/' + year;
         const today_glucose = await glucoseData.findOne({date:today}).lean() 
         // found person 
-        const patient = patientProfile.find(data => data.email == "patp@bmail.com")
+        const patient = await patientProfile.findById("62675c0d652ecfc70bd91d90").lean()
+        console.log(patient)
         res.render('home', {profile : patient, data: today_glucose})
  
 }
