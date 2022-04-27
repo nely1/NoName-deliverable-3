@@ -12,10 +12,10 @@ app.engine(
         helpers: {
             checkThreshold: function (data_val, min_threshold, max_threshold){
                 if (data_val <= min_threshold || data_val >= max_threshold){
-                    return "warning";
+                    return "data-warning";
                 }
                 else {
-                    return "normal";
+                    return "data-normal";
                 }
             },
 

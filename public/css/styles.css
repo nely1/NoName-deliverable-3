@@ -33,7 +33,7 @@ header{
 
 /* navigation bar */
 header li{
-    display: inline;
+    display: none;
     padding-left: 1.5%;
     font-size: 17px;
 }
@@ -188,7 +188,6 @@ generic bands and cards styling for patientUI
     border: 2px solid black;
     background: white;
     text-decoration: none;
-    color: #444;
     display: flex;
     flex-direction: column;
     font-size: 110%;
@@ -199,6 +198,10 @@ generic bands and cards styling for patientUI
 /*******************************************************************************
 record data card styling
 *******************************************************************************/
+.record-card{
+    background-color: white;
+}
+
 .record-card-comment{
     padding-left: 30px;
     padding-right: 30px;
@@ -294,10 +297,6 @@ patientUI homepage styling
     text-decoration: underline;
 }
 
-input[type=submit]:hover#submit-submission {
-    text-decoration:underline;
-}
- 
 
 /* clinician says card */
 #welcome-message{
@@ -363,6 +362,7 @@ input[type=submit]:hover#submit-submission {
 
 .entry-completed {
     text-decoration-line: line-through;
+    opacity: 50%;
 }
 
 
@@ -589,7 +589,6 @@ textarea:focus{
 }
 
 #cancel-submission{
-    color: rgba(25, 97, 160, 1);
     padding-left: 5%;
     float: left;
     font-size: 24px;
@@ -602,7 +601,6 @@ textarea:focus{
 }
 
 #submit-submission {
-    color: rgba(25, 97, 160, 1);
     float:right;
     background-color: white;
     font-size: 24px;
@@ -638,40 +636,40 @@ textarea:focus{
 clinician dashboard styling
 *******************************************************************************/
 /* styling for data/comments tab */
-.tabs{
+.dashboard-tabs{
     display: flex;
     flex-wrap: wrap;
     margin: 40px;
     margin-top: 80px;
 }
 
-.tabs input[type="radio"]{
+.dashboard-tabs input[type="radio"]{
     display: none;
 }
 
-.tabs label{
+.dashboard-tabs label{
     padding: 10px;
     background: white;
     border: 1px solid rgba(25, 97, 160, 1);
 }
 
-.tabs .tab{
+.dashboard-tabs .dashboard-tab{
     width: 100%;
     order: 1;
     display: none;
     border: none;
 }
 
-.tabs .tab td,
-.tabs .tab th{
+.dashboard-tabs .dashboard-tab td,
+.dashboard-tabs .dashboard-tab th{
     padding: 8px;
 }
 
-.tabs .tab tr:hover{
+.dashboard-tabs .dashboard-tab tr:hover{
     background-color: rgb(237, 237, 237);
 }
 
-.tabs .tab th{
+.dashboard-tabs .dashboard-tab th{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -679,17 +677,18 @@ clinician dashboard styling
     color: white;
 }
 
-.tabs input[type="radio"]:checked + label + .tab{
+.dashboard-tabs input[type="radio"]:checked + label + .dashboard-tab{
     display: table;
 }
 
-.tabs input[type="radio"]:checked + label{
+.dashboard-tabs input[type="radio"]:checked + label{
     background:rgba(25, 97, 160, 1);
     color: white;
     border-bottom: none;
 }
 
-#warning {
+/* colours entry red if outside threshold */
+.data-warning {
     background-color: rgba(255,0,0,0.29);
 }
 
@@ -708,14 +707,11 @@ media queries
     .hamburger-menu{
         display: none;
     }
-}
-
-@media only screen and (max-width: 1100px){
     header li{
-        display: none;
+        display: inline;
     }
-
 }
+
 
 @media only screen and (min-width: 1000px) {
     .band {

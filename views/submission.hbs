@@ -1,37 +1,31 @@
 
 <div class="record-data">
-    {{! Image inserted here }}
+    <!--inserts image corresponding to attribute-->
     <svg id width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
         {{#each templateInfo.svg_path}}
             <path d="{{this}}"/>
         {{/each}}
     </svg>
 
-    {{! Submit buttons and the comments text box}}
-
-    {{! Mental note on behaviour: when text box is in focus, an outline will appear, yay or nay?}}
-    {{! Mental note 2: need to dynamically change the submission path thing too }}
-    {{! Mental note 3: should I just call these tags p?}}
-
     <div class = "forms">
         <form action="/{{templateInfo.path_to}}" method="POST" id="send-data">
+            <!--input for attribute value-->
             <div class = "input-boxes">
-                <txt1> 
-                    {{templateInfo.data_type}}:             
-                </txt1> 
+                <txt1>{{templateInfo.data_type}}:</txt1> 
                 <input type="data" id="data-entry" name = "{{templateInfo.path_from}}_data">
-                <txt2> 
-                    {{templateInfo.unit}}
-                </txt2>                
+                <txt2>{{templateInfo.unit}}</txt2>                
             </div>
 
+            <!--input for comment-->
             <textarea id="text-entry" placeholder="Add a comment.." name = "comments"></textarea>
-            <input type ="hidden" name ="date" value ={{getDate}}>
 
+            <!--records date which is hidden from user-->
+            <input type ="hidden" name ="date" value ={{getDate}}>          
+
+            <!--input for submission confirmation-->  
             <div>
                 <button1 type="button" onclick="submission_overlay_on()"><input type="button" value = "Submit"/></button1>
             </div>
-            
         </form>        
         
         <a href = "/patient/record">
@@ -40,13 +34,14 @@
     </div>
 </div>
 
+<!--overlay displayed when 'submit' button pressed-->
 <div id="submission-overlay">
     <div id="submission-content">
         <h2>Confirm submission</h2>
 
         <div id="submission-text">
             <div id="confirm-top-half">
-                <!-- retrieve data inputted from submission page -->
+                <!--retrieve data inputted from submission page and display-->
                 <div id="submission-category">
                     <p><span><b>{{templateInfo.data_type}}: </b></span></p>
                     <p id="confirm-data" class="confirm-format"></p>
@@ -64,8 +59,8 @@
                 <p id="submission-warning">Please ensure data is correct as data is unchangeable after submitting.</p>
                 
                 <div>
-                    <a onclick="submission_overlay_off()" id="cancel-submission">Cancel</a>
-                    <input type="submit" form="send-data" id="submit-submission" value="Submit">
+                    <a onclick="submission_overlay_off()" id="cancel-submission" class="blue-text">Cancel</a>
+                    <input type="submit" form="send-data" id="submit-submission" class="blue-text" value="Submit">
                 </div>
             </div>
         </div>

@@ -8,10 +8,11 @@
     Dashboard
 </h1>
 
-<div class="tabs">
+<div class="dashboard-tabs">
+    <!--style dashboard data tab-->
     <input type="radio" id="data-tab" name="dashboard-tabs" checked="checked">
     <label for="data-tab">Data</label>
-    <table class="tab">
+    <table class="dashboard-tab">
         <tr>
             <th></th>
             <th>PatientID</th>
@@ -33,19 +34,20 @@
             <td>{{data.patientID._id}}</td>
             <td>{{data.patientID.first_name}} {{data.patientID.last_name}}</td>
             {{#if data}} 
-                <td id = {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}> {{data.glucose_data}} </td> 
+                <td class = {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}> {{data.glucose_data}} </td> 
             {{else}}
                 <td> N/A </td> 
             {{/if}}
             <td>N/A</td>
-            <td>2</td>
+            <td>N/A</td>
             <td>N/A</td>
         </tr>
     </table>
 
+    <!--style dashboard comments tab-->
     <input type="radio" id="comments-tab" name="dashboard-tabs">
     <label for="comments-tab">Comments</label>
-    <table class="tab">
+    <table class="dashboard-tab">
         <tr>
             <th></th>
             <th>PatientID</th>
