@@ -7,9 +7,9 @@ const display = async(req, res, next) => {
         month = date.getMonth() + 1;
         day = date.getDate();
         today = day + '/' + month + '/' + year;
-        const today_glucose = await glucoseData.findOne({date:today}).lean().populate('patientID')
-        console.log(today_glucose)
+        const today_glucose = await glucoseData.findOne({date:today}).lean().populate()
         // found person 
+        console.log()
         res.render('dashboard', {data: today_glucose})
 
 } 
