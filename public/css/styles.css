@@ -92,7 +92,7 @@ header button:hover{
 .hamburger-menu{
     background-color: rgb(23, 84, 138);
     border-radius: 25px;
-    margin: 50px 15px auto 100px;
+    margin: 50px 15px auto 65px;
     color: white;
 }
 
@@ -110,8 +110,9 @@ header button:hover{
 
 .hamburger-menu li{
     display: block;
-    font-size: 30px;
-    padding-bottom: 15px;
+    font-size: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.118);;
 }
 
@@ -533,7 +534,6 @@ textarea:focus{
 
 /* confirm submission overlay */
 #confirm-top-half {
-    padding-top: 20px;
     background-color: white;
 }
 
@@ -553,35 +553,36 @@ textarea:focus{
     background-color: white;
     margin: auto;
     margin-top: 100px;
-    width: 55%;
-    font-family: 'Century Gothic'
+    width: 70%;
 }
 
 #submission-content h2{
-    width: 100%;
     background-color:  rgba(25, 97, 160, 1);
     color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     font-family: 'Didact Gothic';
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #submission-category {
     display: flex;
-    padding-left: 5%;
+    padding: 0% 5% 0% 5%;
     font-size: 24px;
 }
 
 #submission-comment {
-    display:flex;
-    padding-left: 5%;
-    font-size: 16.8px;
+    padding: 0% 5% 0% 5%;
     margin-top: -20px;
-    text-align: left;
+    font-size: 16.8px;
+    font-family: 'Century Gothic';
 }
 
+#confirm-comment{
+    margin-top: -10px;
+    width: 100%;
+    word-break: break-word;
+}
 
 #submission-warning {
     text-align: center;
@@ -626,10 +627,6 @@ textarea:focus{
 #text-entry {
     overflow-x: hidden;
     word-break:break-all;
-}
-
-.confirm-format {
-    padding-left:10px;
 }
 
 /*******************************************************************************
@@ -713,7 +710,7 @@ media queries
 }
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 980px) {
     .band {
       grid-template-columns: 1fr 1fr;
     }
