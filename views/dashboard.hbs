@@ -32,7 +32,7 @@
                     <line x1="21" y1="21" x2="15" y2="15" />
                     </svg></a>
                 </td>
-                <td>{{data.patientID._id}}</td>
+                <td>{{data.patientID.patientID}}</td>
                 <td>{{data.patientID.first_name}} {{data.patientID.last_name}}</td>
                 {{#if data.glucose_data}} 
                     <td class = {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}> {{data.glucose_data}} </td> 
@@ -69,7 +69,7 @@
                     </svg></a>
                 </td>
                 
-                    <td>{{data.patientID._id}}</td>
+                    <td>{{data.patientID.patientID}}</td>
                     <td>{{data.patientID.first_name}} {{data.patientID.last_name}}</td> 
                     <td>Glucose Level (mmol/L)</td>  
                     <td>{{data.glucose_data}}</td>

@@ -10,6 +10,8 @@ const schema = new mongoose.Schema({
     email: {type: String, required: true},
     password: {type: String, required: true},
     textbio: String,
+    profile_picture: String,
+    patientID: Number,
     glucose_min: Number,
     glucose_max: Number,
     req_glucose: Boolean,

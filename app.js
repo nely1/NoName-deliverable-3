@@ -18,14 +18,6 @@ app.engine(
                     return "data-normal";
                 }
             },
-
-            getDate: function (){
-                date = new Date();
-                year = date.getFullYear();
-                month = date.getMonth() + 1;
-                day = date.getDate();
-                return day + '/' + month + '/' + year;
-            },
         }
     }
     )
