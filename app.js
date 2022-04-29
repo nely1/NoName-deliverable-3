@@ -11,7 +11,7 @@ app.engine(
 
             // Helper that determines if the recorded health data is within safety thresholds
             checkThreshold: function (data_val, min_threshold, max_threshold){
-                if (data_val <= min_threshold || data_val >= max_threshold){
+                if (data_val < min_threshold || data_val > max_threshold){
                     return "data-warning";
                 }
                 else {
