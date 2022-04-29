@@ -1,4 +1,5 @@
 const glucoseData = require('../models/glucoseModel')
+const patient = require('../models/patientModel')
 
 const display = async(req, res, next) => { 
 
@@ -10,8 +11,12 @@ const display = async(req, res, next) => {
     today.setUTCHours(14,0,0,0);
 
     // Check if patient has recorded data for today in UTC time
-    const today_glucose = await glucoseData.findOne({datetime: {$gte : today}}).lean().populate("patientID")
-    res.render('dashboard', {data: today_glucose})
+    
+    const thisPatient = await patient.findById("62675c0d652ecfc70bd91d90").lean().populate()
+    const today_glucose = await glucoseData.findById(thisPatient.glucose_data[thisPatient.glucose_data.length - 1]).lean()
+    console.log(today_glucose)
+    
+    res.render('dashboard', {data: thisPatient, glucose: today_glucose})
 
 } 
 

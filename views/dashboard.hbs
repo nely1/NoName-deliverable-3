@@ -35,9 +35,9 @@
             </td>
             <td>10271</td>
             <td>Pat Patrick</td>
-            {{#if data.glucose_data}} 
+            {{#if glucose.glucose_data}} 
                 <td class = {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}> 
-                    {{data.glucose_data}} 
+                    {{glucose.glucose_data}}
                 </td> 
             {{else}}
                 <td class="data-warning">-</td> 
@@ -77,7 +77,7 @@
                     <td>Glucose Level (mmol/L)</td>  
 
                     {{#if data.glucose_data}}
-                        <td>{{data.glucose_data}}</td>
+                        <td {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}>{{glucose.glucose_data}}</td>
                         <td>{{data.comments}}</td> 
                     {{else}}
                         <td class="data-warning">-</td>
