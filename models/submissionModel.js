@@ -1,3 +1,4 @@
+// Health data submission form is handled by 1 handlebars template, data specifics such as units and picture stored here
 module.exports =
 [
     {   

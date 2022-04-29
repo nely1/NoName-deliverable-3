@@ -2,14 +2,14 @@ const exphbs = require('express-handlebars')
 const express = require('express')
 const app = express()
 
-//mental note: error handling for invalid routes?
-
 app.engine(
     'hbs',
     exphbs.engine({
         defaultlayout: 'patient_main',
         extname: 'hbs',
         helpers: {
+
+            // Helper that determines if the recorded health data is within safety thresholds
             checkThreshold: function (data_val, min_threshold, max_threshold){
                 if (data_val <= min_threshold || data_val >= max_threshold){
                     return "data-warning";
@@ -39,5 +39,4 @@ app.listen(process.env.PORT || 3000, () => {
     console.log('Diabetes@Home is listening')
 })
 
-// this may be the problem
 require('./models')

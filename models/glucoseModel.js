@@ -1,5 +1,4 @@
 const mongoose = require('mongoose') 
-const patient = require('./patientModel')
 
 const schema = new mongoose.Schema({ 
     glucose_data: {type: Number, required: true, min: 0},
@@ -9,5 +8,4 @@ const schema = new mongoose.Schema({
 }) 
 
 const glucoseModel = mongoose.model('glucoseModel', schema) 
-
 module.exports = glucoseModel 

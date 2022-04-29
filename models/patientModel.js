@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose') 
 
 const schema = new mongoose.Schema({ 
@@ -19,9 +18,7 @@ const schema = new mongoose.Schema({
     req_insulin: Boolean,
     req_weight: Boolean,
     support_message: String
-
 }) 
 
 const patientModel = mongoose.model('patientModel', schema) 
-
 module.exports = patientModel 
