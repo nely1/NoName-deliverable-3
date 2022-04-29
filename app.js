@@ -18,7 +18,8 @@ app.engine(
                     return "data-normal";
                 }
             },
-
+            
+            // Helper that checks if data recorded is from today or not
             checkToday: function (datetime) {
                 let today = new Date()
                 if (today.getUTCHours() < 14) {

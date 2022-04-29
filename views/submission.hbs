@@ -66,6 +66,7 @@
 
 
 <script>
+    // displays submission confirm overlay while retrieving values inputted by user
     function submission_overlay_on() {
         document.getElementById("submission-overlay").style.display = "block";
         var data = document.getElementById("data-entry").value;
@@ -74,6 +75,7 @@
         document.getElementById("confirm-data").innerHTML = data;
     }
 
+    // hides submission confirm overlay
     function submission_overlay_off() {
         document.getElementById("submission-overlay").style.display = "none";
     }
