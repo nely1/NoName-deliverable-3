@@ -29,7 +29,10 @@ const insert = async(req, res) => {
             res.send(err)
             return res.send(result)
         }
-    })       
+    })     
+    
+    const thisPatient = await patient.findById("62675c0d652ecfc70bd91d90")
+    await patient.updateOne({"patientID":10271},{$set:{"glucose_data": new_data._id}})
     return res.redirect('/patient/record')
 }
 
