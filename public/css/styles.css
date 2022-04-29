@@ -457,6 +457,10 @@ record submission styling
     margin-top: 50px;
 }
 
+#data-entry{
+    width: 40%;
+}
+
 .forms txt1{
     background-color: white; 
     text-align: center;
