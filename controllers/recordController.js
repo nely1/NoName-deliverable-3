@@ -16,13 +16,13 @@ const display = async(req, res, next) => {
 }
 
 const insert = async(req, res) => {
+    // Pat's ID is hardcoded until login feature is implemented, links data recorded to Pat
+    const thisPatient = await patient.findById("62675c0d652ecfc70bd91d90")
     const new_data = new glucoseData({
         datetime: new Date(),
         glucose_data: req.body.glucose_data,
         comments: req.body.comments,
-
-        // Pat's ID is hardcoded until login feature is implemented, links data recorded to Pat
-        patientID: await patient.findById("62675c0d652ecfc70bd91d90")
+        patientID: thisPatient
     })
     await new_data.save( (err, result) => { 
         if (err) {
@@ -30,9 +30,10 @@ const insert = async(req, res) => {
             return res.send(result)
         }
     })     
-    
-    const thisPatient = await patient.findById("62675c0d652ecfc70bd91d90")
-    await patient.updateOne({"patientID":10271},{$set:{"glucose_data": new_data._id}})
+
+    // Store each glucose data id in patient, useful for view data implemented in deliverable 3
+    thisPatient.glucose_data.push(new_data._id)
+    await thisPatient.save()
     return res.redirect('/patient/record')
 }
 
