@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
     req_insulin: Boolean,
     req_weight: Boolean,
     support_message: String,
-    glucose_data: [{type: mongoose.Schema.Types.ObjectId, ref: 'glucoseModel'}],
+    glucose_data: Object,
 }) 
 
 const patientModel = mongoose.model('patientModel', schema) 

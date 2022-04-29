@@ -18,6 +18,19 @@ app.engine(
                     return "data-normal";
                 }
             },
+
+            checkToday: function (datetime) {
+                let today = new Date()
+                if (today.getUTCHours() < 14) {
+                    today.setUTCDate(today.getUTCDate()-1);
+                }
+                today.setUTCHours(14,0,0,0);
+
+                if (today <= datetime) {
+                    return true
+                }
+                return false
+            }
         }
     }
     )
