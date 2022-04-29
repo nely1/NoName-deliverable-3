@@ -8,7 +8,9 @@
     Dashboard
 </h1>
 
+
 <div class="dashboard-tabs">
+
     <!--style dashboard data tab-->
     <input type="radio" id="data-tab" name="dashboard-tabs" checked="checked">
     <label for="data-tab">Data</label>
@@ -24,25 +26,23 @@
         </tr>
 
         <tr>
-            {{#if data}}
-                <td>
-                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                    </svg></a>
-                </td>
-                <td>{{data.patientID.patientID}}</td>
-                <td>{{data.patientID.first_name}} {{data.patientID.last_name}}</td>
-                {{#if data.glucose_data}} 
-                    <td class = {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}> {{data.glucose_data}} </td> 
-                {{else}}
-                    <td> N/A </td> 
-                {{/if}}
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
+            <td>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="10" cy="10" r="7" />
+                <line x1="21" y1="21" x2="15" y2="15" />
+                </svg></a>
+            </td>
+            <td>{{data.patientID.patientID}}</td>
+            <td>{{data.patientID.first_name}} {{data.patientID.last_name}}</td>
+            {{#if data.glucose_data}} 
+                <td class = {{checkThreshold data.glucose_data data.patientID.glucose_min data.patientID.glucose_max}}> {{data.glucose_data}} </td> 
+            {{else}}
+                <td class="data-warning">-</td> 
             {{/if}}
+            <td class="data-warning">-</td>
+            <td class="data-warning">-</td>
+            <td class="data-warning">-</td>
         </tr>
     </table>
 
@@ -77,4 +77,6 @@
             {{/if}}
         </tr>
     </table>
+
+    <p>*note: data marked in red require your attention</p>
 </div>
