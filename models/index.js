@@ -15,3 +15,5 @@ mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost', {
     db.once('open', async () => { 
         console.log(`Mongo connection started on ${db.host}:${db.port}`) 
     })
+
+require('./patientModel')
