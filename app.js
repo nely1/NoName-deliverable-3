@@ -60,7 +60,7 @@ app.use(
     session({
         // The secret used to sign session cookies (ADD ENV VAR)
         secret: process.env.SESSION_SECRET || 'keyboard cat',
-        name: 'demo', // The cookie name (CHANGE THIS)
+        name: 'spenk-diabetes', // The cookie name
         saveUninitialized: false,
         resave: false,
         cookie: {

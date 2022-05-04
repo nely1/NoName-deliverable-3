@@ -1,40 +1,28 @@
-const passport = require('passport')
 const express = require('express')
-const router = express.Router()
+const authRouter = express.Router()
+const passport = require('passport')
 
-// MENTAL NOTE ABOUT LOGOUT, MIGHT NEED TO BE A FORM BUTTON INSTEAD OF WHAT WE HAVE NOW
-
-
-// Authentication middleware
-const isAuthenticated = (req, res, next) => {
-
-    // If user is not authenticated via passport, redirect to login page
-    if (!req.isAuthenticated()) {
-        return res.redirect('/login')
-    }
-    // Otherwise, proceed to next middleware function
-    return next()
-}
+// MENTAL NOTE ABOUT LOGOUT, MIGHT NEED TO BE A FORM BUTTON, SCAFFOLDING IS THERE
 
 // Login page (with failure message displayed upon login failure)
-router.get('/', (req, res) => {
+authRouter.get('/', (req, res) => {
     res.render('login', { flash: req.flash('error'), title: 'Login' })
 })
 
 // Handle login
-router.post('/',
+authRouter.post('/',
     passport.authenticate('local', {
         successRedirect: '/patient', failureRedirect: '/login', failureFlash: true
     })
 )
 
 // Handle logout
-router.post('/logout', (req, res) => {
+authRouter.post('/logout', (req, res) => {
     req.logout()
     res.redirect('/')
 })
 
-module.exports = router
+module.exports = authRouter
 
 
 /*For simplicity, we will put all of the routes and functions from this tutorial inside this file.
