@@ -1,4 +1,3 @@
-const patientProfile = require('../models/patientModel')
 const glucoseData = require('../models/glucoseModel')
 
 const display = async(req, res, next) => { 
@@ -12,8 +11,7 @@ const display = async(req, res, next) => {
 
     // Check if patient has recorded data for today in UTC time
     const today_glucose = await glucoseData.findOne({datetime: {$gte : today}}).lean() 
-    const patient = await patientProfile.findById("62675c0d652ecfc70bd91d90").lean()
-    res.render('home', {profile : patient, data: today_glucose})
+    res.render('home', {profile: req.user.toJSON(), data: today_glucose})
 }
 
 module.exports = {

@@ -5,7 +5,7 @@ const app = express()
 app.engine(
     'hbs',
     exphbs.engine({
-        defaultlayout: 'patient_main',
+        defaultlayout: 'main',
         extname: 'hbs',
         helpers: {
 
@@ -44,6 +44,12 @@ app.use(express.urlencoded({ extended: false }))
 
 /*---------------------------------------------- New code start -----------------------------------------------------*/
 
+//Change header when redirected from patient or clinician pages
+app.all('/*', (req, res, next) => {
+    req.app.locals.layout = 'main'; 
+    next(); 
+});
+
 const flash = require('express-flash')
 const session = require('express-session')
 
@@ -72,13 +78,17 @@ if (app.get('env') === 'production') {
 // Initialise Passport.js
 const passport = require('./passport')
 app.use(passport.authenticate('session'))
+
+app.get('/', (req, res) => {
+    res.render('index.hbs')
+})
+
 // Load authentication router
-const authRouter = require('./routes/auth')
-app.use(authRouter)
+const authRouter = require('./routes/authRouter')
+app.use('/login', authRouter)
 
 
 /*------------------------------------------------- New code end --------------------------------------------------*/
-
 
 //Router for patients
 const patientRouter = require('./routes/patientRouter')
