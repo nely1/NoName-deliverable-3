@@ -13,5 +13,8 @@ clinicianRouter.all('/*', (req, res, next) => {
 });
 
 clinicianRouter.get('/', clinicianController.display)
+clinicianRouter.get('/register', clinicianController.register)
+clinicianRouter.post('/register', clinicianController.insert)
+
 
 module.exports = clinicianRouter
