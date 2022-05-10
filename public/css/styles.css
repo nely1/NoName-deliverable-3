@@ -699,6 +699,12 @@ clinician dashboard styling
     border-bottom: none;
 }
 
+.view-button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 /* colours entry red if outside threshold */
 .data-warning {
     background-color: rgba(255,0,0,0.29);

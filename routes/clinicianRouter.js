@@ -17,6 +17,6 @@ clinicianRouter.post('/register', clinicianController.insert)
 
 
 const patientViewController = require('../controllers/patientViewController')
-clinicianRouter.get('/patient_view', patientViewController.display)
+clinicianRouter.post('/patient_view', patientViewController.display)
 
 module.exports = clinicianRouter
