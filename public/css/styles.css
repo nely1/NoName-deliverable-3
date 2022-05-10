@@ -713,13 +713,129 @@ clinician individual patient view styling
     font-size: 20px;
     font-weight: 100;
     padding: 10px;
-    margin-top: -5px;
+    margin-top: -10px;
 }
 
 #back-block a{
     color: white;
     text-decoration: none;
 }
+
+/* general styling */
+
+.patient-view-container h2,
+.patient-view-history h2{
+    text-align: center;
+    background-color: rgb(214, 214, 214);
+    margin-top: 0px;
+    padding: 10px;
+}
+
+/* flexbox for patient view upper half */
+
+.patient-view-container{
+    display: flex;
+    margin-top: -15px;
+}
+
+.patient-view-container-child{
+    flex: 1;
+    border-left: 0.5px solid rgb(115, 115, 115);
+    border-right: 0.5px solid rgb(115, 115, 115);
+}
+
+/* patient details styling */
+.patient-details-container{
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.patient-details{
+    flex-basis: 66.66%;
+}
+
+.patient-details table{
+    width: 100%;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.patient-details tr{
+    line-height: 44px;
+}
+
+.patient-details-img{
+    flex-basis: 33.33%;
+}
+
+.patient-details-img img{
+    width: 100%;
+}
+
+/* patient requirements styling */
+.patient-requirements table{
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+.patient-requirements table tr{
+    line-height: 36px;
+    vertical-align: middle;
+}
+
+.patient-requirements table td{
+    text-align: center;
+}
+
+.patient-requirements table td.align-left{
+    text-align: left;
+}
+
+.patient-requirements table th{
+    font-size: 20px;
+}
+
+.patient-requirements table th.threshold-label{
+    font-size: 15px;
+}
+
+.patient-requirements table input[type="checkbox"]{
+    transform: scale(2);
+}
+
+.patient-requirements table input[type="text"]{
+    height: 20px;
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* text forms styling */
+.patient-message-input,
+.clinician-input{
+    padding: 10px 20px 10px 20px;
+}
+
+.patient-message-input h3,
+.clinician-input h3{
+    font-size: 20px;
+}
+
+.patient-message-input form,
+.clinician-input form{
+    margin-top: -15px;
+}
+
+.patient-message-input textarea,
+.clinician-input textarea{
+    width: 100%;
+    height: 100px;
+    font-size: 25px;
+    resize: none;
+}
+
+/* patient history section */
 
 
 /*******************************************************************************

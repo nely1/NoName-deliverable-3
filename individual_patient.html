@@ -113,10 +113,110 @@
                 <a href="#">&lt back: to dashboard</a>
             </h1>
             
+            <div class="patient-view-container">
+                <div class="patient-view-container-child">
+                    <h2>Patient Details</h2>
 
+                    <div class="patient-details-container">
+                        <div class="patient-details">
+                            <table>
+                                <tr>
+                                    <td>Given name:</td>
+                                    <td>Pat</td>
+                                </tr>
+                                <tr>
+                                    <td>Family name:</td>
+                                    <td>Patrick</td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td>pat_patrick@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of birth:</td>
+                                    <td>25/3/1990</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender:</td>
+                                    <td>Male</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="patient-details-img">
+                            <img src="/public/images/patient_pat.jpg">
+                        </div>
+                    </div>
+                    
+                    <div class="patient-message-input">
+                        <h3>Enter a message for your patient:</h3>
+                        <form>
+                            <textarea></textarea>
+                        </form>
+                    </div>
+                </div>
 
+                <div class="patient-view-container-child">
+                    <h2>Patient Data Requirements</h2>
 
+                    <div class="patient-requirements">
+                        <form>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Required</th>
+                                    <th colspan="3">Suitable Threshold Range</th>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"></th>
+                                    <th class="threshold-label">Lowest</th>
+                                    <th class="threshold-label">Highest</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td class="align-left">Blood Glucose Level</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td class="align-left">mmol/L</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-left">Weight</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td class="align-left">kg</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-left">Inuslin Doses</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-left">Exercise</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td class="align-left">steps</td>
+                                </tr>
+                            </table>
+                        </form>
 
+                    </div>
+
+                    <div class="clinician-input">
+                        <h3>Enter a note:</h3>
+                        <form>
+                            <textarea></textarea>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="patient-view-history">
+                <h2>Patient History</h2>
+            </div>
         </main>
 
     </body>
