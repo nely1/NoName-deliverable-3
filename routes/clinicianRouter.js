@@ -1,5 +1,4 @@
 const express = require('express')
-
 const clinicianRouter = express.Router()
 
 clinicianRouter.use(express.static('public'));
@@ -13,5 +12,8 @@ clinicianRouter.all('/*', (req, res, next) => {
 });
 
 clinicianRouter.get('/', clinicianController.display)
+
+const patientViewController = require('../controllers/patientViewController')
+clinicianRouter.get('/patient_view', patientViewController.display)
 
 module.exports = clinicianRouter
