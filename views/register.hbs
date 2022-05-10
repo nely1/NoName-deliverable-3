@@ -1,0 +1,48 @@
+<div class="record-data">
+
+    <text1>Patient Registration Form</text1>
+
+    <div class="forms">
+        <form action="/clinician/register" method="post" id = "register">
+
+            <div class = "input-boxes">
+                <text1>Given Name:</text1>
+                <input type="text" name="name" required pattern="[a-zA-Z]+" title="invalid name">
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Family Name:</text1>
+                <input type="text" name="family name" required pattern="[a-zA-Z]+" title="invalid name">
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Username:</text1>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Email Address:</text1>
+                <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="invalid email address">
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Password:</text1>
+                <input type="text" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Confirm Password:</text1>
+                <input type="text" name="comfirm password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Patient Bio:</text1>
+                <textarea id="text-entry" name="bio"></textarea>
+            </div>
+
+            <button1>
+                <input type="submit" value = "Submit"/>
+            </button1>
+        </form>
+    </div>
+</div>
