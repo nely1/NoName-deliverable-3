@@ -12,8 +12,10 @@ clinicianRouter.all('/*', (req, res, next) => {
 });
 
 clinicianRouter.get('/', clinicianController.display)
-clinicianRouter.get('/register', clinicianController.register)
-clinicianRouter.post('/register', clinicianController.insert)
+
+const registryController = require('../controllers/registryController')
+clinicianRouter.get('/register', registryController.display)
+clinicianRouter.post('/register', registryController.insert)
 
 
 const patientViewController = require('../controllers/patientViewController')

@@ -1,6 +1,8 @@
 
 <h1 id="back-block">
     <a href="/clinician">&lt back: to dashboard</a>
+
+    <input type="submit" id = "save-changes" name = "save-changes" value = "Save changes" disabled>
 </h1>
 
 <div class="patient-view-container">
@@ -40,7 +42,7 @@
         <div class="patient-message-input">
             <h3>Your support message for {{profile.first_name}}:</h3>
             <form>
-                <textarea placeholder= "{{profile.support_message}}"></textarea>
+                <textarea placeholder= "{{profile.support_message}}" onchange="enable_changes()"></textarea>
             </form>
         </div>
     </div>
@@ -63,30 +65,46 @@
                         <th></th>
                     </tr>
                     <tr>
-                        {{!- Note for later, make the checked thing a handlebars function if true then checked else return none}}
+                        {{!- Note for later, form submission would check either id of first box from true now becomes false OR id of second box from false become true}}
                         <td class="align-left">Blood Glucose Level</td>
-                        <td><input type="checkbox" checked = {{profile.req_glucose}}></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        {{#if profile.req_glucose}}
+                            <td><input type="checkbox" checked></td>
+                        {{else}}
+                            <td><input type="checkbox"></td>
+                        {{/if}}
+                        <td><input type="text" placeholder="{{profile.glucose_min}}"></td>
+                        <td><input type="text" placeholder="{{profile.glucose_max}}"></td>
                         <td class="align-left">mmol/L</td>
                     </tr>
                     <tr>
                         <td class="align-left">Weight</td>
-                        <td><input type="checkbox" checked = {{profile.req_weight}}></td>
+                        {{#if profile.req_weight}}
+                            <td><input type="checkbox" checked></td>
+                        {{else}}
+                            <td><input type="checkbox"></td>
+                        {{/if}}
                         <td><input type="text"></td>
                         <td><input type="text"></td>
                         <td class="align-left">kg</td>
                     </tr>
                     <tr>
                         <td class="align-left">Inuslin Doses</td>
-                        <td><input type="checkbox" checked = {{profile.req_insulin}}></td>
+                        {{#if profile.req_insulin}}
+                            <td><input type="checkbox" checked></td>
+                        {{else}}
+                            <td><input type="checkbox"></td>
+                        {{/if}}
                         <td><input type="text"></td>
                         <td><input type="text"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="align-left">Exercise</td>
-                        <td><input type="checkbox" checked = {{profile.req_exercise}}></td>
+                        {{#if profile.req_exercise}}
+                            <td><input type="checkbox" checked></td>
+                        {{else}}
+                            <td><input type="checkbox"></td>
+                        {{/if}}
                         <td><input type="text"></td>
                         <td><input type="text"></td>
                         <td class="align-left">steps</td>
@@ -126,3 +144,9 @@
         </table>
     </div>
 </div>
+
+<script>
+    function enable_changes() {
+        document.getElementById('save-changes').disabled = false;
+}
+</script>

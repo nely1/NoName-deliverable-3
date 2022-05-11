@@ -66,6 +66,21 @@ header ul #logout a{
     padding: 5px;
 }
 
+.logout{
+    float: right;
+    border-radius: 5px;
+    background-color: aliceblue;
+    color:rgb(25, 97, 160);
+    margin-top: -25px;
+    padding: 7px;
+    font-size: 15px;
+}
+
+.logout:hover{
+    text-decoration: underline;
+    background-color: rgb(204, 204, 204);
+}
+
 header ul #logout a:hover{
     background-color: rgb(204, 204, 204);
 }
@@ -748,6 +763,12 @@ clinician individual patient view styling
     flex: 1;
     border-left: 0.5px solid rgb(115, 115, 115);
     border-right: 0.5px solid rgb(115, 115, 115);
+}
+
+.save-changes{
+    border: none;
+    text-align: right;
+    background: none;
 }
 
 /* patient details styling */
