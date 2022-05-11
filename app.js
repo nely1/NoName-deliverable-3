@@ -31,6 +31,13 @@ app.engine(
                     return true
                 }
                 return false
+            },
+
+            checkRequired: function (req_data) {
+                if (req_data) {
+                    return "checked"
+                }
+                return
             }
         }
     }
