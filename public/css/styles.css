@@ -887,35 +887,57 @@ clinician individual patient view styling
     resize: none;
 }
 
-#patient-history-border{
+#note-input-header a{
+    color: grey;
+    text-decoration: none;
+}
+
+#note-input-header a:hover{
+    text-decoration: underline;
+}
+
+/*******************************************************************************
+clinician history tables' styling
+*******************************************************************************/
+
+.history-table-border{
     padding: 20px;
 }
 
-#full-patient-history{
+.history-table{
     width: 100%;
     text-align: left;
     border-collapse: collapse;
 }
 
-#full-patient-history th,
-#full-patient-history td{
+.history-table th,
+.history-table td{
     padding: 8px;
     border: 0.5px solid #ddd;
 }
 
-#full-patient-history th{
+.history-table th{
     background-color: rgb(38, 127, 206);
     color: white;
     
 }
 
-#full-patient-history tr:nth-child(even){
+.history-table tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-#full-patient-history tr:hover {
+.history-table tr:hover {
     background-color: #ddd;
 }
+
+/*******************************************************************************
+clinician notes history styling
+*******************************************************************************/
+#notes-header{
+    padding-left: 20px;
+    margin-top: 0;
+}
+
 
 /*******************************************************************************
 media queries

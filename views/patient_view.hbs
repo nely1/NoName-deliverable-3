@@ -1,6 +1,6 @@
 
 <h1 id="back-block">
-    <a href="/clinician">&lt back: to dashboard</a>
+    <a href="/clinician">&lt; back: to dashboard</a>
 </h1>
 
 <div class="patient-view-container">
@@ -97,7 +97,11 @@
         </div>
 
         <div class="clinician-input">
-            <h3>Enter a note: </h3>
+            <h3 id="note-input-header">
+                Enter a note: &nbsp;
+                <a href="#">+ view notes history</a>
+            </h3>
+            
             <form>
                 <textarea placeholder = "<<Sneaky notes: eventually we would need a submit button or like a save changes button, and also we would need to add a check your note history button>>"></textarea>
             </form>
@@ -107,8 +111,8 @@
 
 <div class="patient-view-history">
     <h2>Patient History</h2>
-    <div id="patient-history-border">
-        <table id="full-patient-history">
+    <div class="history-table-border">
+        <table class="history-table">
             <tr>
                 <th>Date</th>
                 <th>Blood Glucose Level (mmol/L)</th>

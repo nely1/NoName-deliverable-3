@@ -26,7 +26,7 @@ patientRouter.get('/', isAuthenticated, homepageController.display)
 /*---------------------------------------------- New code end -----------------------------------------------------*/
 
 const recordController = require('../controllers/recordController')
-patientRouter.get('/record', recordController.display)
+patientRouter.get('/record', isAuthenticated, recordController.display)
 patientRouter.post('/record', recordController.insert)
 
 const submitController = require('../controllers/submitController')

@@ -12,7 +12,7 @@ const display = async(req, res, next) => {
 
     // Check if patient has recorded data for today in UTC time
     const today_glucose = await glucoseData.findOne({datetime: {$gte : today}}).lean()
-    res.render('record_data', {data: today_glucose, record: "active"})
+    res.render('record_data', {profile: req.user.toJSON(), data: today_glucose, record: "active"})
 }
 
 const insert = async(req, res) => {

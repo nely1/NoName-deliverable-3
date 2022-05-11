@@ -10,52 +10,55 @@
 
 <div class="band">
     <!--record tab for glucose-->
-    <div class="glucose">
-        <div class="card">
-            <div class="record-card-header">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
-                </svg>
-
-                <h2>Glucose</h2>     
-            </div>
-
-            <!--display if data has been recorded that day or not accordingly-->
-            {{#if data.glucose_data}}
-                <div class="record-card-entry">
-                    <p><span class="value-text">
-                        {{data.glucose_data}}
-                    </span> &emsp; mmol/L</p>
-                </div>
-
-                <div class="record-card-comment">
-                    {{#if data.comments}}
-                        <p><span class="blue-text">Comment:</span> 
-                        {{data.comments}}
-                    {{else}}
-                        <p><span class="no-comment-text">No comment</span></p>
-                    {{/if}}
-
-                    </p>
-                </div>
-            {{else}}
-                <a href="submission/glucose" class="btn-record">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="75" height="75" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    {{#if profile.req_glucose}}
+        <div class="glucose">
+            <div class="card">
+                <div class="record-card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
-                        <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
-                        <line x1="16" y1="5" x2="19" y2="8" />
+                        <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
                     </svg>
-                    
-                    <h2>RECORD</h2>
-                </a>
-            {{/if}}
 
+                    <h2>Glucose</h2>     
+                </div>
+
+                <!--display if data has been recorded that day or not accordingly-->
+                {{#if data.glucose_data}}
+                    <div class="record-card-entry">
+                        <p><span class="value-text">
+                            {{data.glucose_data}}
+                        </span> &emsp; mmol/L</p>
+                    </div>
+
+                    <div class="record-card-comment">
+                        {{#if data.comments}}
+                            <p><span class="blue-text">Comment:</span> 
+                            {{data.comments}}
+                        {{else}}
+                            <p><span class="no-comment-text">No comment</span></p>
+                        {{/if}}
+
+                        </p>
+                    </div>
+                {{else}}
+                    <a href="submission/glucose" class="btn-record">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="75" height="75" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                            <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                            <line x1="16" y1="5" x2="19" y2="8" />
+                        </svg>
+                        
+                        <h2>RECORD</h2>
+                    </a>
+                {{/if}}
+
+            </div>
         </div>
-    </div>
+    {{/if}}
 
     <!--record tab for weight-->
+    {{#if profile.req_weight}}
     <div class="weight">
         <div class="card">
             <div class="record-card-header">
@@ -81,8 +84,10 @@
             </a>
         </div>
     </div>
+    {{/if}}
 
     <!--record tab for insulin-->
+    {{#if profile.req_exercise}}
     <div class="insulin">
         <div class="card">
             <div class="record-card-header">
@@ -112,8 +117,10 @@
             </a>
         </div>
     </div>
+    {{/if}}
 
     <!--record tab for exercise-->
+    {{#if profile.req_insulin}}
     <div class="exercise">
         <div class="card">
             <div class="record-card-header">
@@ -140,4 +147,5 @@
             </a>
         </div>
     </div>
+    {{/if}}
 </div>
