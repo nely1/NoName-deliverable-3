@@ -32,4 +32,7 @@ patientRouter.post('/record', recordController.insert)
 const submitController = require('../controllers/submitController')
 patientRouter.get('/submission/:data_type', submitController.display)
 
+const viewDataController = require('../controllers/viewDataController')
+patientRouter.get('/view_data', viewDataController.display)
+
 module.exports = patientRouter
