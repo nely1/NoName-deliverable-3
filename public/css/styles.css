@@ -841,8 +841,35 @@ clinician individual patient view styling
     resize: none;
 }
 
-/* patient history section */
+#patient-history-border{
+    padding: 20px;
+}
 
+#full-patient-history{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#full-patient-history th,
+#full-patient-history td{
+    padding: 8px;
+    border: 0.5px solid #ddd;
+}
+
+#full-patient-history th{
+    background-color: rgb(38, 127, 206);
+    color: white;
+    
+}
+
+#full-patient-history tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#full-patient-history tr:hover {
+    background-color: #ddd;
+}
 
 /*******************************************************************************
 media queries
