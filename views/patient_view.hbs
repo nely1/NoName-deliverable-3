@@ -1,57 +1,56 @@
+<form action="/clinician/patient_view" method="POST">
+    <h1 id="back-block">
+        <a href="/clinician">&lt; back: to dashboard</a>
 
-<h1 id="back-block">
-    <a href="/clinician">&lt; back: to dashboard</a>
+        <input type="submit" id = "save-changes" value = "Save changes" disabled>
+        <input type="hidden" name ="update" value = "checked"> 
+        <input type="hidden" name ="patientID" value = {{profile._id}}>
+    </h1>
 
-    <input type="submit" id = "save-changes" name = "save-changes" value = "Save changes" disabled>
-</h1>
+    <div class="patient-view-container">
+        <div class="patient-view-container-child">
+            <h2>Patient Details</h2>
 
-<div class="patient-view-container">
-    <div class="patient-view-container-child">
-        <h2>Patient Details</h2>
-
-        <div class="patient-details-container">
-            <div class="patient-details">
-                <table>
-                    <tr>
-                        <td>Given name:</td>
-                        <td>{{profile.first_name}}</td>
-                    </tr>
-                    <tr>
-                        <td>Family name:</td>
-                        <td>{{profile.last_name}}</td>
-                    </tr>
-                    <tr>
-                        <td>Email:</td>
-                        <td>{{profile.email}}</td>
-                    </tr>
-                    <tr>
-                        <td>Date of birth:</td>
-                        <td>{{profile.DOB}}</td>
-                    </tr>
-                    <tr>
-                        <td>Gender:</td>
-                        <td>{{profile.gender}}</td>
-                    </tr>
-                </table>
+            <div class="patient-details-container">
+                <div class="patient-details">
+                    <table>
+                        <tr>
+                            <td>Given name:</td>
+                            <td>{{profile.first_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Family name:</td>
+                            <td>{{profile.last_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{profile.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth:</td>
+                            <td>{{profile.DOB}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>{{profile.gender}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="patient-details-img">
+                    <img src={{profile.profile_picture}}>
+                </div>
             </div>
-            <div class="patient-details-img">
-                <img src={{profile.profile_picture}}>
+            
+            <div class="patient-message-input">
+                <h3>Your support message for {{profile.first_name}}:</h3>
+                <textarea placeholder= "{{profile.support_message}}" name = "support_message" onchange="enable_changes()"></textarea>    
             </div>
         </div>
-        
-        <div class="patient-message-input">
-            <h3>Your support message for {{profile.first_name}}:</h3>
-            <form>
-                <textarea placeholder= "{{profile.support_message}}" onchange="enable_changes()"></textarea>
-            </form>
-        </div>
-    </div>
 
-    <div class="patient-view-container-child">
-        <h2>Patient Data Requirements</h2>
+        <div class="patient-view-container-child">
+            <h2>Patient Data Requirements</h2>
 
-        <div class="patient-requirements">
-            <form>
+            <div class="patient-requirements">            
                 <table>
                     <tr>
                         <th></th>
@@ -68,64 +67,64 @@
                         {{!- Note for later, form submission would check either id of first box from true now becomes false OR id of second box from false become true}}
                         <td class="align-left">Blood Glucose Level</td>
                         {{#if profile.req_glucose}}
-                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" name = "req_glucose" checked onchange="enable_changes()"></td>
                         {{else}}
-                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox" name = "req_glucose" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text" placeholder="{{profile.glucose_min}}"></td>
-                        <td><input type="text" placeholder="{{profile.glucose_max}}"></td>
+                        <td><input type="text" placeholder="{{profile.glucose_min}}" name = "glucose_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.glucose_max}}" name = "glucose_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
                         <td class="align-left">mmol/L</td>
                     </tr>
                     <tr>
                         <td class="align-left">Weight</td>
                         {{#if profile.req_weight}}
-                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" name = "req_weight" checked onchange="enable_changes()"></td>
                         {{else}}
-                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox" name = "req_weight" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        <td><input type="text" placeholder="{{profile.weight_min}}" name = "weight_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.weight_max}}" name = "weight_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
                         <td class="align-left">kg</td>
                     </tr>
                     <tr>
                         <td class="align-left">Inuslin Doses</td>
                         {{#if profile.req_insulin}}
-                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" name = "req_insulin" checked onchange="enable_changes()"></td>
                         {{else}}
-                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox" name = "req_insulin" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        <td><input type="text" placeholder="{{profile.insulin_min}}" name = "insulin_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.insulin_max}}" name = "insulin_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="align-left">Exercise</td>
                         {{#if profile.req_exercise}}
-                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" name = "req_exercise" checked onchange="enable_changes()"></td>
                         {{else}}
-                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox" name = "req_exercise" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        <td><input type="text" placeholder="{{profile.exercise_min}}" name = "exercise_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.exercise_max}}" name = "exercise_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
                         <td class="align-left">steps</td>
                     </tr>
                 </table>
-            </form>
 
-        </div>
+            </div>
 
-        <div class="clinician-input">
-            <h3 id="note-input-header">
-                Enter a note: &nbsp;
-                <a href="#">+ view notes history</a>
-            </h3>
-            
-            <form>
-                <textarea placeholder = "<<Sneaky notes: eventually we would need a submit button or like a save changes button, and also we would need to add a check your note history button>>"></textarea>
-            </form>
+            <div class="clinician-input">
+                <h3 id="note-input-header">
+                    Enter a note: &nbsp;
+                    <a href="#">+ view notes history</a>
+                </h3>
+                
+                <form>
+                    <textarea placeholder = "<<Sneaky notes: eventually we would need a submit button or like a save changes button, and also we would need to add a check your note history button>>" name = "clinician_note"></textarea>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</form>
 
 <div class="patient-view-history">
     <h2>Patient History</h2>

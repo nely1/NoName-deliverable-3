@@ -32,13 +32,6 @@ app.engine(
                 }
                 return false
             },
-
-            checkRequired: function (req_data) {
-                if (req_data) {
-                    return "checked"
-                }
-                return
-            }
         }
     }
     )

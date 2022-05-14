@@ -2,8 +2,6 @@ const express = require('express')
 const authRouter = express.Router()
 const passport = require('passport')
 
-// MENTAL NOTE ABOUT LOGOUT, MIGHT NEED TO BE A FORM BUTTON, SCAFFOLDING IS THERE
-
 // Login page (with failure message displayed upon login failure)
 authRouter.get('/', (req, res) => {
     res.render('login', { flash: req.flash('error'), title: 'Login' })
