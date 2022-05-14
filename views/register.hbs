@@ -5,6 +5,8 @@
     <div class="forms">
         <form action="/clinician/register" method="post" id = "register">
 
+            <input type="hidden" name = "role" value = "patient">          
+
             <div class = "input-boxes">
                 <text1>Given Name:</text1>
                 <input type="text" name="name" required pattern="[a-zA-Z]+" title="invalid name">
@@ -25,7 +27,8 @@
                 <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="invalid email address">
             </div>
 
-
+            {{! - need to get doucment counts and offset them by 1071 for patient id in the javascript for insertion}}
+            {{! - either set defaults for support messages, data types etc pr redirect the clinician to that patients view page for clinician to edit the medical data}}
 
             {{! - https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page}}
             <div class = "input-boxes">
@@ -39,11 +42,16 @@
             </div>
 
             <div class = "input-boxes">
+                <text1>Upload a profile picture:</text1>
+                <input type="file" name="profile_picture" accept="image/png, image/gif, image/jpeg">
+            </div>
+
+            <div class = "input-boxes">
                 <text1>Patient Bio:</text1>
                 <textarea id="text-entry" name="bio"></textarea>
             </div>
 
-            <button type = "reset" value = "Reset" >Reset</button>
+                        <button type = "reset" value = "Reset" >Reset</button>
 
             <button1>
                 <input type="submit" value = "Submit"/>
