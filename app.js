@@ -85,12 +85,12 @@ app.get('/', (req, res) => {
 
 // Render about us page
 app.get('/about_us', (req, res) => {
-    res.render('about_us.hbs')
+    res.render('about_us.hbs', {about_us: "active"})
 })
 
 // Render about diabetes page
 app.get('/about_diabetes', (req, res) => {
-    res.render('about_diabetes.hbs')
+    res.render('about_diabetes.hbs', {about_diabetes: "active"})
 })
 
 // Load authentication router

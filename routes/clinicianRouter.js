@@ -23,4 +23,11 @@ clinicianRouter.post('/patient_view', patientViewController.display)
 const patientNotesController = require('../controllers/patientNotesController')
 clinicianRouter.post('/patient_view/notes', patientNotesController.display)
 
+const aboutUsController = require('../controllers/aboutUsController')
+clinicianRouter.get('/about_us', aboutUsController.display)
+
+const aboutDiabetesController = require('../controllers/aboutDiabetesController')
+clinicianRouter.get('/about_diabetes', aboutDiabetesController.display)
+
+
 module.exports = clinicianRouter
