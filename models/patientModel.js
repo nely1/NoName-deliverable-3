@@ -11,6 +11,7 @@ const schema = new mongoose.Schema({
     password: {type: String, required: true},
     textbio: String,
     profile_picture: String,
+    role: {type:String, required:true},
     patientID: Number,
     glucose_min: Number,
     glucose_max: Number,
