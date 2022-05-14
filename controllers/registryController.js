@@ -1,5 +1,5 @@
 const display = (req, res) => {
-    res.render('register')
+    res.render('register', {register: "active"})
 }
 
 const insert = async(req, res) => {
