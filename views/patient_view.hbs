@@ -115,7 +115,13 @@
             <div class="clinician-input">
                 <h3 id="note-input-header">
                     Enter a note: &nbsp;
-                    <a href="#">+ view notes history</a>
+                    <!-- need help for this -->
+                    <form action="/clinician/patient_view/notes" method="POST">
+                        <input type="hidden">
+                        <button>
+                            + view notes history
+                        </button>
+                    </form>
                 </h3>
                 
                 <form>
