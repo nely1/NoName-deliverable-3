@@ -49,4 +49,7 @@ patientRouter.get('/about_us', aboutUsController.display)
 const aboutDiabetesController = require('../controllers/aboutDiabetesController')
 patientRouter.get('/about_diabetes', aboutDiabetesController.display)
 
+const settingsController = require('../controllers/settingsController')
+patientRouter.get('/settings', settingsController.display)
+
 module.exports = patientRouter
