@@ -43,4 +43,10 @@ patientRouter.get('/submission/:data_type', submitController.display)
 const viewDataController = require('../controllers/viewDataController')
 patientRouter.get('/view_data', viewDataController.display)
 
+const aboutUsController = require('../controllers/aboutUsController')
+patientRouter.get('/about_us', aboutUsController.display)
+
+const aboutDiabetesController = require('../controllers/aboutDiabetesController')
+patientRouter.get('/about_diabetes', aboutDiabetesController.display)
+
 module.exports = patientRouter
