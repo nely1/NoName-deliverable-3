@@ -97,7 +97,6 @@ app.get('/about_diabetes', (req, res) => {
 const authRouter = require('./routes/authRouter')
 app.use('/login', authRouter)
 
-
 /*------------------------------------------------- New code end --------------------------------------------------*/
 
 //Router for patients

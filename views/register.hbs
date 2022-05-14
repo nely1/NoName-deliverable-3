@@ -3,9 +3,9 @@
     <text1>Patient Registration Form</text1>
 
     <div class="forms">
-        <form action="/clinician/register" method="post" id = "register">
+        <form action="/clinician/register" enctype="multipart/form-data" method="post" id = "register">
 
-            <input type="hidden" name = "role" value = "patient">          
+            {{!-- <input type="hidden" name = "role" value = "patient">          
 
             <div class = "input-boxes">
                 <text1>Given Name:</text1>
@@ -39,11 +39,11 @@
             <div class = "input-boxes">
                 <text1>Confirm Password:</text1>
                 <input type="text" name="comfirm password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
-            </div>
+            </div> --}}
 
             <div class = "input-boxes">
                 <text1>Upload a profile picture:</text1>
-                <input type="file" name="profile_picture" accept="image/png, image/gif, image/jpeg">
+                <input type="file" name="myImage" accept="image/png, image/gif, image/jpeg">
             </div>
 
             <div class = "input-boxes">
