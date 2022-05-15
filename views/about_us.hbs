@@ -53,20 +53,21 @@
     </div>
 
     <!-- will need to toggle display whether logged in or not -->
-    <h3 class="info-header">Login today!</h3>
+    {{#if logged_in}}
+        <h3 class="info-header">Login today!</h3>
 
-    <div class="info-content">
-        <p>Login to our website to access amazing features such as:</p>
-        <ul id="login-features">
-            <li>Active Health Monitoring</li>
-            <li>Support messages by clinicians</li>
-            <li>Competitive diabetes recording</li>
-        </ul>
-        <p>+ many more!</p> 
-    </div>
+        <div class="info-content">
+            <p>Login to our website to access amazing features such as:</p>
+            <ul id="login-features">
+                <li>Active Health Monitoring</li>
+                <li>Support messages by clinicians</li>
+                <li>Competitive diabetes recording</li>
+            </ul>
+            <p>+ many more!</p> 
+        </div>
 
-    <a href="/login" class="info-nav-button">Login here</a>
-
+        <a href="/login" class="info-nav-button">Login here</a>
+    {{/if}}
     
     <img src="/images/login-photo.jpeg" id="login-photo">
 </div>
