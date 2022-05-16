@@ -17,7 +17,8 @@ const display = async(req, res, next) => {
 
 const insert = async(req, res) => {
     // Pat's ID is hardcoded until login feature is implemented, links data recorded to Pat
-    const thisPatient = await patient.findById("62675c0d652ecfc70bd91d90")
+    const thisPatient = req.user
+    
     const new_data = new glucoseData({
         datetime: new Date(),
         glucose_data: req.body.glucose_data,
