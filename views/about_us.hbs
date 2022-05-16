@@ -52,8 +52,7 @@
         </div>
     </div>
 
-    <!-- will need to toggle display whether logged in or not -->
-    {{#if logged_in}}
+    {{#unless logged_in}}
         <h3 class="info-header">Login today!</h3>
 
         <div class="info-content">
@@ -67,7 +66,7 @@
         </div>
 
         <a href="/login" class="info-nav-button">Login here</a>
-    {{/if}}
+    {{/unless}}
     
     <img src="/images/login-photo.jpeg" id="login-photo">
 </div>
