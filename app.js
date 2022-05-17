@@ -100,7 +100,7 @@ app.get('/about_diabetes', (req, res) => {
 
 // Load authentication router
 const authRouter = require('./routes/authRouter')
-app.use('/login', authRouter)
+app.use('/login_select', authRouter)
 
 /*------------------------------------------------- New code end --------------------------------------------------*/
 

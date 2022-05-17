@@ -2,17 +2,30 @@ const express = require('express')
 const authRouter = express.Router()
 const passport = require('passport')
 
-// Login page (with failure message displayed upon login failure)
-authRouter.get('/', (req, res) => {
-    res.render('login', { flash: req.flash('error'), title: 'Login' })
+authRouter.get('/clinician', (req, res) => {
+    res.render('login', { flash: req.flash('error'), title: 'Login', userType: "Clinician"})
 })
 
-// Handle login
-authRouter.post('/',
-    passport.authenticate('local', {
-        successRedirect: '/patient', failureRedirect: '/login', failureFlash: true
+authRouter.get('/patient', (req, res) => {
+    res.render('login', { flash: req.flash('error'), title: 'Login' , userType: "Patient"})
+})
+
+
+// Handle clinician login
+authRouter.post('/clinician',
+    passport.authenticate('clinician', {
+        successRedirect: '/clinician', failureRedirect: '/login_select/clinician', failureFlash: true
     })
 )
+
+
+// Handle patient login
+authRouter.post('/patient',
+    passport.authenticate('patient', {
+        successRedirect: '/patient', failureRedirect: '/login_select/patient', failureFlash: true
+    })
+)
+
 
 // Handle logout
 authRouter.post('/logout', (req, res) => {

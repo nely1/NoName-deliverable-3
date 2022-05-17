@@ -20,7 +20,11 @@
                 <li><a href="/clinician/about_diabetes" class = {{about_diabetes}}>About diabetes</a></li>
                 <li><a href="/clinician/about_us" class = {{about_us}}>About us</a></li>
                 <li><a href="#" class = {{settings}}>Account settings</a></li>
-                <li id="logout"><a href="#">Logout</a></li>
+                <li>
+                    <form method="POST" action="/login_select/logout">
+                        <button class = "logout">Logout</button>
+                    </form>
+                </li>
                 <li id="username">Dr Chris Carter</li>
             </ul>
 

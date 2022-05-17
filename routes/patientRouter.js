@@ -3,10 +3,9 @@ const patientRouter = express.Router()
 
 // Authentication middleware
 const isAuthenticated = (req, res, next) => {
-
     // If user is not authenticated via passport, redirect to login page
     if (!req.isAuthenticated()) {
-        return res.redirect('/login')
+        return res.redirect('/login_select/patient')
     }
     // Otherwise, proceed to next middleware function
     return next()
@@ -18,7 +17,7 @@ const hasRole = (thisRole) => {
         if (req.user.role == thisRole) 
             return next()
         else {
-            res.redirect('/')
+            res.redirect('/login_select')
         }
     }    
 }
