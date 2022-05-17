@@ -18,15 +18,17 @@ const display = async(req, res, next) => {
     const thisPatient = req.user
     // check if patient has already entered data for today
     // if not create a summary object for data to be entered in
-    let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean()
+    let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean().populate('glucoseID insulinID weightID exerciseID')
+    console.log(today_data)
+
 
     if (!today_data) {
         today_data = new summaryData({
             datetime: today,
-            insulinID: null,
-            glucoseID: null,
-            weightID: null,
-            exerciseID: null,
+            insulinID: new insulinData(),
+            glucoseID: new glucoseData(),
+            weightID: new weightData(),
+            exerciseID: new exerciseData(),
             patientID: thisPatient._id
         })
         
@@ -38,9 +40,8 @@ const display = async(req, res, next) => {
         })   
     }
 
-    // Check if patient has recorded data for today in UTC time
-    const today_glucose = await glucoseData.findOne({datetime: {$gte : today}}).lean()
-    res.render('record_data', {profile: req.user.toJSON(), data: today_glucose, record: "active"})
+  
+    res.render('record_data', {profile: req.user.toJSON(), data: today_data, record: "active"})
 }
 
 const insert = async(req, res) => {
@@ -59,6 +60,7 @@ const insert = async(req, res) => {
     const thisPatient = req.user
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean()
 
+    
     if (req.body.data_type == 'Glucose') {
             new_data = new glucoseData({
             datetime: new Date(),
