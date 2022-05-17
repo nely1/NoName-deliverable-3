@@ -49,7 +49,7 @@
             <!--for each attribute, only display if required-->
             <ul>
                 {{#if profile.req_glucose}}
-                    <li {{#if data.glucose_data}} class = "entry-completed" {{/if}}>
+                    <li {{#if data.glucoseID.glucose_data}} class = "entry-completed" {{/if}}>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
@@ -58,7 +58,7 @@
                     </li>
                 {{/if}}
                 {{#if profile.req_weight}}
-                    <li>
+                    <li {{#if data.weightID.weight_data}} class = "entry-completed" {{/if}}>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-scale-outline" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <rect x="3" y="3" width="18" height="18" rx="4" />
@@ -68,7 +68,7 @@
                     </li>
                 {{/if}}
                 {{#if profile.req_exercise}}
-                    <li>
+                    <li {{#if data.insulinID.insulin_data}} class = "entry-completed" {{/if}}>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-walk" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <circle cx="13" cy="4" r="1" />
@@ -80,7 +80,7 @@
                     </li>
                 {{/if}}
                 {{#if profile.req_insulin}}
-                    <li>
+                    <li {{#if data.exerciseID.exercise_data}} class = "entry-completed" {{/if}}>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-vaccine" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M17 3l4 4" />

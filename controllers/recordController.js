@@ -19,8 +19,6 @@ const display = async(req, res, next) => {
     // check if patient has already entered data for today
     // if not create a summary object for data to be entered in
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean().populate('glucoseID insulinID weightID exerciseID')
-    console.log(today_data)
-
 
     if (!today_data) {
         today_data = new summaryData({
@@ -39,9 +37,8 @@ const display = async(req, res, next) => {
             }
         })   
     }
-
   
-    res.render('record_data', {profile: req.user.toJSON(), data: today_data, record: "active"})
+    res.render('record_data', {profile: thisPatient.toJSON(), data: today_data, record: "active"})
 }
 
 const insert = async(req, res) => {
