@@ -193,6 +193,7 @@ guest and information pages generic styling
     background-color: rgb(235, 235, 235);
     border-radius: 20px;
     padding-bottom: 50px;
+    padding-top: 20px;
     margin: 10%;
     margin-top: 5%;
 }
@@ -216,25 +217,25 @@ guest and information pages generic styling
     margin: 0px;
 }
 
-.info-nav-button{
+.guest-nav-button{
     background-color: rgba(25, 97, 160, 1);
     border: 2px solid black;
     border-radius: 10px;
     color: white;
     text-decoration: none;
     padding: 15px;
-    width: 200px;
+    width: 250px;
     margin: 20px auto;
     display: block;
     font-size: 30px;
 }
 
-.info-nav-button:hover{
+.guest-nav-button:hover{
     text-decoration: underline;
 }
 
 /*******************************************************************************
-guest landing page styling
+guest landing pages styling
 *******************************************************************************/
 .info-content-section h1{
     font-size: 35px;
@@ -245,8 +246,22 @@ guest landing page styling
     font-size: 25px;
 }
 
-#landing-buttons{
+.stacked-buttons{
     margin-top: 50px;
+}
+
+/*******************************************************************************
+login pages styling
+*******************************************************************************/
+#login-form input[type=text],
+#login-form input[type=password]{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.login-input{
+    padding: 20px;
+    font-size: 25px;
 }
 
 /*******************************************************************************

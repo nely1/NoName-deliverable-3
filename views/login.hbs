@@ -1,16 +1,25 @@
-<h1>Login</h1>
-
 {{#each flash}}
     <p class="alert">{{this}}</p>
 {{/each}}
 
-<form action="login" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" />
-    <label for="password">Password:</label>
-    <input type="password" name="password" />
-    <input type="submit" value="Submit" />
-</form>
+<div class="info-content-section">
+    <h1>Patient login:</h1>
+    <form id="login-form" action="login" method="POST">
+        <div class="login-input">
+            <label for="username">Username:</label>
+            <input type="text" name="username" />
+        </div>
+
+        <div class="login-input">
+            <label for="password">Password:</label>
+            <input type="password" name="password" />
+        </div>
+
+
+        <input type="submit" class="guest-nav-button" value="Sign in" />
+    </form>
+</div>
+
 
 
 
