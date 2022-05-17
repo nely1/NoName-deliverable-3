@@ -5,16 +5,16 @@
     <div class="forms">
         <form action="/clinician/register" enctype="multipart/form-data" method="post" id = "register">
 
-            {{!-- <input type="hidden" name = "role" value = "patient">          
+            <input type="hidden" name = "role" value = "patient">          
 
             <div class = "input-boxes">
-                <text1>Given Name:</text1>
-                <input type="text" name="name" required pattern="[a-zA-Z]+" title="invalid name">
+                <text1>First Name:</text1>
+                <input type="text" name="first_name" required pattern="[a-zA-Z]+" title="invalid name">
             </div>
 
             <div class = "input-boxes">
-                <text1>Family Name:</text1>
-                <input type="text" name="family name" required pattern="[a-zA-Z]+" title="invalid name">
+                <text1>Last Name:</text1>
+                <input type="text" name="last_namename" required pattern="[a-zA-Z]+" title="invalid name">
             </div>
 
             <div class = "input-boxes">
@@ -27,23 +27,28 @@
                 <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="invalid email address">
             </div>
 
-            {{! - need to get doucment counts and offset them by 1071 for patient id in the javascript for insertion}}
+            {{! - need to get doucment counts and offset them by 1000 for patient id in the javascript for insertion}}
             {{! - either set defaults for support messages, data types etc pr redirect the clinician to that patients view page for clinician to edit the medical data}}
 
-            {{! - https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page}}
             <div class = "input-boxes">
                 <text1>Password:</text1>
                 <input type="text" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
             </div>
 
             <div class = "input-boxes">
-                <text1>Confirm Password:</text1>
-                <input type="text" name="comfirm password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
-            </div> --}}
+                <text1>Date of birth: dd/mm/yyyy</text1>
+                <input type="text" name="date_of_birth" required pattern="(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\d{2}|20[01][0-9]|2020)" title = "must follow the format of day/month/year">
+            </div>
+
+            <div class = "input-boxes">
+                <text1>Gender: M or F</text1>
+                <input type="text" name="gender" required pattern="M|F" title = "must follow the format of day/month/year">
+            </div>
+
 
             <div class = "input-boxes">
                 <text1>Upload a profile picture:</text1>
-                <input type="file" name="myImage" accept="image/png, image/gif, image/jpeg">
+                <input type="file" name="myImage" required accept="image/png, image/gif, image/jpeg">
             </div>
 
             <div class = "input-boxes">

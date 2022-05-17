@@ -51,8 +51,6 @@ const insert = async(req, res) => {
 
     // Pat's ID is hardcoded until login feature is implemented, links data recorded to Pat
     
-    
-    
     let new_data 
     const thisPatient = req.user
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean()
