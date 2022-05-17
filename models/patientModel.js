@@ -15,12 +15,17 @@ const schema = new mongoose.Schema({
     patientID: Number,
     glucose_min: Number,
     glucose_max: Number,
+    weight_min: Number,
+    weight_max: Number,
+    insulin_min: Number,
+    insulin_max: Number, 
+    exercise_min: Number,
+    exercise_max: Number,
     req_glucose: Boolean,
     req_exercise: Boolean,
     req_insulin: Boolean,
     req_weight: Boolean,
-    support_message: String,
-    glucose_data: Object,
+    support_message: String
 }) 
 
 // Password comparison function

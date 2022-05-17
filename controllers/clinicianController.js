@@ -29,14 +29,14 @@ const display = async(req, res, next) => {
         .populate('glucoseID insulinID weightID exerciseID') 
         
         if (!summaryDetails) {
-            patientDetails.summary = new summary()
+            patientDetails[pat].summary = new summary()
             
         }
         else {
-            patientDetails.summary = summaryDetails
+            patientDetails[pat].summary = summaryDetails
         }
     }
-    console.log(patientDetails) 
+    console.log(patientDetails[0].summary.weightID) 
     res.render('dashboard', {patientData: patientDetails, dashboard: "active",summaryData: summaries})
 } 
 
