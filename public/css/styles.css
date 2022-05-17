@@ -404,6 +404,19 @@ record data card styling
     background-color: white;
 }
 
+.record-card-container{
+    display: flex;
+}
+
+.record-card-values{
+    flex-basis: 75%;
+}
+
+.record-card-tick{
+    margin-right: 5px;
+    flex-basis: 25%;
+}
+
 .record-card-comment{
     padding-left: 30px;
     padding-right: 30px;
@@ -463,6 +476,12 @@ a.btn-record:visited{
 
 a.btn-record:hover{
     background-color: rgb(242, 242, 242);
+}
+
+.record-not-req{
+    font-size: 40px;
+    padding-left: 25px;
+    line-height: 45px;
 }
 
 /*******************************************************************************
