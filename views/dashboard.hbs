@@ -111,7 +111,7 @@
         </tr>
 
         {{#each patientData}}
-            {{#if this.req_glucose}}
+            {{#if this.summary.glucoseID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
@@ -144,7 +144,7 @@
                 </tr>
             {{/if}}
 
-            {{#if this.req_weight}}
+            {{#if this.summary.weightID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
@@ -168,16 +168,11 @@
                     {{else}}
                         <td class="data-warning">-</td>    
                     {{/if}}
-                    {{#if this.summary.weightID.comments}}
-                        <td>{{this.summary.weightID.comments}}</td>
-                    {{else}}
-                        <td>-</td>
-                    {{/if}}
-        
+                    <td>{{this.summary.weightID.comments}}</td>
                 </tr>
             {{/if}}
 
-            {{#if this.req_insulin}}
+            {{#if this.summary.insulinID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
@@ -211,7 +206,7 @@
                 </tr>
             {{/if}}
 
-            {{#if this.req_exercise}}
+            {{#if this.summary.exerciseID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
