@@ -1,5 +1,4 @@
 const patient = require('../models/patientModel')
-const clinician = require('../models/clinicianModel')
 
 const display = (req, res) => {
     res.render('register', {register: "active"})
@@ -7,7 +6,7 @@ const display = (req, res) => {
 
 const insert = async(req, res) => {
 
-    let new_patient = new Patient({
+    const new_patient = new patient({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         username: req.body.username,
@@ -17,8 +16,8 @@ const insert = async(req, res) => {
         password: req.body.password,
         textbio: req.body.bio,
         role: req.body.role,
-        patientID: 1001 + patient.countDocuments(),
-        profile_picture: req.file.field,
+        patientID: 1001 + await patient.countDocuments({}),
+        profile_picture: "images\\" + req.file.filename,
 
         req_glucose: true,
         req_insulin: true,
@@ -27,9 +26,6 @@ const insert = async(req, res) => {
 
     })
     
-    const thisClinician = req.user
-
-
     await new_patient.save( (err, result) => { 
         if (err) {
             res.send(err)
@@ -37,10 +33,10 @@ const insert = async(req, res) => {
         }
     }) 
 
-    thisClinician = thisClinician.patients.push(new_patient._id)
-    console.log(thisClinician.patients)
-
-    res.render('patient_view', {profile: thisPatient})
+    const thisClinician = req.user
+    await thisClinician.patients.push(new_patient._id)
+    await thisClinician.save()
+    await res.render('patient_view', {profile: new_patient.toJSON()})
 }
 
 module.exports = {
