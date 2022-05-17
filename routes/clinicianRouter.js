@@ -22,12 +22,34 @@ const clinicianRouter = express.Router()
 //   var upload = multer({ storage: storage })
 
 
+// Authentication middleware
+const isAuthenticated = (req, res, next) => {
+    // If user is not authenticated via passport, redirect to login page
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login_select/clinician')
+    }
+    // Otherwise, proceed to next middleware function
+    return next()
+}
+
+
+// set up role-based authentication
+const hasRole = (thisRole) => {
+    return (req, res, next) => {
+        if (req.user.role == thisRole) 
+            return next()
+        else {
+            res.redirect('/login_select')
+        }
+    }    
+}
+
 clinicianRouter.use(express.static('public'));
 
 const clinicianController = require('../controllers/clinicianController')
 
 // Change the header layout specificly for clinicians
-clinicianRouter.all('/*', (req, res, next) => {
+clinicianRouter.all('/*', isAuthenticated, hasRole("clinician"), (req, res, next) => {
     req.app.locals.layout = 'clinician_main'; 
     next(); 
 });
