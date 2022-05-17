@@ -71,8 +71,8 @@
                         {{else}}
                             <td><input type="checkbox" name = "req_glucose" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text" placeholder="{{profile.glucose_min}}" name = "glucose_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
-                        <td><input type="text" placeholder="{{profile.glucose_max}}" name = "glucose_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.glucose_min}}" name = "glucose_min" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.glucose_max}}" name = "glucose_max" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
                         <td class="align-left">mmol/L</td>
                     </tr>
                     <tr>
@@ -82,8 +82,8 @@
                         {{else}}
                             <td><input type="checkbox" name = "req_weight" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text" placeholder="{{profile.weight_min}}" name = "weight_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
-                        <td><input type="text" placeholder="{{profile.weight_max}}" name = "weight_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.weight_min}}" name = "weight_min" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.weight_max}}" name = "weight_max" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
                         <td class="align-left">kg</td>
                     </tr>
                     <tr>
@@ -93,8 +93,8 @@
                         {{else}}
                             <td><input type="checkbox" name = "req_insulin" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text" placeholder="{{profile.insulin_min}}" name = "insulin_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
-                        <td><input type="text" placeholder="{{profile.insulin_max}}" name = "insulin_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.insulin_min}}" name = "insulin_min" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.insulin_max}}" name = "insulin_max" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -104,8 +104,8 @@
                         {{else}}
                             <td><input type="checkbox" name = "req_exercise" onchange="enable_changes()"></td>
                         {{/if}}
-                        <td><input type="text" placeholder="{{profile.exercise_min}}" name = "exercise_min" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
-                        <td><input type="text" placeholder="{{profile.exercise_max}}" name = "exercise_max" onchange="enable_changes()" pattern = "[0-9]+" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.exercise_min}}" name = "exercise_min" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
+                        <td><input type="text" placeholder="{{profile.exercise_max}}" name = "exercise_max" onchange="enable_changes()" pattern = "[0-9]+[.]?[0-9]*" title = "Must be a number"></td>
                         <td class="align-left">steps</td>
                     </tr>
                 </table>
