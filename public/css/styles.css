@@ -253,15 +253,24 @@ guest landing pages styling
 /*******************************************************************************
 login pages styling
 *******************************************************************************/
+
 #login-form input[type=text],
 #login-form input[type=password]{
     font-size: 20px;
     padding: 10px;
 }
 
-.login-input{
+.login-section label {
+    display: inline-block;
+    text-align: right;
+    width: 70px;
+    margin-right: 10px;
+}
+
+.login-section input{
     padding: 20px;
     font-size: 25px;
+    margin-bottom: 10px;
 }
 
 /*******************************************************************************
@@ -510,7 +519,8 @@ patientUI homepage styling
 /* generic styling */
 #top-engager,
 #homepage-ranking,
-#record-today{
+#record-today,
+#leaderboard{
     background-color: rgb(71, 138, 196);
     border: none;
     color: white;
@@ -917,6 +927,51 @@ patient view data styling
 .data-card-comment{
     margin: 0px;
 }
+
+/*******************************************************************************
+Leaderboard
+*******************************************************************************/
+
+#profile{
+    color: white;
+    text-align: right;
+}
+
+#leaderboard h3{
+    font-size: 50px;
+}
+
+#ranking{
+    width: 100%;
+    background-color: rgb(71, 138, 196);
+    border: none;
+    color: white;
+}
+
+#ranking-title{
+    text-align: center;
+
+}
+
+#ranking-badge{ 
+    padding: 10px;
+    background-color: rgb(71, 138, 196);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ranking-badge h2{
+    text-align: center;
+}
+
+#ranking-message{
+    background-color: rgb(62,167,226); 
+    width: 60%; 
+    margin:auto;
+    border-color: white;
+}
+
 
 
 /*******************************************************************************
