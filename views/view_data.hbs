@@ -8,9 +8,9 @@
 </h1>
 
 <div id="week-selector">
-    <form action="/view_data" method="GET">
+    <form method="POST">
         <label for="data-week-calendar">Select a week:&nbsp;</label>
-        <input type="week" id="data-week-calendar">
+        <input name="week" type="week" id="data-week-calendar">
         <input type="submit" value="view data">
     </form>
 </div>

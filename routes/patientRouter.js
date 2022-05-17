@@ -41,6 +41,7 @@ patientRouter.get('/submission/:data_type', submitController.display)
 
 const viewDataController = require('../controllers/viewDataController')
 patientRouter.get('/view_data', viewDataController.display)
+patientRouter.post('/view_data', viewDataController.filter)
 
 const aboutUsController = require('../controllers/aboutUsController')
 patientRouter.get('/about_us', aboutUsController.display)

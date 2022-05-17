@@ -102,7 +102,6 @@ const insert = async(req, res) => {
    
 
     // Store each glucose data id in patient, useful for view data which will be implemented in deliverable 3
-    await patient.updateOne({"patientID":10271},{$set:{"glucose_data": new_data}})
     await summaryData.updateOne({_id: today_data._id},{$set:{[string_id]: new_data._id}})
     return res.redirect('/patient/record')
 }
