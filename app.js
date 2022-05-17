@@ -83,6 +83,11 @@ app.get('/', (req, res) => {
     res.render('index.hbs')
 })
 
+// Render login select page
+app.get('/login_select', (req, res) => {
+    res.render('login_select.hbs')
+})
+
 // Render about us page
 app.get('/about_us', (req, res) => {
     res.render('about_us.hbs', {about_us: "active"})
