@@ -1,9 +1,6 @@
-{{#each flash}}
-    <p class="alert">{{this}}</p>
-{{/each}}
-
 <div class="info-content-section">
     <h1>Patient login:</h1>
+
     <form id="login-form" action="login" method="POST">
         <div class="login-input">
             <label for="username">Username:</label>
@@ -15,7 +12,9 @@
             <input type="password" name="password" />
         </div>
 
-
+        {{#each flash}}
+            <p class="alert">{{this}}</p>
+        {{/each}}
         <input type="submit" class="guest-nav-button" value="Sign in" />
     </form>
 </div>
