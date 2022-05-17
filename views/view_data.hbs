@@ -8,8 +8,11 @@
 </h1>
 
 <div id="week-selector">
-    <label for="data-week-calendar">Select a week:&nbsp;</label>
-    <input type="week" id="data-week-calendar">
+    <form action="/view_data" method="GET">
+        <label for="data-week-calendar">Select a week:&nbsp;</label>
+        <input type="week" id="data-week-calendar">
+        <input type="submit" value="view data">
+    </form>
 </div>
 
 <div class="band">

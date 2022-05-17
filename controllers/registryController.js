@@ -1,4 +1,5 @@
 const patient = require('../models/patientModel')
+const clinician = require('../models/clinicianModel')
 
 const display = (req, res) => {
     res.render('register', {register: "active"})
@@ -35,6 +36,9 @@ const insert = async(req, res) => {
             return res.send(result)
         }
     }) 
+
+    thisClinician = thisClinician.patients.push(new_patient._id)
+    console.log(thisClinician.patients)
 
     res.render('patient_view', {profile: thisPatient})
 }
