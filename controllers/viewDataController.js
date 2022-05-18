@@ -15,7 +15,7 @@ const display = async(req, res, next) => {
     
     finish = new Date(start)
     finish.setDate(finish.getDate() + 7)
-    data = await summary.find({patientID: req.user._id}).lean().populate('glucoseID insulinID weightID exerciseID')
+    data = await summary.find({patientID: req.user._id,  datetime: { $gte: start, $lt: finish }}).lean().populate('glucoseID insulinID weightID exerciseID')
 
     res.render('view_data', {view_data: "active", allData: data})
 } 
@@ -61,7 +61,7 @@ const filter = async(req, res, next) => {
         finish = new Date(start)
         finish.setDate(finish.getDate() + 7)
 
-        data = await summary.find({patientID: req.user._id}).lean().populate('glucoseID insulinID weightID exerciseID')
+        data = await summary.find({patientID: req.user._id,  datetime: { $gte: start, $lt: finish }}).lean().populate('glucoseID insulinID weightID exerciseID')
     }
     res.render('view_data', {view_data: "active", allData: data, prevEntered: yearWeek})
 }
