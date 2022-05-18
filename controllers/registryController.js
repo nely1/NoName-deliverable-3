@@ -17,7 +17,7 @@ const insert = async(req, res) => {
         textbio: req.body.bio,
         role: req.body.role,
         patientID: 1001 + await patient.countDocuments({}),
-        profile_picture: "images\\" + req.file.filename,
+        profile_picture: "\\images\\" + req.file.filename,
 
         req_glucose: true,
         req_insulin: true,
