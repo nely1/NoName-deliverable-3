@@ -114,13 +114,14 @@
                 </table>
 
             </div>
-
+</form>
             <div class="clinician-input">
                 <h3 id="note-input-header">
                     Enter a note: &nbsp;
                     
                     <form action="/clinician/patient_view/notes" method="GET" id="view-notes">
-                        <input type = "submit" value ="+ view notes history">
+                        <input type="hidden" name="patientID" value={{profile._id}}>
+                        <input type="submit" value = "+ view notes history">
                     </form>
                 </h3>
                 
@@ -133,7 +134,6 @@
             </div>
         </div>
     </div>
-</form>
 
 <div class="patient-view-history">
     <h2>Patient History</h2>
