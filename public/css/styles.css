@@ -520,7 +520,8 @@ patientUI homepage styling
 #top-engager,
 #homepage-ranking,
 #record-today,
-#leaderboard{
+#leaderboard,
+#ranking{
     background-color: rgb(71, 138, 196);
     border: none;
     color: white;
@@ -941,7 +942,7 @@ Leaderboard
     font-size: 50px;
 }
 
-#ranking{
+#leaderboard{
     width: 100%;
     background-color: rgb(71, 138, 196);
     border: none;
@@ -972,28 +973,94 @@ Leaderboard
     border-color: white;
 }
 
-#engager-display{
+.engager-display{
     color: black;
     background-color: rgb(78,198,254);
     box-shadow: 5px 5px rgb(0, 0, 0);
     border: 3px solid black;
-    margin: 0 30px 20px 30px;
+    margin: 0 30px 30px 30px;
     display: inline-block;
     vertical-align: middle;
 }
 
-#engager-display:nth-child(2n){
+.engager-display:nth-child(2n){
     background-color: rgb(141,219,255);
 }
 
-#ranking h1{
+/* record today card */
+#leaderboard h2,
+#ranking h2{
+    text-align: center;
+    font-size: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#ranking h3{
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#your-ranking{
+    text-align: center;
+    font-size: 50px;
+    background-color: rgb(85, 164, 232);
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#engagement-rate,
+#engagement-badge{
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#engagement-rate h2,
+#engagement-badge h2{
+    font-size: 25px;
+    font-weight: 100;
+    text-decoration: underline;
+}
+
+#engagement-badge p{
+    font-size: 15px;
+}
+
+#engagement-rate-value,
+#badge-icon{
+    text-align: center;
+    font-size: 40px;
+    border: 5px solid white;
+    border-radius: 40px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#leaderboard h3{
     margin: 0 30px 20px 30px;
     margin-top: 19px;
     margin-left: 60px;
+    font-size: 20px;
 }
 
 #engagement{
     float: right;
+}
+
+#ranking-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 50px;
 }
 
 

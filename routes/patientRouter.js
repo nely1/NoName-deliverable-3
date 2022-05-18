@@ -43,6 +43,9 @@ const viewDataController = require('../controllers/viewDataController')
 patientRouter.get('/view_data', viewDataController.display)
 patientRouter.post('/view_data', viewDataController.filter)
 
+const leaderboardController = require('../controllers/leaderboardController')
+patientRouter.get('/leaderboard', leaderboardController.display)
+
 const aboutUsController = require('../controllers/aboutUsController')
 patientRouter.get('/about_us', aboutUsController.display)
 
