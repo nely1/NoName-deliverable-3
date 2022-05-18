@@ -25,7 +25,8 @@ const schema = new mongoose.Schema({
     req_exercise: Boolean,
     req_insulin: Boolean,
     req_weight: Boolean,
-    support_message: String
+    support_message: String,
+    notes: [{type: mongoose.Schema.Types.ObjectId, ref: 'clinicianNoteModel'}]
 }) 
 
 // Password comparison function
