@@ -7,10 +7,12 @@
         <input type="hidden" name ="patientID" value = {{profile._id}}>
     </h1>
 
+
     <div class="patient-view-container">
         <div class="patient-view-container-child">
             <h2>Patient Details</h2>
 
+            <!--patient's details-->
             <div class="patient-details-container">
                 <div class="patient-details">
                     <table>
@@ -41,6 +43,7 @@
                 </div>
             </div>
             
+            <!--patient support message-->
             <div class="patient-message-input">
                 <h3>Your support message for {{profile.first_name}}:</h3>
                 <textarea placeholder= "{{profile.support_message}}" name = "support_message" onchange="enable_changes()"></textarea>    
@@ -124,8 +127,11 @@
                     </form>
                 </h3>
                 
-                <form>
-                    <textarea placeholder = "<<Sneaky notes: eventually we would need a submit button or like a save changes button, and also we would need to add a check your note history button>>" name = "clinician_note"></textarea>
+                <!--inputs a note for the clinician-->
+                <form action="/clinician/patient_view/notes" method="POST">
+                    <input type="hidden" name="patientID" value = {{profile._id}}>
+                    <textarea name = "clinician_note"></textarea>
+                    <input type="submit" value="Submit">
                 </form>
             </div>
         </div>

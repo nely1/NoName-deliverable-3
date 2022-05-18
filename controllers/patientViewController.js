@@ -1,4 +1,5 @@
 const patient = require('../models/patientModel')
+const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => { 
 
@@ -24,8 +25,11 @@ const display = async(req, res, next) => {
         await thisPatient.save()
     }
     const thisPatient = await patient.findById(req.body.patientID).lean().populate()
+
+
     res.render('patient_view', {profile: thisPatient})
 } 
+
 
 module.exports = {
     display,

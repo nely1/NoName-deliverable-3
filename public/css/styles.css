@@ -972,6 +972,29 @@ Leaderboard
     border-color: white;
 }
 
+#engager-display{
+    color: black;
+    background-color: rgb(78,198,254);
+    box-shadow: 5px 5px rgb(0, 0, 0);
+    border: 3px solid black;
+    margin: 0 30px 20px 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#engager-display:nth-child(2n){
+    background-color: rgb(141,219,255);
+}
+
+#ranking h1{
+    margin: 0 30px 20px 30px;
+    margin-top: 19px;
+    margin-left: 60px;
+}
+
+#engagement{
+    float: right;
+}
 
 
 /*******************************************************************************

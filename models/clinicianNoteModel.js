@@ -2,9 +2,10 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({ 
     notes: [String],
+    datetime: Date,
     clinicianID: {type: mongoose.Schema.Types.ObjectId, ref: 'clinicianModel'}, 
     patientID: {type: mongoose.Schema.Types.ObjectId, ref: 'patientModel'}
 }) 
 
-const exerciseModel = mongoose.model('exerciseModel', schema) 
-module.exports = exerciseModel 
+const clinicianNotesModel = mongoose.model('clinicianNotesModel', schema) 
+module.exports = clinicianNotesModel 
