@@ -1,5 +1,8 @@
 <h1 id="back-block">
-    <a href="/clinician">&lt; back: to patient view</a>
+    <form action="/clinician/patient_view" method="POST">
+        <input type="hidden" name="patientID" value = {{patientID}}>
+        <button>&lt; back: to patient view</button>
+    </form>
 </h1>
 
 <h2 id="notes-header">History of Notes on Patient: Pat Patrick</h2>
@@ -10,7 +13,7 @@
             <th>Date</th>
             <th>Time</th>
             <th>Notes</th>
-        </tr>
+        </tr>   
         <!--iterate over all notes and display-->
         {{#each notes}}
             <tr>

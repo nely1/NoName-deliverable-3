@@ -150,13 +150,39 @@
                 <th>Insulin doses</th>
                 <th>Exercise (steps)</th>
             </tr>
-            <tr>
-                <td>06/01/2022</td>
-                <td>7.6</td>
-                <td>67</td>
-                <td>2</td>
-                <td>10113</td>
-            </tr>
+            {{#each allData}}
+                <tr>
+                    <td>{{formatDate this.datetime "DD/MM/YYYY"}}</td>
+                    <td>
+                        {{#if this.glucoseID.glucose_data}}
+                            {{this.glucoseID.glucose_data}}
+                        {{else}}
+                            -
+                        {{/if}}
+                    </td>
+                    <td>
+                        {{#if this.weightID.weight_data}}
+                            {{this.weightID.weight_data}}
+                        {{else}}
+                            -
+                        {{/if}}
+                    </td>
+                    <td>
+                        {{#if this.insulinID.insulin_data}}
+                            {{this.insulinID.insulin_data}}
+                        {{else}}
+                            -
+                        {{/if}}
+                    </td>
+                    <td>
+                        {{#if this.exerciseID.exercise_data}}
+                            {{this.exerciseID.exercise_data}}
+                        {{else}}
+                            -
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/each}}
         </table>
     </div>
 </div>

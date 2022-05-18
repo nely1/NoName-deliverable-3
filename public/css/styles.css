@@ -1079,11 +1079,19 @@ clinician individual patient view styling
     font-weight: 100;
     padding: 10px;
     margin-top: -10px;
+    border: none;
 }
 
 #back-block a{
     color: white;
     text-decoration: none;
+}
+
+#back-block button{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 20px;
 }
 
 /* general styling */
@@ -1224,9 +1232,9 @@ clinician history tables' styling
 }
 
 .history-table{
-    width: 100%;
     text-align: left;
     border-collapse: collapse;
+    width: 100%;
 }
 
 .history-table th,
@@ -1238,7 +1246,6 @@ clinician history tables' styling
 .history-table th{
     background-color: rgb(38, 127, 206);
     color: white;
-    
 }
 
 .history-table tr:nth-child(even){
@@ -1248,6 +1255,7 @@ clinician history tables' styling
 .history-table tr:hover {
     background-color: #ddd;
 }
+
 
 /*******************************************************************************
 clinician notes history styling

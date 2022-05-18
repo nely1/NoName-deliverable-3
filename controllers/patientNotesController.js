@@ -1,24 +1,18 @@
 const patient = require('../models/patientModel')
 const clinicianNote = require('../models/clinicianNoteModel')
+const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => {
-    
-    const thisPatient = await patient.findById(req.query.patientID)
+    const thisPatient = req.query.patientID
+    patientNotes = await clinicianNote.find({patientID: thisPatient}).lean().populate('datetime note')
 
-    let patientNoteIDs = thisPatient.notes
-    let patientNotes = []
-
-    for (var note in patientNoteIDs){
-        patientNote = await clinicianNote.findById(patientNoteIDs[note]).lean()
-        patientNotes.push(patientNote) 
-    }
-
-    res.render('patient_notes', {notes: patientNotes})
+    res.render('patient_notes', {notes: patientNotes.reverse(), patientID: thisPatient})
 }
 
 const insertNote = async(req, res) => {
 
     const new_note = new clinicianNote({
+        patientID: req.body.patientID,
         note: req.body.clinician_note,
         datetime: new Date(),
     })
@@ -35,7 +29,9 @@ const insertNote = async(req, res) => {
     await patientObject.save()
 
     const thisPatient = await patient.findById(req.body.patientID).lean().populate()
-    await res.render('patient_view', {profile: thisPatient})
+    data = await summary.find({patientID: thisPatient}).lean().populate('glucoseID insulinID weightID exerciseID')
+
+    await res.render('patient_view', {profile: thisPatient, allData: data.reverse()})
 }
 
 module.exports = {
