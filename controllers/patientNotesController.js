@@ -2,8 +2,18 @@ const patient = require('../models/patientModel')
 const clinicianNote = require('../models/clinicianNoteModel')
 
 const display = async(req, res, next) => {
-    console.log("test")
-    res.render('patient_notes')
+    
+    const thisPatient = await patient.findById(req.query.patientID)
+
+    let patientNoteIDs = thisPatient.notes
+    let patientNotes = []
+
+    for (var note in patientNoteIDs){
+        patientNote = await clinicianNote.findById(patientNoteIDs[note]).lean()
+        patientNotes.push(patientNote) 
+    }
+
+    res.render('patient_notes', {notes: patientNotes})
 }
 
 const insertNote = async(req, res) => {

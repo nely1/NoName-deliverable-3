@@ -1,58 +1,68 @@
-<form action="/clinician/patient_view" method="POST">
-    <h1 id="back-block">
-        <a href="/clinician">&lt; back: to dashboard</a>
-
-        <input type="submit" id = "save-changes" value = "Save changes" disabled>
-        <input type="hidden" name ="update" value = "checked"> 
-        <input type="hidden" name ="patientID" value = {{profile._id}}>
-    </h1>
+<h1 id="back-block">
+    <a href="/clinician">&lt; back: to dashboard</a>
+</h1>
 
 
-    <div class="patient-view-container">
-        <div class="patient-view-container-child">
-            <h2>Patient Details</h2>
+<div class="patient-view-container">
+    <div class="patient-view-container-child">
+        <h2>Patient Details</h2>
 
-            <!--patient's details-->
-            <div class="patient-details-container">
-                <div class="patient-details">
-                    <table>
-                        <tr>
-                            <td>Given name:</td>
-                            <td>{{profile.first_name}}</td>
-                        </tr>
-                        <tr>
-                            <td>Family name:</td>
-                            <td>{{profile.last_name}}</td>
-                        </tr>
-                        <tr>
-                            <td>Email:</td>
-                            <td>{{profile.email}}</td>
-                        </tr>
-                        <tr>
-                            <td>Date of birth:</td>
-                            <td>{{profile.DOB}}</td>
-                        </tr>
-                        <tr>
-                            <td>Gender:</td>
-                            <td>{{profile.gender}}</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="patient-details-img">
-                    <img src={{profile.profile_picture}}>
-                </div>
+        <!--patient's details-->
+        <div class="patient-details-container">
+            <div class="patient-details">
+                <table>
+                    <tr>
+                        <td>Given name:</td>
+                        <td>{{profile.first_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Family name:</td>
+                        <td>{{profile.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>{{profile.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of birth:</td>
+                        <td>{{profile.DOB}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>{{profile.gender}}</td>
+                    </tr>
+                </table>
             </div>
-            
-            <!--patient support message-->
-            <div class="patient-message-input">
-                <h3>Your support message for {{profile.first_name}}:</h3>
-                <textarea placeholder= "{{profile.support_message}}" name = "support_message" onchange="enable_changes()"></textarea>    
+            <div class="patient-details-img">
+                <img src={{profile.profile_picture}}>
             </div>
         </div>
+        
+        <!--clinician's notes-->
+        <div class="clinician-input">
+            <!--header and view history of notes-->
+            <h3 id="note-input-header">
+                <form action="/clinician/patient_view/notes" method="GET">
+                    Enter a note: &nbsp;
+                    <input type="hidden" name="patientID" value={{profile._id}}>
+                    <input type="submit" value = "+ view notes history">
+                </form>
+            </h3>
+            
+            <!--inputs a note for the clinician-->
+            <form action="/clinician/patient_view/notes" method="POST">
+                <input type="hidden" name="patientID" value={{profile._id}}>
+                <textarea name = "clinician_note"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 
-        <div class="patient-view-container-child">
-            <h2>Patient Data Requirements</h2>
+    <div class="patient-view-container-child">
+        <h2>Patient Data Requirements and Support Message</h2>
 
+        <form action="/clinician/patient_view" method="POST">
+            <!--patient requirements-->
             <div class="patient-requirements">            
                 <table>
                     <tr>
@@ -114,26 +124,20 @@
                 </table>
 
             </div>
-</form>
-            <div class="clinician-input">
-                <h3 id="note-input-header">
-                    Enter a note: &nbsp;
-                    
-                    <form action="/clinician/patient_view/notes" method="GET" id="view-notes">
-                        <input type="hidden" name="patientID" value={{profile._id}}>
-                        <input type="submit" value = "+ view notes history">
-                    </form>
-                </h3>
-                
-                <!--inputs a note for the clinician-->
-                <form action="/clinician/patient_view/notes" method="POST">
-                    <input type="hidden" name="patientID" value={{profile._id}}>
-                    <textarea name = "clinician_note"></textarea>
-                    <input type="submit" value="Submit">
-                </form>
+
+            <!--patient support message-->
+            <div class="patient-message-input">
+                <h3>Your support message for {{profile.first_name}}:</h3>
+                <textarea placeholder= "{{profile.support_message}}" name = "support_message" onchange="enable_changes()"></textarea>    
             </div>
-        </div>
+
+            <!--save changes-->
+            <input type="submit" id = "save-changes" value = "Save changes" disabled>
+            <input type="hidden" name ="update" value = "checked"> 
+            <input type="hidden" name ="patientID" value = {{profile._id}}>
+        </form>
     </div>
+</div>
 
 <div class="patient-view-history">
     <h2>Patient History</h2>

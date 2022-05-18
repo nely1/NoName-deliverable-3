@@ -1,6 +1,7 @@
 const exphbs = require('express-handlebars')
 const express = require('express')
 const app = express()
+const moment = require('moment') 
 
 app.engine(
     'hbs',
@@ -8,7 +9,6 @@ app.engine(
         defaultlayout: 'main',
         extname: 'hbs',
         helpers: {
-
             // Helper that determines if the recorded health data is within safety thresholds
             checkThreshold: function (data_val, min_threshold, max_threshold){
                 if (data_val < min_threshold || data_val > max_threshold){
@@ -31,6 +31,12 @@ app.engine(
                     return true
                 }
                 return false
+            },
+
+            // Helper that formats dates and times given a date and format
+            formatDate: function(date, format){
+                var mmnt = moment(date)
+                return mmnt.format(format)
             },
         }
     }

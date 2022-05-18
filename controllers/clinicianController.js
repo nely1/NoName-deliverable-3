@@ -10,7 +10,7 @@ const display = async(req, res, next) => {
     }
     today.setUTCHours(14,0,0,0);
 
-    const thisClinician = await clinician.findById("6282fa0e54139c4ed1b70231").lean()
+    const thisClinician = req.user
 
     let patientArray = thisClinician.patients
     

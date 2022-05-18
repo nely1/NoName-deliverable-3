@@ -11,10 +11,12 @@
             <th>Time</th>
             <th>Notes</th>
         </tr>
+        {{#each notes}}
         <tr>
-            <td>25/04/22</td>
-            <td>10:45</td>
-            <td>One week follow up, Pat's health condition....</td>
+            <td>{{formatDate this.datetime "DD/MM/YYYY"}}</td>
+            <td>{{formatDate this.datetime "hh:mm A"}}</td>
+            <td>{{this.note}}</td>
         </tr>
+        {{/each}}
     </table>
 </div>
