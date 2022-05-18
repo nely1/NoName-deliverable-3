@@ -17,83 +17,126 @@
 
 <div class="band">
     <!--Will need to iterate this div over data so each row is displayed by one card-->
-    <div class="data-card">
-        <h2>06/01/2022, Thursday</h2>
-        <div class="data-card-content">
-            <!--If data non-existent, will need to have N/A text-->
-            <!--Glucose-->
-            <div class="data-card-entry">
-                <h3 class="data-card-value">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
-                    </svg>
-                    Glucose:
-                    <span class="blue-text">7.8</span>
-                    mmol/L
-                </h3>
-                <p class="data-card-comment">
-                    Comment: I had a family gathering.
-                </p>
-            </div>
+    {{#each allData}}
+        <div class="data-card">
+            <h2>{{formatDate this.datetime "DD/MM/YYYY, dddd"}}</h2>
+            <div class="data-card-content">
+                <!--If data non-existent, will need to have N/A text-->
+                <!--Glucose-->
+                <div class="data-card-entry">
+                    <h3 class="data-card-value">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6.8 11a6 6 0 1 0 10.396 0l-5.197 -8l-5.2 8z" />
+                        </svg>
+                        Glucose:
+                        {{#if this.glucoseID.glucose_data}}
+                            <span class="blue-text">{{this.glucoseID.glucose_data}}</span>
+                            mmol/L
+                        {{else}}
+                            -
+                        {{/if}}
+                    </h3>
+                    <p class="data-card-comment">
+                        {{#if this.glucoseID}}
+                            {{#if this.glucoseID.comments}}
+                                {{this.glucoseID.comments}}
+                            {{else}}
+                                <span class="no-comment-text">No comment</span>
+                            {{/if}}
+                        {{/if}}
+                    </p>
+                </div>
 
-            <!--Weight-->
-            <div class="data-card-entry">
-                <h3 class="data-card-value">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wiper" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 9l5.5 5.5a5 5 0 0 1 7 0l5.5 -5.5a12 12 0 0 0 -18 0" />
-                        <path d="M9 10l3 3a7 5 0 7 1 7 0l15.5 -5.5a12 6 0 0 0 -18 0" />
-                        <path d ="M22,2 2,2 2,22 22,22 22,2" />
-                    </svg>
-                    Weight:
-                    <span class="blue-text">78</span>
-                    kg
-                </h3>
-                <p class="data-card-comment">
-                    <span class="no-comment-text">No comment.</span>
-                </p>
-            </div>
+                <!--Weight-->
+                <div class="data-card-entry">
+                    <h3 class="data-card-value">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wiper" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 9l5.5 5.5a5 5 0 0 1 7 0l5.5 -5.5a12 12 0 0 0 -18 0" />
+                            <path d="M9 10l3 3a7 5 0 7 1 7 0l15.5 -5.5a12 6 0 0 0 -18 0" />
+                            <path d ="M22,2 2,2 2,22 22,22 22,2" />
+                        </svg>
+                        Weight:
+                        {{#if this.weightID.weight_data}}
+                            <span class="blue-text">{{this.weightID.weight_data}}</span>
+                            kg
+                        {{else}}
+                            -
+                        {{/if}}
+                    </h3>
+                    <p class="data-card-comment">
+                        {{#if this.weightID}}
+                            {{#if this.weightID.comments}}
+                                {{this.weightID.comments}}
+                            {{else}}
+                                <span class="no-comment-text">No comment</span>
+                            {{/if}}
+                        {{/if}}
+                    </p>
+                </div>
 
-            <!--Insulin doses-->
-            <div class="data-card-entry">
-                <h3 class="data-card-value">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-vaccine" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M17 3l4 4" />
-                        <path d="M19 5l-4.5 4.5" />
-                        <path d="M11.5 6.5l6 6" />
-                        <path d="M16.5 11.5l-6.5 6.5h-4v-4l6.5 -6.5" />
-                        <path d="M7.5 12.5l1.5 1.5" />
-                        <path d="M10.5 9.5l1.5 1.5" />
-                        <path d="M3 21l3 -3" />
-                    </svg>
-                    Insulin doses:
-                    <span class="blue-text">2</span>
-                </h3>
-                <p class="data-card-comment">
-                    Comment: I did not drink as much water today
-                </p>
-            </div>
+                <!--Insulin doses-->
+                <div class="data-card-entry">
+                    <h3 class="data-card-value">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-vaccine" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M17 3l4 4" />
+                            <path d="M19 5l-4.5 4.5" />
+                            <path d="M11.5 6.5l6 6" />
+                            <path d="M16.5 11.5l-6.5 6.5h-4v-4l6.5 -6.5" />
+                            <path d="M7.5 12.5l1.5 1.5" />
+                            <path d="M10.5 9.5l1.5 1.5" />
+                            <path d="M3 21l3 -3" />
+                        </svg>
+                        Insulin doses:
+                        {{#if this.insulinID.insulin_data}}
+                            <span class="blue-text">{{this.insulinID.insulin_data}}</span>
+                            kg
+                        {{else}}
+                            -
+                        {{/if}}
+                    </h3>
+                    <p class="data-card-comment">
+                        {{#if this.insulinID}}
+                            {{#if this.insulinID.comments}}
+                                {{this.insulinID.comments}}
+                            {{else}}
+                                <span class="no-comment-text">No comment</span>
+                            {{/if}}
+                        {{/if}}
+                    </p>
+                </div>
 
-            <!--Exercise-->
-            <div class="data-card-entry">
-                <h3 class="data-card-value">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-walk" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M13 3 a 1.5 1.5 0 1 0 0.5 0" />
-                        <path d ="M7 21l4 -7" />
-                        <path d="M16 21l-2 -4l-3 -3l1 -6" />
-                        <path d="M6 12l2 -3l4 -1l3 3l3 1" />
-                    </svg>
-                    Exercise:
-                    <span class="blue-text">7926</span>
-                    steps
-                </h3>
-                <p class="data-card-comment">
-                    <span class="no-comment-text">No comment.</span>
-                </p>
+                <!--Exercise-->
+                <div class="data-card-entry">
+                    <h3 class="data-card-value">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-walk" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M13 3 a 1.5 1.5 0 1 0 0.5 0" />
+                            <path d ="M7 21l4 -7" />
+                            <path d="M16 21l-2 -4l-3 -3l1 -6" />
+                            <path d="M6 12l2 -3l4 -1l3 3l3 1" />
+                        </svg>
+                        Exercise:
+                        {{#if this.exerciseID.exercise_data}}
+                            <span class="blue-text">{{this.exerciseID.exercise_data}}</span>
+                            kg
+                        {{else}}
+                            -
+                        {{/if}}
+                    </h3>
+                    <p class="data-card-comment">
+                        {{#if this.exerciseID}}
+                            {{#if this.exerciseID.comments}}
+                                {{this.exerciseID.comments}}
+                            {{else}}
+                                <span class="no-comment-text">No comment</span>
+                            {{/if}}
+                        {{/if}}
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    {{/each}}
 </div>

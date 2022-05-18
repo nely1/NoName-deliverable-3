@@ -3,11 +3,11 @@ const patient = require('../models/patientModel')
 const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => {
-    thisPatient = req.user
+    //daysOfWeeks = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday', 'Sunday']
 
-    daysOfWeeks = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday', 'Sunday']
-
-    data = await summary.find({patientID: thisPatient._id}).lean().populate('glucoseID insulinID weightID exerciseID')
+    data = await summary.find({patientID: req.user._id}).lean().populate('glucoseID insulinID weightID exerciseID')
+    
+    /*
     dates = []
 
     for (var date in data) {
@@ -19,8 +19,10 @@ const display = async(req, res, next) => {
         dateString = day + '/' + month +'/' + year + ', ' + dayOfWeek
         dates.push(dateString)
     }
+    */
+    //console.log(data)
 
-    res.render('view_data', {view_data: "active", times: dates, info: data})
+    res.render('view_data', {view_data: "active", allData: data.reverse()})
 } 
 
 const filter = async(req, res, next) => {

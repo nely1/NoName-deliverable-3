@@ -11,12 +11,13 @@
             <th>Time</th>
             <th>Notes</th>
         </tr>
+        <!--iterate over all notes and display-->
         {{#each notes}}
-        <tr>
-            <td>{{formatDate this.datetime "DD/MM/YYYY"}}</td>
-            <td>{{formatDate this.datetime "hh:mm A"}}</td>
-            <td>{{this.note}}</td>
-        </tr>
+            <tr>
+                <td>{{formatDate this.datetime "DD/MM/YYYY"}}</td>
+                <td>{{formatDate this.datetime "hh:mm A"}}</td>
+                <td>{{this.note}}</td>
+            </tr>
         {{/each}}
     </table>
 </div>
