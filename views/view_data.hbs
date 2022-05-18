@@ -10,7 +10,11 @@
 <div id="week-selector">
     <form method="POST">
         <label for="data-week-calendar">Select a week:&nbsp;</label>
-        <input name="week" type="week" id="data-week-calendar">
+        {{#if prevEntered}}
+            <input name="week" type="week" id="data-week-calendar" value={{prevEntered}}>
+        {{else}}
+            <input name="week" type="week" id="data-week-calendar">
+        {{/if}}
         <input type="submit" value="view data">
     </form>
 </div>
