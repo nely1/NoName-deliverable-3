@@ -2,6 +2,9 @@ const patient = require('../models/patientModel')
 const clinicianNote = require('../models/clinicianNoteModel')
 
 const display = async(req, res, next) => {
+    
+
+    console.log("test")
     res.render('patient_notes')
 }
 

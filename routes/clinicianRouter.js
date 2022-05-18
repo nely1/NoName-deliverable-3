@@ -57,7 +57,6 @@ clinicianRouter.post('/patient_view', patientViewController.display)
 
 const patientNotesController = require('../controllers/patientNotesController')
 clinicianRouter.get('/patient_view/notes', patientNotesController.display)
-
 clinicianRouter.post('/patient_view/notes', patientNotesController.insertNote)
 
 const aboutUsController = require('../controllers/aboutUsController')

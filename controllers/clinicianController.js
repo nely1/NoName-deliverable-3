@@ -36,7 +36,7 @@ const display = async(req, res, next) => {
             patientDetails[pat].summary = summaryDetails
         }
     }
-    console.log(patientDetails[0].summary.weightID) 
+    // console.log(patientDetails[0].summary.weightID) 
     res.render('dashboard', {patientData: patientDetails, dashboard: "active",summaryData: summaries})
 } 
 

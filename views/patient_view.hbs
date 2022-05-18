@@ -118,9 +118,9 @@
             <div class="clinician-input">
                 <h3 id="note-input-header">
                     Enter a note: &nbsp;
-                    <!-- need help for this -->
-                    <form action="/clinician/patient_view/notes" method="POST">
-                        <input type="hidden">
+                    
+                    <form action="/clinician/patient_view/notes" method="GET" id="view-notes">
+                        <input type="hidden" name="patientID" value={{profile._id}}>
                         <button>
                             + view notes history
                         </button>
@@ -129,7 +129,7 @@
                 
                 <!--inputs a note for the clinician-->
                 <form action="/clinician/patient_view/notes" method="POST">
-                    <input type="hidden" name="patientID" value = {{profile._id}}>
+                    <input type="hidden" name="patientID" value={{profile._id}}>
                     <textarea name = "clinician_note"></textarea>
                     <input type="submit" value="Submit">
                 </form>
