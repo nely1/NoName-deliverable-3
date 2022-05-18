@@ -18,6 +18,8 @@ const insert = async(req, res) => {
         role: req.body.role,
         patientID: 1001 + await patient.countDocuments({}),
         profile_picture: "\\images\\" + req.file.filename,
+        registry_date: new Date().getUTCDate(),
+        notes:[],
 
         req_glucose: true,
         req_insulin: true,

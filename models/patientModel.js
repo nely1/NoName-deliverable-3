@@ -27,7 +27,7 @@ const schema = new mongoose.Schema({
     req_weight: Boolean,
     support_message: String,
     notes: [{type: mongoose.Schema.Types.ObjectId, ref: 'clinicianNoteModel'}],
-    registration_date: {type: Date, required: true}
+    registry_date: {type: Date, required: true}
 }) 
 
 // Password comparison function
