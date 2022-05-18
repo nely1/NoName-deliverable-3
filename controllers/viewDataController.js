@@ -4,6 +4,17 @@ const patient = require('../models/patientModel')
 const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => {
+    //display data for the current week
+    today = new Date()
+    if (today.getUTCHours() < 14) {
+        today.setUTCDate(today.getUTCDate()-1);
+    }
+    today.setUTCHours(14,0,0,0)
+    dow = today.getUTCDay(today)
+    start = today.setUTCDate(today.getUTCDate() - dow)
+    
+    finish = new Date(start)
+    finish.setDate(finish.getDate() + 7)
     data = await summary.find({patientID: req.user._id}).lean().populate('glucoseID insulinID weightID exerciseID')
 
     res.render('view_data', {view_data: "active", allData: data})
@@ -30,11 +41,26 @@ const filter = async(req, res, next) => {
 
         finish = new Date(start)
         finish.setDate(finish.getDate() + 7)
+
         
         // use start and finish to filter out data that has been entered between those times
         data = await summary.find({patientID: req.user._id,  datetime: { $gte: start, $lt: finish }}).lean().populate('glucoseID insulinID weightID exerciseID')
     }
+
+    // if no week has been specified display the data for the current week
     else {
+        today = new Date()
+        if (today.getUTCHours() < 14) {
+            today.setUTCDate(today.getUTCDate()-1);
+        }
+        today.setUTCHours(14,0,0,0)
+
+        dow = today.getUTCDay(today)
+        start = today.setUTCDate(today.getUTCDate() - dow)
+        
+        finish = new Date(start)
+        finish.setDate(finish.getDate() + 7)
+
         data = await summary.find({patientID: req.user._id}).lean().populate('glucoseID insulinID weightID exerciseID')
     }
     res.render('view_data', {view_data: "active", allData: data, prevEntered: yearWeek})
