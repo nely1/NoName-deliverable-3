@@ -4,7 +4,7 @@ const patient = require('../models/patientModel')
 const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => {
-    //display data for the current week
+    //display data for the current week as default
     today = new Date()
     if (today.getUTCHours() < 14) {
         today.setUTCDate(today.getUTCDate()-1);

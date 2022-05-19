@@ -43,6 +43,7 @@ const display = async(req, res, next) => {
 
 const insert = async(req, res) => {
     // initialise the day in melbourne time
+    
     today = new Date()
     if (today.getUTCHours() < 14) {
         today.setUTCDate(today.getUTCDate()-1);
@@ -58,7 +59,7 @@ const insert = async(req, res) => {
     
     if (req.body.data_type == 'Glucose') {
             new_data = new glucoseData({
-            datetime: new Date(),
+            datetime: today,
             glucose_data: req.body.data,
             comments: req.body.comments,
             patientID: thisPatient
@@ -67,7 +68,7 @@ const insert = async(req, res) => {
 
     else if (req.body.data_type == 'Insulin') {
             new_data = new insulinData({
-            datetime: new Date(),
+            datetime: today,
             insulin_data: req.body.data,
             comments: req.body.comments,
             patientID: thisPatient
@@ -76,7 +77,7 @@ const insert = async(req, res) => {
 
     else if (req.body.data_type == 'Weight') {
             new_data = new weightData({
-            datetime: new Date(),
+            datetime: today,
             weight_data: req.body.data,
             comments: req.body.comments,
             patientID: thisPatient
@@ -84,7 +85,7 @@ const insert = async(req, res) => {
     }
     else {
             new_data = new exerciseData({
-            datetime: new Date(),
+            datetime: today,
             exercise_data: req.body.data,
             comments: req.body.comments,
             patientID: thisPatient

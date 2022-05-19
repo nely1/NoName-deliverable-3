@@ -5,6 +5,11 @@ const display = (req, res) => {
 }
 
 const insert = async(req, res) => {
+    today = new Date()
+    if (today.getUTCHours() < 14) {
+        today.setUTCDate(today.getUTCDate()-1);
+    }
+    today.setUTCHours(14,0,0,0)
 
     const new_patient = new patient({
         first_name: req.body.first_name,
@@ -18,7 +23,7 @@ const insert = async(req, res) => {
         role: req.body.role,
         patientID: 1001 + await patient.countDocuments({}),
         profile_picture: "\\images\\" + req.file.filename,
-        registry_date: new Date().getUTCDate(),
+        registry_date: today,
         notes:[],
 
         req_glucose: true,

@@ -11,11 +11,11 @@
     </div>
     <div class="settings-entry">
         <h3>Email:</h3>
-        <input type="text" placeholder={{profile.email}} name="acc_email">
+        <input type="text" placeholder={{profile.email}} name="acc_email" readonly="readonly">
     </div>
     <div class="settings-entry">
         <h3>Username:</h3>
-        <input type="text" placeholder={{profile.username}} name="acc_username">
+        <input type="text" placeholder={{profile.username}} name="acc_username" readonly="readonly">
     </div>
     <div class="settings-entry">
         <h3>Gender:</h3>
@@ -27,10 +27,11 @@
     </div>
     <div class="settings-entry">
         <h3>Text bio:</h3>
-        <textarea name="acc_bio" placeholder={{profile.textbio}}></textarea> 
+        <textarea name="acc_bio" placeholder={{profile.textbio}} readonly="readonly"></textarea> 
     </div>
     <div class="settings-entry">
         <h3>Reset your password</h3>
-        <a href="#">Change your password ></a>
+        <input id="password-change" type="password" placeholder="Enter new password" name="password">
+        <button>Reset</button>
     </div>
 </div>

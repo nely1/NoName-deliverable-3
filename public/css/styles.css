@@ -354,20 +354,10 @@ account settings page styling
 .settings-entry input{
     border: none;
     outline: none;
-    border-bottom: 1px solid black;
     font-size: 20px;
     margin-top: 20px;
-}
-
-.settings-entry a{
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-.settings-entry a:hover{
-    text-decoration: underline;
+    border: none;
+    text-align: center;
 }
 
 .settings-entry textarea{
@@ -390,7 +380,14 @@ account settings page styling
     margin-bottom: 50px;
 }
 
+#password-change{
+    border-bottom: 1px solid black;
+}
 
+#password-change::placeholder{
+    color: grey;
+    text-align: center;
+}
 
 /*******************************************************************************
 generic bands and cards styling for patientUI

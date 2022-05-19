@@ -65,5 +65,7 @@ clinicianRouter.get('/about_us', aboutUsController.display)
 const aboutDiabetesController = require('../controllers/aboutDiabetesController')
 clinicianRouter.get('/about_diabetes', aboutDiabetesController.display)
 
+const settingsController = require('../controllers/settingsController')
+clinicianRouter.get('/settings', settingsController.display)
 
 module.exports = clinicianRouter
