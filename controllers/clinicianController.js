@@ -22,23 +22,23 @@ const display = async(req, res, next) => {
             // add every patients' details to patientDetails
             // add every summary that is done today and by a patient
             // if the summary doesnt exist for a patient today add null to summaries
-
+        
             details = await patient.findById(patientArray[pat]).lean()
             patientDetails.push(details)
-
+        
             summaryDetails = await summary.findOne({datetime: {$gte : today}, patientID: patientArray[pat]},{glucoseID: true, insulinID: true, weightID: true, exerciseID: true, _id: false})
             .lean()
             .populate('glucoseID insulinID weightID exerciseID') 
-
+            
             if (!summaryDetails) {
                 patientDetails[pat].summary = new summary()
-
+                
             }
             else {
                 patientDetails[pat].summary = summaryDetails
             }
         }
-    }   
+}   
     res.render('dashboard', {patientData: patientDetails, dashboard: "active",summaryData: summaries})
 } 
 

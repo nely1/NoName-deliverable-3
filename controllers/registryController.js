@@ -18,7 +18,7 @@ const insert = async(req, res) => {
         role: req.body.role,
         patientID: 1001 + await patient.countDocuments({}),
         profile_picture: "\\images\\" + req.file.filename,
-        registry_date: new Date().getUTCDate(),
+        registry_date: new Date,
         notes:[],
 
         req_glucose: true,
@@ -38,7 +38,7 @@ const insert = async(req, res) => {
     const thisClinician = req.user
     await thisClinician.patients.push(new_patient._id)
     await thisClinician.save()
-    await res.render('patient_view', {profile: new_patient.toJSON()})
+    res.render('patient_view', {profile: new_patient.toJSON()})
 }
 
 module.exports = {

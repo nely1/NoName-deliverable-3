@@ -27,10 +27,23 @@
     </div>
     <div class="settings-entry">
         <h3>Text bio:</h3>
-        <textarea name="acc_bio" placeholder={{profile.textbio}}></textarea> 
+        <textarea name="acc_bio" placeholder="{{profile.textbio}}"></textarea> 
     </div>
     <div class="settings-entry">
         <h3>Reset your password</h3>
         <a href="#">Change your password ></a>
     </div>
 </div>
+
+<script>
+    function check() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>
