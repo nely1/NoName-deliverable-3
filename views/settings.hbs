@@ -31,20 +31,30 @@
     </div>
     <div class="settings-entry">
         <h3>Reset your password</h3>
-        <input id="password-change" type="password" placeholder="Enter new password" name="password">
-        <button>Reset</button>
+        <form action="/patient/settings" method="POST"> 
+            <input id="password-change" type="password" placeholder="Enter new password" name="password" onchange="enable_changes()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
+            <input type="submit" id="reset-password" value="Reset" disabled >
+        </form>
+        <button onclick="change_mode()" id="password-mode">Show password</button>
     </div>
 </div>
 
+
 <script>
-    function check() {
-  if (document.getElementById('password').value ==
-    document.getElementById('confirm_password').value) {
-    document.getElementById('message').style.color = 'green';
-    document.getElementById('message').innerHTML = 'matching';
-  } else {
-    document.getElementById('message').style.color = 'red';
-    document.getElementById('message').innerHTML = 'not matching';
-  }
-}
+    function change_mode() {
+        var mode = document.getElementById('password-change').type
+
+        if (mode == "text") {
+            document.getElementById('password-change').type = "password"
+            document.getElementById('password-mode').innerHTML = "Show password"
+        }
+        else {
+            document.getElementById('password-change').type = "text"
+            document.getElementById('password-mode').innerHTML = "Hide password"
+        }
+    }
+
+    function enable_changes() {
+        document.getElementById('reset-password').disabled = false;
+    }
 </script>

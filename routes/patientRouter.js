@@ -54,5 +54,6 @@ patientRouter.get('/about_diabetes', aboutDiabetesController.display)
 
 const settingsController = require('../controllers/settingsController')
 patientRouter.get('/settings', settingsController.display)
+patientRouter.post('/settings',settingsController.changeDetails)
 
 module.exports = patientRouter

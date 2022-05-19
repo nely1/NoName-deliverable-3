@@ -1,17 +1,20 @@
+const patient = require('../models/patientModel')
 
 const display = async(req, res, next) => { 
     res.render('settings', {profile: req.user.toJSON(), settings: "active"})
 }
 
 const changeDetails = async(req, res, next) => {
-    newDetails = req.body
+    newPassword = req.body.password
 
-    newPassword = newDetails.newPassword
+    thisPatient = await patient.findById(req.user._id)
 
-    user = req.user
+    thisPatient.password = newPassword
 
-    user.password = newPassword
+    await thisPatient.save()
+    
 
+    res.render('settings', {profile: req.user.toJSON(), settings: "active"})
 }
 
 module.exports = {
