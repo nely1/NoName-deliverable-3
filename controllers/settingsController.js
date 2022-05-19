@@ -12,7 +12,7 @@ const changeDetails = async(req, res, next) => {
     thisPatient.password = newPassword
 
     await thisPatient.save()
-    
+    console.log(newPassword)
 
     res.render('settings', {profile: req.user.toJSON(), settings: "active"})
 }
