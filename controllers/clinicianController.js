@@ -1,9 +1,9 @@
 const patient = require('../models/patientModel')
-const clinician = require('../models/clinicianModel')
 const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => { 
 
+    // Convert 12am Melbourne time into UTC time using UTC+10, a patient can record new data every 2pm UTC time.
     today = new Date()
     if (today.getUTCHours() < 14) {
         today.setUTCDate(today.getUTCDate()-1);
@@ -13,15 +13,13 @@ const display = async(req, res, next) => {
     const thisClinician = req.user
 
     let patientArray = thisClinician.patients
-    
     let patientDetails = []
-    let summaries = []
 
     if (patientArray) {
         for (var pat in patientArray) {
             // add every patients' details to patientDetails
             // add every summary that is done today and by a patient
-            // if the summary doesnt exist for a patient today add null to summaries
+            // if the summary doesn't exist for a patient today add null to summaries
         
             details = await patient.findById(patientArray[pat]).lean()
             patientDetails.push(details)
@@ -38,8 +36,8 @@ const display = async(req, res, next) => {
                 patientDetails[pat].summary = summaryDetails
             }
         }
-}   
-    res.render('dashboard', {patientData: patientDetails, dashboard: "active",summaryData: summaries})
+    }   
+    res.render('dashboard', {patientData: patientDetails, dashboard: "active"})
 } 
 
 module.exports = {

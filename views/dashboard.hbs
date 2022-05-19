@@ -25,8 +25,10 @@
             <th>Exercise (steps)</th>
         </tr>
 
+        <!--fill table with patients' data from today-->
         {{#each patientData}}
             <tr>
+                <!--view patient button-->
                 <td>
                     <form action="/clinician/patient_view" method="POST">
                         <input type="hidden" name="patientID" value = {{this._id}}>
@@ -39,6 +41,7 @@
                         </button>
                     </form>
                 </td>
+
                 <td>{{this.patientID}}</td>
                 <td>{{this.first_name}} {{this.last_name}}</td>
 

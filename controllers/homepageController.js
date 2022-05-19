@@ -15,7 +15,6 @@ const display = async(req, res, next) => {
     today.setUTCHours(14,0,0,0);
 
     // Check if patient has recorded data for today in UTC time
-    //const today_glucose = await glucoseData.findOne({datetime: {$gte : today}}).lean() 
     const thisPatient = req.user
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean().populate('glucoseID insulinID weightID exerciseID')
     

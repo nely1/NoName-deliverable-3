@@ -11,6 +11,7 @@ const display = async(req, res, next) => {
 
 const insertNote = async(req, res) => {
 
+    // create new note according to input from request
     const new_note = new clinicianNote({
         patientID: req.body.patientID,
         note: req.body.clinician_note,

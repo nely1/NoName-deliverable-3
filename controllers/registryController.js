@@ -5,12 +5,14 @@ const display = (req, res) => {
 }
 
 const insert = async(req, res) => {
+    // 
     today = new Date()
     if (today.getUTCHours() < 14) {
         today.setUTCDate(today.getUTCDate()-1);
     }
     today.setUTCHours(14,0,0,0)
 
+    // create new patient object
     const new_patient = new patient({
         first_name: req.body.first_name,
         last_name: req.body.last_name,

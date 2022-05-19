@@ -11,8 +11,8 @@ var storage = multer.diskStorage({
         cb(null, path)
     }
   })
-  var upload = multer({ storage: storage })
 
+var upload = multer({ storage: storage })
 
 // Authentication middleware
 const isAuthenticated = (req, res, next) => {

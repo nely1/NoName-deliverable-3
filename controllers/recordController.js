@@ -16,6 +16,7 @@ const display = async(req, res, next) => {
     today.setUTCHours(14,0,0,0);
 
     const thisPatient = req.user
+
     // check if patient has already entered data for today
     // if not create a summary object for data to be entered in
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean().populate('glucoseID insulinID weightID exerciseID')
@@ -43,19 +44,15 @@ const display = async(req, res, next) => {
 
 const insert = async(req, res) => {
     // initialise the day in melbourne time
-    
     today = new Date()
     if (today.getUTCHours() < 14) {
         today.setUTCDate(today.getUTCDate()-1);
     }
     today.setUTCHours(14,0,0,0);
 
-    // Pat's ID is hardcoded until login feature is implemented, links data recorded to Pat
-    
     let new_data 
     const thisPatient = req.user
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean()
-
     
     if (req.body.data_type == 'Glucose') {
             new_data = new glucoseData({
@@ -100,9 +97,8 @@ const insert = async(req, res) => {
     })     
 
     let string_id = req.body.data_type.toLowerCase() + "ID"
-   
 
-    // Store each glucose data id in patient, useful for view data which will be implemented in deliverable 3
+    
     await summaryData.updateOne({_id: today_data._id},{$set:{[string_id]: new_data._id}})
     return res.redirect('/patient/record')
 }

@@ -7,6 +7,7 @@
     View your data
 </h1>
 
+<!--week picker using html's week type-->
 <div id="week-selector">
     <form method="POST">
         <label for="data-week-calendar">Select a week:&nbsp;</label>
@@ -20,12 +21,11 @@
 </div>
 
 <div class="band">
-    <!--Will need to iterate this div over data so each row is displayed by one card-->
+    <!--iterate over patient's past data and display a card for each day-->
     {{#each allData}}
         <div class="data-card">
             <h2>{{formatDate this.datetime "DD/MM/YYYY, dddd"}}</h2>
             <div class="data-card-content">
-                <!--If data non-existent, will need to have N/A text-->
                 <!--Glucose-->
                 <div class="data-card-entry">
                     <h3 class="data-card-value">

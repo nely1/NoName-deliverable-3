@@ -23,9 +23,6 @@
                 <li><a href="/patient/about_us" class = {{about_us}}>About us</a></li>
                 <li><a href="/patient/settings" class = {{settings}}>Account settings</a></li>
 
-                <!-- Original code
-                <li id="logout"><a href="#">Logout</a></li>
-                -->
                 <li>
                     <form method="POST" action="/login_select/logout">
                         <button class = "logout">Logout</button>
@@ -123,16 +120,6 @@
                             Account settings
                         </a></li>
                         
-                        <!-- Original code
-                            <li><a href = "#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
-                                <path d="M7 12h14l-3 -3m0 6l3 -3" />
-                            </svg>
-                            Logout
-                        </a></li>
-                        -->
                         <li><form method="POST" action="/login/logout">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

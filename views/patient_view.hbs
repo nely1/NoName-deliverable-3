@@ -150,6 +150,7 @@
                 <th>Insulin doses</th>
                 <th>Exercise (steps)</th>
             </tr>
+            <!--iterate over patient's past data and display in table-->
             {{#each allData}}
                 <tr>
                     <td>{{formatDate this.datetime "DD/MM/YYYY"}}</td>
@@ -190,5 +191,5 @@
 <script>
     function enable_changes() {
         document.getElementById('save-changes').disabled = false;
-}
+    }
 </script>

@@ -1,6 +1,7 @@
 <form action="/clinician/register" enctype="multipart/form-data" method="POST" id="register-form">
     <input type="hidden" name = "role" value = "patient">  
 
+    <!--new patient's details-->
     <div class="band">
         <div class="register-entry">
             <label>First Name:</label>
@@ -34,9 +35,9 @@
             <label>Upload a profile picture:</label>
             <input type="file" name="myImage" required accept="image/png, image/gif, image/jpeg">
         </div>
-
     </div>
 
+    <!--new patient's biography-->
     <div class="register-container" id="patient-bio-input">
         <label>Patient Bio:</label><br>
         <textarea id="text-entry" name="bio"></textarea>
