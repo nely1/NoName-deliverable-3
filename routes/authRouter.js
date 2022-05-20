@@ -3,14 +3,15 @@ const authRouter = express.Router()
 const passport = require('passport')
 const { body, validationResult, check } = require('express-validator')
 
+// Login page for clinicians
 authRouter.get('/clinician', (req, res) => {
     res.render('login', { flash: req.flash('error'), title: 'Login', userType: "Clinician"})
 })
 
+// Login page for patients
 authRouter.get('/patient', (req, res) => {
     res.render('login', { flash: req.flash('error'), title: 'Login' , userType: "Patient"})
 })
-
 
 // Handle clinician login
 authRouter.post('/clinician',
@@ -21,7 +22,6 @@ authRouter.post('/clinician',
     })
 )
 
-
 // Handle patient login
 authRouter.post('/patient',
     body("username").escape(),
@@ -31,7 +31,6 @@ authRouter.post('/patient',
     })
 )
 
-
 // Handle logout
 authRouter.post('/logout', (req, res) => {
     req.logout()
@@ -39,8 +38,3 @@ authRouter.post('/logout', (req, res) => {
 })
 
 module.exports = authRouter
-
-
-/*For simplicity, we will put all of the routes and functions from this tutorial inside this file.
-You may want to move the authentication middleware and remove the dummy authenticated page route GET
-/ from this file for your actual project.*/

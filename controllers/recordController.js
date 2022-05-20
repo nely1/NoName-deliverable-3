@@ -1,5 +1,4 @@
 const glucoseData = require('../models/glucoseModel');
-const patient = require('../models/patientModel')
 const summaryData = require('../models/summaryModel')
 const insulinData = require('../models/insulinModel')
 const exerciseData = require('../models/exerciseModel')
@@ -98,7 +97,6 @@ const insert = async(req, res) => {
 
     let string_id = req.body.data_type.toLowerCase() + "ID"
 
-    
     await summaryData.updateOne({_id: today_data._id},{$set:{[string_id]: new_data._id}})
     return res.redirect('/patient/record')
 }

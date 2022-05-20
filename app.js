@@ -2,6 +2,8 @@ const exphbs = require('express-handlebars')
 const express = require('express')
 const app = express()
 const moment = require('moment') 
+const flash = require('express-flash')
+const session = require('express-session')
 
 app.engine(
     'hbs',
@@ -39,16 +41,12 @@ app.engine(
                 return mmnt.format(format)
             },
         }
-    }
-    )
+    })
 )
 app.set('view engine', 'hbs')
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-
-
-/*---------------------------------------------- New code start -----------------------------------------------------*/
 
 //Change header when redirected from patient or clinician pages
 app.all('/*', (req, res, next) => {
@@ -56,15 +54,11 @@ app.all('/*', (req, res, next) => {
     next(); 
 });
 
-const flash = require('express-flash')
-const session = require('express-session')
-
+// Code for login sessions adapted from INFO30005 tutorial 9
 // Flash messages for failed logins, and (possibly) other success/error messages
 app.use(flash())
-// Track authenticated users through login sessions
 app.use(
     session({
-        // The secret used to sign session cookies (ADD ENV VAR)
         secret: process.env.SESSION_SECRET || 'keyboard cat',
         name: 'spenk-diabetes', // The cookie name
         saveUninitialized: false,
@@ -78,7 +72,7 @@ app.use(
 )
 
 if (app.get('env') === 'production') {
-    app.set('trust proxy', 1); // Trust first proxy
+    app.set('trust proxy', 1);
 }
 
 // Initialise Passport.js
@@ -107,8 +101,6 @@ app.get('/about_diabetes', (req, res) => {
 // Load authentication router
 const authRouter = require('./routes/authRouter')
 app.use('/login_select', authRouter)
-
-/*------------------------------------------------- New code end --------------------------------------------------*/
 
 //Router for patients
 const patientRouter = require('./routes/patientRouter')

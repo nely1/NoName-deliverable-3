@@ -1,6 +1,4 @@
 const { min } = require('moment');
-const glucoseData = require('../models/glucoseModel');
-const patient = require('../models/patientModel')
 const summary = require('../models/summaryModel')
 
 const display = async(req, res, next) => {

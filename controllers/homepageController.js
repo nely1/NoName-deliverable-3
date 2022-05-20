@@ -1,9 +1,4 @@
-const glucoseData = require('../models/glucoseModel');
-const patient = require('../models/patientModel')
 const summaryData = require('../models/summaryModel')
-const insulinData = require('../models/insulinModel')
-const exerciseData = require('../models/exerciseModel')
-const weightData = require('../models/weightModel')
 
 const display = async(req, res, next) => { 
 
