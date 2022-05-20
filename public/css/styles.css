@@ -249,6 +249,7 @@ guest and information pages generic styling
 
 .guest-nav-button:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /*******************************************************************************
