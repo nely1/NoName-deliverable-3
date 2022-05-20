@@ -51,9 +51,14 @@ clinicianRouter.get('/', clinicianController.display)
 const registryController = require('../controllers/registryController')
 clinicianRouter.get('/register', registryController.display)
 clinicianRouter.post('/register',
-    body("password").escape(),
-    body("bio").escape(),
-    body("username").escape(),
+    body("password", "cannot be empty").not().isEmpty().escape(),
+    body("bio", "cannot be empty").not().isEmpty().escape(),
+    body("username", "cannot be empty").not().isEmpty().escape(),
+    body("first_name").not().isEmpty().escape(),
+    body("last_name").not().isEmpty().escape(),
+    body("date_of_birth").not().isEmpty().escape(),
+    body("gender").not().isEmpty().escape(),
+    body("email").isEmail().escape(),
     upload.single('myImage'),
     registryController.insert)
 

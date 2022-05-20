@@ -37,7 +37,8 @@ patientRouter.get('/', isAuthenticated, homepageController.display)
 // Page for patients to select data to record
 const recordController = require('../controllers/recordController')
 patientRouter.get('/record', recordController.display)
-patientRouter.post('/record', 
+patientRouter.post('/record',
+    body("data", "cannot be empty, must be a number").not().isEmpty().isNumeric(),
     body("comments").escape(),
     recordController.insert)
 
