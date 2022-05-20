@@ -28,6 +28,8 @@ const display = async(req, res, next) => {
     patient_array = await patient.find({})
     let engagement_rate = 0;
     let counter = 0;
+    let thisPatientEngagementRate = 0
+    let thisPatientRank = 0 
     
     for(let i = 0; i < patient_array.length;i++){
         thisPatient = await summaryData.find({patientID : patient_array[i]._id});
@@ -56,6 +58,7 @@ const display = async(req, res, next) => {
         // check if engagement rate is logged in user's, if so store
         if (req.user._id.equals(patient_array[i]._id)){
             thisPatientEngagementRate = engagement_rate
+            thisPatientRank = i + 1
         }
 
         engagement_list[engagement_list.length] = [engagement_rate, patient_array[i].username]
@@ -63,7 +66,8 @@ const display = async(req, res, next) => {
 
     engagement_list.sort(sortFunction)
     res.render('home', {profile: req.user.toJSON(), data: today_data, home: "active", 
-        one_rate: engagement_list[0][0], one_name: engagement_list[0][1], user_rate: thisPatientEngagementRate})
+        one_rate: engagement_list[0][0], one_name: engagement_list[0][1], 
+        user_rate: thisPatientEngagementRate, user_rank: thisPatientRank})
 }
 
 function sortFunction(a, b) {

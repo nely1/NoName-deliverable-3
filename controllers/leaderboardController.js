@@ -34,6 +34,7 @@ const display = async(req, res) => {
     let engagement_rate = 0;
     let counter = 0;
     let thisPatientEngagementRate = 0
+    let thisPatientRank = 0 
     
     for(let i = 0; i < patient_array.length;i++){
         thisPatient = await summary.find({patientID : patient_array[i]._id});
@@ -63,6 +64,7 @@ const display = async(req, res) => {
         // check if engagement rate is logged in user's, if so store
         if (req.user._id.equals(patient_array[i]._id)){
             thisPatientEngagementRate = engagement_rate
+            thisPatientRank = i + 1
         }
 
         engagement_list[engagement_list.length] = [engagement_rate, patient_array[i].username]
@@ -73,7 +75,7 @@ const display = async(req, res) => {
     res.render('leaderboard', {leaderboard: "active", one_rate: engagement_list[0][0] , one_name: engagement_list[0][1],
         two_rate: engagement_list[1][0], two_name: engagement_list[1][1], three_rate: engagement_list[2][0], three_name: engagement_list[2][1],
         four_rate: engagement_list[3][0], four_name: engagement_list[3][1], five_rate: engagement_list[4][0], five_name: engagement_list[4][1], 
-        user_rate: thisPatientEngagementRate, badge: thisPatientEngagementRate>80} )
+        user_rate: thisPatientEngagementRate, user_rank: thisPatientRank, badge: thisPatientEngagementRate>80} )
 } 
 
 
