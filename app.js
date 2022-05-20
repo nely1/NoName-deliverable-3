@@ -40,6 +40,11 @@ app.engine(
                 var mmnt = moment(date)
                 return mmnt.format(format)
             },
+
+            // Helper that checks if engagement is enough to earn a badge
+            checkBadge: function(engagement){
+                return engagement > 80
+            }
         }
     })
 )
