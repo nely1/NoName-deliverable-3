@@ -130,7 +130,18 @@ header button:hover{
     font-size: 25px;
     padding-bottom: 10px;
     padding-top: 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.118);;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.118);
+}
+
+.hamburger-menu button{
+    font-size: 25px;
+    color: white;
+    float: none;
+}
+
+.hamburger-menu button:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .hamburger-menu li svg{
@@ -215,6 +226,11 @@ guest and information pages generic styling
     color: white;
     padding: 10px;
     margin: 0px;
+}
+
+.info-content a{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .guest-nav-button{
@@ -910,7 +926,6 @@ patient view data styling
 *******************************************************************************/
 #week-selector{
     background-color: #ddd;
-    width: 100%;
     padding: 10px;
     padding-left: 20px;
     font-size: 20px;
