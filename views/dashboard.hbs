@@ -113,12 +113,14 @@
             <th>Comment</th>
         </tr>
 
-        {{#each patientData}}
-            {{#if this.summary.glucoseID.comments}}
+        {{#each patientComments}}
+
+        <!--Enter the glucose comments-->
+            {{#if this.glucoseID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
-                            <input type="hidden" name="patientID" value = {{this._id}}>
+                            <input type="hidden" name="patientID" value = {{this.patientID._id}}>
                             <button class = "view-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -129,29 +131,24 @@
                         </form>
                     </td>
                     
-                    <td>{{this.patientID}}</td>
-                    <td>{{this.first_name}} {{this.last_name}}</td>
+                    <td>{{this.patientID.patientID}}</td>
+                    <td>{{this.patientID.first_name}} {{this.patientID.last_name}}</td>
                     <td>Glucose Level (mmol/L)</td>  
                     
-                    {{#if this.summary.glucoseID}}
-                        <td class={{checkThreshold this.summary.glucoseID.glucose_data this.glucose_min this.glucose_max}}>{{this.summary.glucoseID.glucose_data}}</td>    
-                    {{else}}
-                        <td class="data-warning">-</td>    
-                    {{/if}}
-                    {{#if this.summary.glucoseID.comments}}
-                        <td>{{this.summary.glucoseID.comments}}</td>
-                    {{else}}
-                        <td>-</td>
-                    {{/if}}
+        
+                    <td class={{checkThreshold this.glucoseID.glucose_data this.patientID.glucose_min this.patientID.glucose_max}}>{{this.glucoseID.glucose_data}}</td>                 
+                    <td>{{this.glucoseID.comments}}</td>
+        
         
                 </tr>
             {{/if}}
-
-            {{#if this.summary.weightID.comments}}
+            
+            <!--Enter the weight comments-->
+            {{#if this.weightID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
-                            <input type="hidden" name="patientID" value = {{this._id}}>
+                            <input type="hidden" name="patientID" value = {{this.patientID._id}}>
                             <button class = "view-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -162,58 +159,22 @@
                         </form>
                     </td>
                     
-                    <td>{{this.patientID}}</td>
-                    <td>{{this.first_name}} {{this.last_name}}</td>
+                    <td>{{this.patientID.patientID}}</td>
+                    <td>{{this.patientID.first_name}} {{this.patientID.last_name}}</td>
                     <td>Weight (kg)</td>  
                     
-                    {{#if this.summary.weightID}}
-                        <td class={{checkThreshold this.summary.weightID.weight_data this.weight_min this.weight_max}}>{{this.summary.weightID.weight_data}}</td>    
-                    {{else}}
-                        <td class="data-warning">-</td>    
-                    {{/if}}
-                    <td>{{this.summary.weightID.comments}}</td>
-                </tr>
-            {{/if}}
-
-            {{#if this.summary.insulinID.comments}}
-                <tr>    
-                    <td>
-                        <form action="/clinician/patient_view" method="POST">
-                            <input type="hidden" name="patientID" value = {{this._id}}>
-                            <button class = "view-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <circle cx="10" cy="10" r="7" />
-                                <line x1="21" y1="21" x2="15" y2="15" />
-                                </svg>
-                            </button>
-                        </form>
-                    </td>
-                    
-                    <td>{{this.patientID}}</td>
-                    <td>{{this.first_name}} {{this.last_name}}</td>
-                    <td>Insulin Doses</td>  
-                    
-                    {{#if this.summary.insulinID}}
-                        <td class={{checkThreshold this.summary.insulinID.insulin_data this.insulin_min this.insulin_max}}>{{this.summary.insulinID.insulin_data}}</td>    
-                    {{else}}
-                        <td class="data-warning">-</td>    
-                    {{/if}}
-
-                    {{#if this.summary.insulinID.comments}}
-                        <td>{{this.summary.insulinID.comments}}</td>
-                    {{else}}
-                        <td>-</td>
-                    {{/if}}
+                    <td class={{checkThreshold this.weightID.weight_data this.patientID.weight_min this.patientID.weight_max}}>{{this.weightID.weight_data}}</td>    
+                    <td>{{this.weightID.comments}}</td>
         
                 </tr>
             {{/if}}
-
-            {{#if this.summary.exerciseID.comments}}
+            
+            <!--Enter the insulin comments-->
+            {{#if this.insulinID.comments}}
                 <tr>    
                     <td>
                         <form action="/clinician/patient_view" method="POST">
-                            <input type="hidden" name="patientID" value = {{this._id}}>
+                            <input type="hidden" name="patientID" value = {{this.patientID._id}}>
                             <button class = "view-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -224,20 +185,38 @@
                         </form>
                     </td>
                     
-                    <td>{{this.patientID}}</td>
-                    <td>{{this.first_name}} {{this.last_name}}</td>
+                    <td>{{this.patientID.patientID}}</td>
+                    <td>{{this.patientID.first_name}} {{this.patientID.last_name}}</td>
+                    <td>Insulin Doses </td>  
+                    
+                    <td class={{checkThreshold this.insulinID.insulin_data this.patientID.insulin_min this.patientID.insulin_max}}>{{this.insulinID.insulin_data}}</td>    
+                    <td>{{this.insulinID.comments}}</td>
+        
+                </tr>
+            {{/if}}
+        
+            <!--Enter the exercise comments-->
+            {{#if this.exerciseID.comments}}
+                <tr>    
+                    <td>
+                        <form action="/clinician/patient_view" method="POST">
+                            <input type="hidden" name="patientID" value = {{this.patientID._id}}>
+                            <button class = "view-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="10" cy="10" r="7" />
+                                <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                    
+                    <td>{{this.patientID.patientID}}</td>
+                    <td>{{this.patientID.first_name}} {{this.patientID.last_name}}</td>
                     <td>Exercise (steps)</td>  
                     
-                    {{#if this.summary.exerciseID}}
-                        <td class={{checkThreshold this.summary.exerciseID.exercise_data this.exercise_min this.exercise_max}}>{{this.summary.exerciseID.exercise_data}}</td>    
-                    {{else}}
-                        <td class="data-warning">-</td>    
-                    {{/if}}
-                    {{#if this.summary.exerciseID.comments}}
-                        <td>{{this.summary.exerciseID.comments}}</td>
-                    {{else}}
-                        <td>-</td>
-                    {{/if}}
+                    <td class={{checkThreshold this.exerciseID.exercise_data this.patientID.exercise_min this.patientID.exercise_max}}>{{this.exerciseID.exercise_data}}</td>    
+                    <td>{{this.exerciseID.comments}}</td>
         
                 </tr>
             {{/if}}

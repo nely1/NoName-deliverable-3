@@ -1,7 +1,7 @@
-# deliverable-2
+# deliverable-3
 
 Description:
-This repository is for the web information project deliverable-2. The code is meant to allow patients to submit glucose data as a feature.
+This repository is for the web information project deliverable-3. The website is complete with all the features being implemented.
 
 contributors:
   Nelson Ly: 1047123
