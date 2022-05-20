@@ -5,7 +5,7 @@ const display = (req, res) => {
 }
 
 const insert = async(req, res) => {
-    // 
+    // initialise the day in melbourne time
     today = new Date()
     if (today.getUTCHours() < 14) {
         today.setUTCDate(today.getUTCDate()-1);
@@ -32,7 +32,6 @@ const insert = async(req, res) => {
         req_insulin: true,
         req_weight: true,
         req_exercise: true,
-
     })
     
     await new_patient.save( (err, result) => { 
@@ -45,6 +44,8 @@ const insert = async(req, res) => {
     const thisClinician = req.user
     await thisClinician.patients.push(new_patient._id)
     await thisClinician.save()
+
+    // send clinician to overview page for the newly register patient
     res.render('patient_view', {profile: new_patient.toJSON()})
 }
 
