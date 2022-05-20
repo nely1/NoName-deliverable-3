@@ -72,7 +72,7 @@ const display = async(req, res) => {
 
     engagement_list.sort(sortFunction)
     
-    res.render('leaderboard', {leaderboard: "active", one_rate: engagement_list[0][0] , one_name: engagement_list[0][1],
+    res.render('leaderboard', {layout: 'patient_main', leaderboard: "active", one_rate: engagement_list[0][0] , one_name: engagement_list[0][1],
         two_rate: engagement_list[1][0], two_name: engagement_list[1][1], three_rate: engagement_list[2][0], three_name: engagement_list[2][1],
         four_rate: engagement_list[3][0], four_name: engagement_list[3][1], five_rate: engagement_list[4][0], five_name: engagement_list[4][1], 
         user_rate: thisPatientEngagementRate, user_rank: thisPatientRank, badge: thisPatientEngagementRate>80} )

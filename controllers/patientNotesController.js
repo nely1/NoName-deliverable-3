@@ -6,7 +6,7 @@ const display = async(req, res, next) => {
     const thisPatient = req.query.patientID
     patientNotes = await clinicianNote.find({patientID: thisPatient}).lean().populate('datetime note')
 
-    res.render('patient_notes', {notes: patientNotes.reverse(), patientID: thisPatient})
+    res.render('patient_notes', {layout: 'clinician_main', notes: patientNotes.reverse(), patientID: thisPatient})
 }
 
 const insertNote = async(req, res) => {
@@ -32,7 +32,7 @@ const insertNote = async(req, res) => {
     const thisPatient = await patient.findById(req.body.patientID).lean().populate()
     data = await summary.find({patientID: thisPatient}).lean().populate('glucoseID insulinID weightID exerciseID')
 
-    await res.render('patient_view', {profile: thisPatient, allData: data.reverse()})
+    await res.render('patient_view', {layout: 'clinician_main', profile: thisPatient, allData: data.reverse()})
 }
 
 module.exports = {

@@ -47,7 +47,7 @@ const display = async(req, res, next) => {
             }
         }
     }   
-    res.render('dashboard', {patientData: patientDetails, dashboard: "active", patientComments: comments})
+    res.render('dashboard', {layout: 'clinician_main', patientData: patientDetails, dashboard: "active", patientComments: comments})
 } 
 
 module.exports = {

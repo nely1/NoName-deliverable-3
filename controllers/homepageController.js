@@ -65,7 +65,7 @@ const display = async(req, res, next) => {
     }
 
     engagement_list.sort(sortFunction)
-    res.render('home', {profile: req.user.toJSON(), data: today_data, home: "active", 
+    res.render('home', {layout: 'patient_main', profile: req.user.toJSON(), data: today_data, home: "active", 
         one_rate: engagement_list[0][0], one_name: engagement_list[0][1], 
         user_rate: thisPatientEngagementRate, user_rank: thisPatientRank})
 }

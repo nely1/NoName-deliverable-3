@@ -1,7 +1,7 @@
 const patient = require('../models/patientModel')
 
 const display = (req, res) => {
-    res.render('register', {register: "active"})
+    res.render('register', {layout: 'clinician_main', register: "active"})
 }
 
 const insert = async(req, res) => {
@@ -46,7 +46,7 @@ const insert = async(req, res) => {
     await thisClinician.save()
 
     // send clinician to overview page for the newly register patient
-    res.render('patient_view', {profile: new_patient.toJSON()})
+    res.render('patient_view', {layout: 'clinician_main', profile: new_patient.toJSON()})
 }
 
 module.exports = {

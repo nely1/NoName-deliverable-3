@@ -38,7 +38,7 @@ const display = async(req, res, next) => {
         })   
     }
   
-    res.render('record_data', {profile: thisPatient.toJSON(), data: today_data, record: "active"})
+    res.render('record_data', {layout: 'patient_main', profile: thisPatient.toJSON(), data: today_data, record: "active"})
 }
 
 const insert = async(req, res) => {

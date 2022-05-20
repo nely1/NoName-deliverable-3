@@ -29,7 +29,7 @@ const display = async(req, res, next) => {
     const thisPatient = await patient.findById(req.body.patientID).lean().populate()
     data = await summary.find({patientID: thisPatient}).lean().populate('glucoseID insulinID weightID exerciseID')
 
-    res.render('patient_view', {profile: thisPatient, allData: data.reverse()})
+    res.render('patient_view', {layout: 'clinician_main', profile: thisPatient, allData: data.reverse()})
 } 
 
 module.exports = {
