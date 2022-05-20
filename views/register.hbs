@@ -13,7 +13,7 @@
         </div>
         <div class="register-entry">
             <label>Username:</label>
-            <input type="text" name="username" required>
+            <input type="text" name="username" maxlength= "15" required title="maximum character limit is 15">
         </div>
         <div class="register-entry">
             <label>Email Address:</label>
@@ -40,7 +40,7 @@
     <!--new patient's biography-->
     <div class="register-container" id="patient-bio-input">
         <label>Patient Bio:</label><br>
-        <textarea id="text-entry" name="bio"></textarea>
+        <textarea id="text-entry" name="bio" required></textarea>
     </div>
 
     <div id="register-buttons">

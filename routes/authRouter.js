@@ -1,6 +1,7 @@
 const express = require('express')
 const authRouter = express.Router()
 const passport = require('passport')
+const { body, validationResult, check } = require('express-validator')
 
 authRouter.get('/clinician', (req, res) => {
     res.render('login', { flash: req.flash('error'), title: 'Login', userType: "Clinician"})
@@ -13,6 +14,8 @@ authRouter.get('/patient', (req, res) => {
 
 // Handle clinician login
 authRouter.post('/clinician',
+    body("username").escape(),
+    body("password").escape(),
     passport.authenticate('clinician', {
         successRedirect: '/clinician', failureRedirect: '/login_select/clinician', failureFlash: true
     })
@@ -21,6 +24,8 @@ authRouter.post('/clinician',
 
 // Handle patient login
 authRouter.post('/patient',
+    body("username").escape(),
+    body("password").escape(),
     passport.authenticate('patient', {
         successRedirect: '/patient', failureRedirect: '/login_select/patient', failureFlash: true
     })

@@ -1,5 +1,7 @@
 const express = require('express')
 const clinicianRouter = express.Router()
+const { body, validationResult, check } = require('express-validator')
+
 
 const multer = require("multer")
 var storage = multer.diskStorage({
@@ -50,10 +52,18 @@ clinicianRouter.get('/', clinicianController.display)
 
 const registryController = require('../controllers/registryController')
 clinicianRouter.get('/register', registryController.display)
-clinicianRouter.post('/register', upload.single('myImage'), registryController.insert)
+clinicianRouter.post('/register',
+    body("password").escape(),
+    body("bio").escape(),
+    body("username").escape(),
+    upload.single('myImage'),
+    registryController.insert)
 
 const patientViewController = require('../controllers/patientViewController')
-clinicianRouter.post('/patient_view', patientViewController.display)
+clinicianRouter.post('/patient_view', 
+    body("clinician_note").escape(),
+    body("support_message").escape(),
+    patientViewController.display)
 
 const patientNotesController = require('../controllers/patientNotesController')
 clinicianRouter.get('/patient_view/notes', patientNotesController.display)

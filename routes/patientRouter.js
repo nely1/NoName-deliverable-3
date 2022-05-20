@@ -1,5 +1,6 @@
 const express = require('express')
 const patientRouter = express.Router()
+const { body, validationResult, check } = require('express-validator')
 
 // Authentication middleware
 const isAuthenticated = (req, res, next) => {
@@ -34,7 +35,9 @@ patientRouter.get('/', isAuthenticated, homepageController.display)
 
 const recordController = require('../controllers/recordController')
 patientRouter.get('/record', recordController.display)
-patientRouter.post('/record', recordController.insert)
+patientRouter.post('/record', 
+    body("comments").escape(),
+    recordController.insert)
 
 const submitController = require('../controllers/submitController')
 patientRouter.get('/submission/:data_type', submitController.display)
@@ -54,6 +57,8 @@ patientRouter.get('/about_diabetes', aboutDiabetesController.display)
 
 const settingsController = require('../controllers/settingsController')
 patientRouter.get('/settings', settingsController.display)
-patientRouter.post('/settings',settingsController.changeDetails)
+patientRouter.post('/settings',
+    body("password").escape(),
+    settingsController.changeDetails)
 
 module.exports = patientRouter
