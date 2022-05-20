@@ -9,6 +9,8 @@ const schema = new mongoose.Schema({
     gender: String,
     email: {type: String, required: true},
     password: {type: String, required: true},
+    textbio: String,
+    profile_picture: String,
     role: {type:String, required:true}, 
     patients: [{type: mongoose.Schema.Types.ObjectId, ref: 'patientModel'}]   
 }) 

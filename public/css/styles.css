@@ -365,9 +365,12 @@ account settings page styling
     width: 75%;
     height: 100px;
     font-size: 20px;
+    border: none;
+    margin-top: 20px;
 }
 
-.settings-entry input::placeholder{
+.settings-entry input::placeholder,
+.settings-entry textarea::placeholder{
     color: black;
 }
 
@@ -389,7 +392,25 @@ account settings page styling
     text-align: center;
 }
 
+#reset-password{
+    padding: 5px;
+    background-color: grey;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+}
 
+#reset-password:hover,
+#password-mode:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#password-mode{
+    background-color: grey;
+    border: none;
+    color: white;
+}
 
 
 /*******************************************************************************

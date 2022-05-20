@@ -27,13 +27,14 @@
     </div>
     <div class="settings-entry">
         <h3>Text bio:</h3>
-        <textarea name="acc_bio" placeholder={{profile.textbio}} readonly="readonly"></textarea> 
+        <textarea name="acc_bio" placeholder="{{profile.textbio}}" readonly="readonly"></textarea> 
     </div>
     <div class="settings-entry">
         <h3>Reset your password</h3>
+        
         <form action="/patient/settings" method="POST"> 
             <input id="password-change" type="password" placeholder="Enter new password" name="password" onchange="enable_changes()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter, and be at least 8 characters">
-            <input type="submit" id="reset-password" value="Reset" disabled >
+            <input type="submit" id="reset-password" value="Reset" disabled>
         </form>
         <button onclick="change_mode()" id="password-mode">Show password</button>
     </div>
