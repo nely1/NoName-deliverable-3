@@ -14,6 +14,7 @@ const display = async(req, res, next) => {
 
     let patientArray = thisClinician.patients
     let patientDetails = []
+    let comments = []
 
     if (patientArray) {
         for (var pat in patientArray) {
@@ -27,6 +28,15 @@ const display = async(req, res, next) => {
             summaryDetails = await summary.findOne({datetime: {$gte : today}, patientID: patientArray[pat]},{glucoseID: true, insulinID: true, weightID: true, exerciseID: true, _id: false})
             .lean()
             .populate('glucoseID insulinID weightID exerciseID') 
+
+            comment = await summary.find({patientID: patientArray[pat]},{glucoseID: true, insulinID: true, weightID: true, exerciseID: true, _id: false})
+            .lean()
+            .populate('glucoseID insulinID weightID exerciseID patientID')
+
+            for (let i in comment) {
+                comments.push(comment[i])
+            }
+            
             
             if (!summaryDetails) {
                 patientDetails[pat].summary = new summary()
@@ -37,7 +47,7 @@ const display = async(req, res, next) => {
             }
         }
     }   
-    res.render('dashboard', {patientData: patientDetails, dashboard: "active"})
+    res.render('dashboard', {patientData: patientDetails, dashboard: "active", patientComments: comments})
 } 
 
 module.exports = {
