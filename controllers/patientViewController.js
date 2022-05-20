@@ -9,7 +9,6 @@ const display = async(req, res, next) => {
         thisPatient.req_weight = false
         thisPatient.req_insulin = false
         thisPatient.req_exercise = false
-        thisPatient.password = "12345"
         for (var changes in req.body){
             if(changes == "update"||changes == "patientID"){
                 continue
