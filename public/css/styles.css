@@ -1003,7 +1003,7 @@ Leaderboard
 }
 
 #ranking-message{
-    background-color: rgb(62,167,226); 
+    background-color: rgb(141,219,255); 
     width: 60%; 
     margin:auto;
     border-color: white;
@@ -1195,6 +1195,12 @@ clinician individual patient view styling
     background: none;
     border: none;
     font-size: 20px;
+}
+
+#back-block a:hover,
+#back-block button:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* general styling */
