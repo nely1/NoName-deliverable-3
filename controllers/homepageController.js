@@ -18,6 +18,8 @@ const display = async(req, res, next) => {
     const thisPatient = req.user
     let today_data = await summaryData.findOne({datetime: {$gte : today}, patientID: thisPatient._id}).lean().populate('glucoseID insulinID weightID exerciseID')
     
+    
+
     res.render('home', {profile: thisPatient.toJSON(), data: today_data, home: "active"})
 }
 
