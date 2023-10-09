@@ -4,7 +4,8 @@ const app = express()
 const moment = require('moment') 
 const flash = require('express-flash')
 const session = require('express-session')
-
+const mongoose = require('mongoose')
+require('dotenv').config()
 app.engine(
     'hbs',
     exphbs.engine({
@@ -115,8 +116,19 @@ app.use('/patient', patientRouter)
 const clinicianRouter = require('./routes/clinicianRouter')
 app.use('/clinician', clinicianRouter)
 
-app.listen(process.env.PORT || 3000, () => {
+console.log(process.env.MONGO_URL)
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URL);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
+
+connectDB().then(() => app.listen(process.env.PORT || 3000, () => {
     console.log('Diabetes@Home is listening')
-})
+}))
 
 require('./models')
