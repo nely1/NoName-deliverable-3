@@ -3,11 +3,11 @@
     <form id="login-form" action="/login_select/{{userType}}" method="POST">
         <div class="login-section">
             <label for="username">Email:</label>
-            <input type="text" name="username"/>
+            <input type="text" name="username" value="{{patientTypeUsername userType}}"/>
         </div>
         <div class="login-section">
             <label for="password">Password:</label>
-            <input type="password" name="password"/>
+            <input type="password" name="password" value="{{patientTypePassword userType}}"/>
         </div>
 
         <!--error if incorrect-->

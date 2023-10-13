@@ -45,6 +45,25 @@ app.engine(
             // Helper that checks if engagement is enough to earn a badge
             checkBadge: function(engagement){
                 return engagement > 80
+            },
+
+            patientTypeUsername: function(loginType) {
+                if (loginType == "Patient") {
+                    return "nel@gmail.com"
+                }
+                else {
+                    return "carter@gmail.com"
+                }
+            },
+
+
+            patientTypePassword: function(loginType) {
+                if (loginType == "Patient") {
+                    return "1stGamer"
+                }   
+                else {
+                    return "Unicorn11"
+                }
             }
         }
     })
